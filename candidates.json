@@ -1,0 +1,2532 @@
+[
+  {
+    "formula_actual": "Cs2AgBiBr6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.7989461664623034,
+    "predicted_bg_corrected": 1.181,
+    "energy_above_hull_eV": 0.0055,
+    "pd_score": 1.0,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2AgBiCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.282631082405555,
+    "predicted_bg_corrected": 1.664,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2AgSbCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.1282309469012417,
+    "predicted_bg_corrected": 1.51,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2InAgCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.7706330330243456,
+    "predicted_bg_corrected": 1.152,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2InBiBr6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.4774463373381237,
+    "predicted_bg_corrected": 0.859,
+    "energy_above_hull_eV": 0.0019,
+    "pd_score": 1.0,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2PdCl6",
+    "perovskite_type": "vacancy_ordered",
+    "predicted_bg": 1.2468592730036516,
+    "predicted_bg_corrected": 0.629,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2PdBr6",
+    "perovskite_type": "vacancy_ordered",
+    "predicted_bg": 1.1372083916416054,
+    "predicted_bg_corrected": 0.519,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2PtBr6",
+    "perovskite_type": "vacancy_ordered",
+    "predicted_bg": 1.7339516510525366,
+    "predicted_bg_corrected": 1.116,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2PtCl6",
+    "perovskite_type": "vacancy_ordered",
+    "predicted_bg": 1.8819596092232929,
+    "predicted_bg_corrected": 1.264,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2SnI6",
+    "perovskite_type": "vacancy_ordered",
+    "predicted_bg": 1.1194591318315272,
+    "predicted_bg_corrected": 0.501,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2TeBr6",
+    "perovskite_type": "vacancy_ordered",
+    "predicted_bg": 2.0981964236337767,
+    "predicted_bg_corrected": 1.48,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2NaInBr6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.1894585168937515,
+    "predicted_bg_corrected": 1.571,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2LiInBr6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.0643403545614807,
+    "predicted_bg_corrected": 1.446,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2SnBr6",
+    "perovskite_type": "vacancy_ordered",
+    "predicted_bg": 1.8209952018527933,
+    "predicted_bg_corrected": 1.203,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2PtI6",
+    "perovskite_type": "vacancy_ordered",
+    "predicted_bg": 1.4311337672529665,
+    "predicted_bg_corrected": 0.813,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "K2CuBiCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.7405648967860246,
+    "predicted_bg_corrected": 1.122,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "K2InAgCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.8599088465733973,
+    "predicted_bg_corrected": 1.242,
+    "energy_above_hull_eV": 0.0062,
+    "pd_score": 1.0,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "CsGaAgF6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.237950428610706,
+    "predicted_bg_corrected": 0.62,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs3Sb2I9",
+    "perovskite_type": "Sb_Bi_ternary",
+    "predicted_bg": 2.3057430152337486,
+    "predicted_bg_corrected": 1.688,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs4InSbCl12",
+    "perovskite_type": "double",
+    "predicted_bg": 1.6589369027580585,
+    "predicted_bg_corrected": 1.041,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "CsGeBr3",
+    "perovskite_type": "single",
+    "predicted_bg": 1.7352575244663044,
+    "predicted_bg_corrected": 1.117,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2ZrI6",
+    "perovskite_type": "vacancy_ordered",
+    "predicted_bg": 2.462846500995373,
+    "predicted_bg_corrected": 1.845,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs4TlSbCl12",
+    "perovskite_type": "double",
+    "predicted_bg": 1.6605969151832207,
+    "predicted_bg_corrected": 1.042,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "CsGeI3",
+    "perovskite_type": "single",
+    "predicted_bg": 2.466462170447628,
+    "predicted_bg_corrected": 1.848,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2TlInBr6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.460471861957316,
+    "predicted_bg_corrected": 1.842,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2TlBiBr6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.471569361288524,
+    "predicted_bg_corrected": 1.853,
+    "energy_above_hull_eV": 0.0084,
+    "pd_score": 1.0,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2TiI6",
+    "perovskite_type": "vacancy_ordered",
+    "predicted_bg": 1.2567036162583247,
+    "predicted_bg_corrected": 0.638,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2TiCu3F12",
+    "perovskite_type": "double",
+    "predicted_bg": 1.5471868899246306,
+    "predicted_bg_corrected": 0.929,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2TeI6",
+    "perovskite_type": "vacancy_ordered",
+    "predicted_bg": 1.6324586973740376,
+    "predicted_bg_corrected": 1.014,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "CsSnBr3",
+    "perovskite_type": "single",
+    "predicted_bg": 2.1315067507455696,
+    "predicted_bg_corrected": 1.513,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "CsSnI3",
+    "perovskite_type": "single",
+    "predicted_bg": 1.4556284014123633,
+    "predicted_bg_corrected": 0.837,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2PtI6",
+    "perovskite_type": "vacancy_ordered",
+    "predicted_bg": 1.2627515932836866,
+    "predicted_bg_corrected": 0.645,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2PdI6",
+    "perovskite_type": "vacancy_ordered",
+    "predicted_bg": 1.4914044170908434,
+    "predicted_bg_corrected": 0.873,
+    "energy_above_hull_eV": 0.0065,
+    "pd_score": 1.0,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2TeI6",
+    "perovskite_type": "vacancy_ordered",
+    "predicted_bg": 1.9345170071658249,
+    "predicted_bg_corrected": 1.316,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2SnBr6",
+    "perovskite_type": "vacancy_ordered",
+    "predicted_bg": 1.8558778712620767,
+    "predicted_bg_corrected": 1.238,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "TlSnI3",
+    "perovskite_type": "single",
+    "predicted_bg": 2.3299008564092665,
+    "predicted_bg_corrected": 1.712,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "RbSnBr3",
+    "perovskite_type": "single",
+    "predicted_bg": 2.498104167211472,
+    "predicted_bg_corrected": 1.88,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "RbGeI3",
+    "perovskite_type": "single",
+    "predicted_bg": 2.4808612096574625,
+    "predicted_bg_corrected": 1.863,
+    "energy_above_hull_eV": 0.0051,
+    "pd_score": 1.0,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "TlCuCl3",
+    "perovskite_type": "single",
+    "predicted_bg": 1.124409243423471,
+    "predicted_bg_corrected": 0.506,
+    "energy_above_hull_eV": 0.0014,
+    "pd_score": 1.0,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "RbSnI3",
+    "perovskite_type": "single",
+    "predicted_bg": 2.4822586172963312,
+    "predicted_bg_corrected": 1.864,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb4TlSbCl12",
+    "perovskite_type": "double",
+    "predicted_bg": 1.8167706652732296,
+    "predicted_bg_corrected": 1.199,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb4InSbCl12",
+    "perovskite_type": "double",
+    "predicted_bg": 1.8833025633790017,
+    "predicted_bg_corrected": 1.265,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb3Sb2I9",
+    "perovskite_type": "Sb_Bi_ternary",
+    "predicted_bg": 2.341864306038294,
+    "predicted_bg_corrected": 1.724,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "RbCuCl3",
+    "perovskite_type": "single",
+    "predicted_bg": 1.1647992498595443,
+    "predicted_bg_corrected": 0.547,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2TlSbCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.406866627574557,
+    "predicted_bg_corrected": 1.789,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2AgAu3I8",
+    "perovskite_type": "double",
+    "predicted_bg": 1.3588514452188116,
+    "predicted_bg_corrected": 0.741,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2AgSbCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.2270712731404165,
+    "predicted_bg_corrected": 1.609,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2CuSbCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.6345478052413125,
+    "predicted_bg_corrected": 1.016,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2InBiCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.201384419258092,
+    "predicted_bg_corrected": 1.583,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2InAgCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.761882802690376,
+    "predicted_bg_corrected": 1.144,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2InAgF6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.3176511811782743,
+    "predicted_bg_corrected": 1.699,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2CuBiCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.7097783904346244,
+    "predicted_bg_corrected": 1.092,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "KCuCl3",
+    "perovskite_type": "single",
+    "predicted_bg": 1.4763508311496945,
+    "predicted_bg_corrected": 0.858,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "K2TeI6",
+    "perovskite_type": "vacancy_ordered",
+    "predicted_bg": 2.18021224800973,
+    "predicted_bg_corrected": 1.562,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "K2TiCl6",
+    "perovskite_type": "vacancy_ordered",
+    "predicted_bg": 2.4931575360045377,
+    "predicted_bg_corrected": 1.875,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "KCuSb3F18",
+    "perovskite_type": "double",
+    "predicted_bg": 1.3108017553476097,
+    "predicted_bg_corrected": 0.693,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "K2PtI6",
+    "perovskite_type": "vacancy_ordered",
+    "predicted_bg": 1.7548837927925551,
+    "predicted_bg_corrected": 1.137,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "K2PtBr6",
+    "perovskite_type": "vacancy_ordered",
+    "predicted_bg": 1.5911578125567007,
+    "predicted_bg_corrected": 0.973,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "K2PtCl6",
+    "perovskite_type": "vacancy_ordered",
+    "predicted_bg": 1.7431782238624374,
+    "predicted_bg_corrected": 1.125,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "K2SnBr6",
+    "perovskite_type": "vacancy_ordered",
+    "predicted_bg": 2.054461449320881,
+    "predicted_bg_corrected": 1.436,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "K2PdCl6",
+    "perovskite_type": "vacancy_ordered",
+    "predicted_bg": 1.6379144024637549,
+    "predicted_bg_corrected": 1.02,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2PdCl6",
+    "perovskite_type": "vacancy_ordered",
+    "predicted_bg": 2.0400782467338514,
+    "predicted_bg_corrected": 1.422,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2PdBr6",
+    "perovskite_type": "vacancy_ordered",
+    "predicted_bg": 1.2393190259372122,
+    "predicted_bg_corrected": 0.621,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 1.0,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2NaSbI6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.070643918866899,
+    "predicted_bg_corrected": 1.452,
+    "energy_above_hull_eV": 0.0298,
+    "pd_score": 0.91,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2PdI6",
+    "perovskite_type": "vacancy_ordered",
+    "predicted_bg": 1.3732444048327457,
+    "predicted_bg_corrected": 0.755,
+    "energy_above_hull_eV": 0.0119,
+    "pd_score": 0.91,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2LiBiI6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.386154556924513,
+    "predicted_bg_corrected": 1.768,
+    "energy_above_hull_eV": 0.0314,
+    "pd_score": 0.91,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2TlSbCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.390613944359332,
+    "predicted_bg_corrected": 1.772,
+    "energy_above_hull_eV": 0.0104,
+    "pd_score": 0.91,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2TlSbBr6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.587575444405226,
+    "predicted_bg_corrected": 0.969,
+    "energy_above_hull_eV": 0.015,
+    "pd_score": 0.91,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "K2AgBiBr6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.7798857046046324,
+    "predicted_bg_corrected": 1.162,
+    "energy_above_hull_eV": 0.0401,
+    "pd_score": 0.91,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "K2InAgF6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.1059792569535136,
+    "predicted_bg_corrected": 1.488,
+    "energy_above_hull_eV": 0.0368,
+    "pd_score": 0.91,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "K2CuSbCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.3852262781560745,
+    "predicted_bg_corrected": 0.767,
+    "energy_above_hull_eV": 0.0372,
+    "pd_score": 0.91,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2TlBiI6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.5227383339310063,
+    "predicted_bg_corrected": 0.905,
+    "energy_above_hull_eV": 0.0235,
+    "pd_score": 0.91,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2TlInI6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.4779522746705127,
+    "predicted_bg_corrected": 0.86,
+    "energy_above_hull_eV": 0.0395,
+    "pd_score": 0.91,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "K2AgSbCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.113799454379534,
+    "predicted_bg_corrected": 1.496,
+    "energy_above_hull_eV": 0.0261,
+    "pd_score": 0.91,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "K2CuBiBr6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.2703085905568223,
+    "predicted_bg_corrected": 0.652,
+    "energy_above_hull_eV": 0.0456,
+    "pd_score": 0.91,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "K2AgSbBr6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.4880846884684855,
+    "predicted_bg_corrected": 0.87,
+    "energy_above_hull_eV": 0.0197,
+    "pd_score": 0.91,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2TlSbI6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.229239852224708,
+    "predicted_bg_corrected": 0.611,
+    "energy_above_hull_eV": 0.0234,
+    "pd_score": 0.91,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2CuBiCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.7173014168986518,
+    "predicted_bg_corrected": 1.099,
+    "energy_above_hull_eV": 0.0242,
+    "pd_score": 0.91,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2CuSbCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.4334704104451432,
+    "predicted_bg_corrected": 0.815,
+    "energy_above_hull_eV": 0.0362,
+    "pd_score": 0.91,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2SnI6",
+    "perovskite_type": "vacancy_ordered",
+    "predicted_bg": 1.198279527819951,
+    "predicted_bg_corrected": 0.58,
+    "energy_above_hull_eV": 0.0148,
+    "pd_score": 0.91,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "TlGeI3",
+    "perovskite_type": "single",
+    "predicted_bg": 2.391816082104849,
+    "predicted_bg_corrected": 1.774,
+    "energy_above_hull_eV": 0.017,
+    "pd_score": 0.91,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2TlInBr6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.308355853791943,
+    "predicted_bg_corrected": 1.69,
+    "energy_above_hull_eV": 0.0399,
+    "pd_score": 0.91,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2TlBiBr6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.1728529164289503,
+    "predicted_bg_corrected": 1.555,
+    "energy_above_hull_eV": 0.0457,
+    "pd_score": 0.91,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2NaInBr6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.3005158134550125,
+    "predicted_bg_corrected": 1.682,
+    "energy_above_hull_eV": 0.027,
+    "pd_score": 0.91,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2TlSbBr6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.669390781415109,
+    "predicted_bg_corrected": 1.051,
+    "energy_above_hull_eV": 0.0412,
+    "pd_score": 0.91,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2CuBiBr6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.3555762515792562,
+    "predicted_bg_corrected": 0.737,
+    "energy_above_hull_eV": 0.0429,
+    "pd_score": 0.91,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2AgSbBr6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.4842194733422347,
+    "predicted_bg_corrected": 0.866,
+    "energy_above_hull_eV": 0.0252,
+    "pd_score": 0.91,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2InSbCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.9007209444368207,
+    "predicted_bg_corrected": 1.283,
+    "energy_above_hull_eV": 0.0268,
+    "pd_score": 0.91,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "LiCuF3",
+    "perovskite_type": "single",
+    "predicted_bg": 1.5707484269715843,
+    "predicted_bg_corrected": 0.953,
+    "energy_above_hull_eV": 0.0172,
+    "pd_score": 0.91,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2AgBiI6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.1929491033243005,
+    "predicted_bg_corrected": 0.575,
+    "energy_above_hull_eV": 0.0493,
+    "pd_score": 0.91,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2BiAuCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.1254553855740594,
+    "predicted_bg_corrected": 1.507,
+    "energy_above_hull_eV": 0.039,
+    "pd_score": 0.91,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "K2TlSbBr6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.7372515904627095,
+    "predicted_bg_corrected": 1.119,
+    "energy_above_hull_eV": 0.044,
+    "pd_score": 0.91,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2AgBiBr6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.9264710419767024,
+    "predicted_bg_corrected": 1.308,
+    "energy_above_hull_eV": 0.0301,
+    "pd_score": 0.91,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2AgSbBr6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.4329472834865973,
+    "predicted_bg_corrected": 0.815,
+    "energy_above_hull_eV": 0.012,
+    "pd_score": 0.91,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2InGaBr6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.5632717007350907,
+    "predicted_bg_corrected": 0.945,
+    "energy_above_hull_eV": 0.0334,
+    "pd_score": 0.91,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2CuBiBr6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.3374033336746236,
+    "predicted_bg_corrected": 0.719,
+    "energy_above_hull_eV": 0.0313,
+    "pd_score": 0.91,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2InGaCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.284019026929043,
+    "predicted_bg_corrected": 1.666,
+    "energy_above_hull_eV": 0.0417,
+    "pd_score": 0.91,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2InBiCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.276358226196156,
+    "predicted_bg_corrected": 1.658,
+    "energy_above_hull_eV": 0.0243,
+    "pd_score": 0.91,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2LiSbI6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.01363390697972,
+    "predicted_bg_corrected": 1.395,
+    "energy_above_hull_eV": 0.0355,
+    "pd_score": 0.91,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2NaInI6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.1716106215595956,
+    "predicted_bg_corrected": 0.553,
+    "energy_above_hull_eV": 0.0453,
+    "pd_score": 0.91,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2NaBiI6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.325371727704262,
+    "predicted_bg_corrected": 1.707,
+    "energy_above_hull_eV": 0.0255,
+    "pd_score": 0.91,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2AgBiI6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.2248291107446734,
+    "predicted_bg_corrected": 0.607,
+    "energy_above_hull_eV": 0.0297,
+    "pd_score": 0.91,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs3Sb2Cl9",
+    "perovskite_type": "Sb_Bi_ternary",
+    "predicted_bg": 2.762427086717868,
+    "predicted_bg_corrected": 2.144,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.8,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "CsSnCl3",
+    "perovskite_type": "single",
+    "predicted_bg": 2.805106501337733,
+    "predicted_bg_corrected": 2.187,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.8,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs3Bi2I9",
+    "perovskite_type": "Sb_Bi_ternary",
+    "predicted_bg": 2.7546410799869583,
+    "predicted_bg_corrected": 2.136,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.8,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2TeBr6",
+    "perovskite_type": "vacancy_ordered",
+    "predicted_bg": 2.5174606894073746,
+    "predicted_bg_corrected": 1.899,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.8,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "TlGeBr3",
+    "perovskite_type": "single",
+    "predicted_bg": 2.6058076438516093,
+    "predicted_bg_corrected": 1.988,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.8,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "TlSnF3",
+    "perovskite_type": "single",
+    "predicted_bg": 2.6025197138455307,
+    "predicted_bg_corrected": 1.984,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.8,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2AgBiCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.688280961186851,
+    "predicted_bg_corrected": 2.07,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.8,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "RbPbI3",
+    "perovskite_type": "single",
+    "predicted_bg": 2.47036123861289,
+    "predicted_bg_corrected": 1.852,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.8,
+    "application": "Visible PD",
+    "lead_free": false
+  },
+  {
+    "formula_actual": "Rb3Sb2Br9",
+    "perovskite_type": "Sb_Bi_ternary",
+    "predicted_bg": 2.584941716793921,
+    "predicted_bg_corrected": 1.967,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.8,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "CsPbI3",
+    "perovskite_type": "single",
+    "predicted_bg": 2.4666266758974023,
+    "predicted_bg_corrected": 1.848,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.8,
+    "application": "Visible PD",
+    "lead_free": false
+  },
+  {
+    "formula_actual": "K2AgBiCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.7093864985474,
+    "predicted_bg_corrected": 2.091,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.8,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "K2GaAgF6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.697179596426481,
+    "predicted_bg_corrected": 2.079,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.8,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2TlBiCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.884939412483391,
+    "predicted_bg_corrected": 2.267,
+    "energy_above_hull_eV": 0.0077,
+    "pd_score": 0.8,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "CsGeCl3",
+    "perovskite_type": "single",
+    "predicted_bg": 2.8679512366715723,
+    "predicted_bg_corrected": 2.25,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.8,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs3Sb2Br9",
+    "perovskite_type": "Sb_Bi_ternary",
+    "predicted_bg": 2.5621173819280747,
+    "predicted_bg_corrected": 1.944,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.8,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2TiCl6",
+    "perovskite_type": "vacancy_ordered",
+    "predicted_bg": 2.5884824998784013,
+    "predicted_bg_corrected": 1.97,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.8,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2InAgF6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.938795322743895,
+    "predicted_bg_corrected": 2.321,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.8,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2GaAgF6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.776846370007228,
+    "predicted_bg_corrected": 2.159,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.8,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2SnCl6",
+    "perovskite_type": "vacancy_ordered",
+    "predicted_bg": 2.8058085694126564,
+    "predicted_bg_corrected": 2.188,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.8,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2GeCl6",
+    "perovskite_type": "vacancy_ordered",
+    "predicted_bg": 2.980682321844713,
+    "predicted_bg_corrected": 2.362,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.8,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2TeCl6",
+    "perovskite_type": "vacancy_ordered",
+    "predicted_bg": 2.997174685597688,
+    "predicted_bg_corrected": 2.379,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.8,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2HfI6",
+    "perovskite_type": "vacancy_ordered",
+    "predicted_bg": 2.757266331206788,
+    "predicted_bg_corrected": 2.139,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.8,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2AgBiF6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.7131561749718145,
+    "predicted_bg_corrected": 2.095,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.8,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "K2PdF6",
+    "perovskite_type": "vacancy_ordered",
+    "predicted_bg": 2.8008838314903994,
+    "predicted_bg_corrected": 2.183,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.8,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "KTl2GaF6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.9083430240318138,
+    "predicted_bg_corrected": 2.29,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.8,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "KSnI3",
+    "perovskite_type": "single",
+    "predicted_bg": 2.5477636700856814,
+    "predicted_bg_corrected": 1.93,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.8,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "K2TeCl6",
+    "perovskite_type": "vacancy_ordered",
+    "predicted_bg": 2.998448903823556,
+    "predicted_bg_corrected": 2.38,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.8,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2TiCl6",
+    "perovskite_type": "vacancy_ordered",
+    "predicted_bg": 2.6469561291451056,
+    "predicted_bg_corrected": 2.029,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.8,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2PtCl6",
+    "perovskite_type": "vacancy_ordered",
+    "predicted_bg": 2.5332183881671453,
+    "predicted_bg_corrected": 1.915,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.8,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2PdF6",
+    "perovskite_type": "vacancy_ordered",
+    "predicted_bg": 2.773831494809439,
+    "predicted_bg_corrected": 2.156,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.8,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb3Bi2I9",
+    "perovskite_type": "Sb_Bi_ternary",
+    "predicted_bg": 2.849741816759161,
+    "predicted_bg_corrected": 2.232,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.8,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Na2PdF6",
+    "perovskite_type": "vacancy_ordered",
+    "predicted_bg": 2.662714165029592,
+    "predicted_bg_corrected": 2.045,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.8,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "K2TeBr6",
+    "perovskite_type": "vacancy_ordered",
+    "predicted_bg": 2.583302785293965,
+    "predicted_bg_corrected": 1.965,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.8,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2GaAgF6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.8463607668528312,
+    "predicted_bg_corrected": 2.228,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.8,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2TlSbI6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.2126418506298209,
+    "predicted_bg_corrected": 0.594,
+    "energy_above_hull_eV": 0.0504,
+    "pd_score": 0.79,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2LiSbI6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.0654043698250804,
+    "predicted_bg_corrected": 1.447,
+    "energy_above_hull_eV": 0.0528,
+    "pd_score": 0.79,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2NaInI6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.1595443561697132,
+    "predicted_bg_corrected": 0.541,
+    "energy_above_hull_eV": 0.077,
+    "pd_score": 0.79,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2TlInI6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.4045462116407426,
+    "predicted_bg_corrected": 0.786,
+    "energy_above_hull_eV": 0.0761,
+    "pd_score": 0.79,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2NaBiI6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.433430286706871,
+    "predicted_bg_corrected": 1.815,
+    "energy_above_hull_eV": 0.0502,
+    "pd_score": 0.79,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "K2TlInI6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.2904379951764535,
+    "predicted_bg_corrected": 0.672,
+    "energy_above_hull_eV": 0.0825,
+    "pd_score": 0.79,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "K2TlSbCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.492716338311272,
+    "predicted_bg_corrected": 1.875,
+    "energy_above_hull_eV": 0.0705,
+    "pd_score": 0.79,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "K2NaSbI6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.212959993545023,
+    "predicted_bg_corrected": 1.595,
+    "energy_above_hull_eV": 0.0768,
+    "pd_score": 0.79,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2TlGaBr6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.256012629784674,
+    "predicted_bg_corrected": 1.638,
+    "energy_above_hull_eV": 0.0714,
+    "pd_score": 0.79,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2NaGaBr6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.9759688332614365,
+    "predicted_bg_corrected": 1.358,
+    "energy_above_hull_eV": 0.0839,
+    "pd_score": 0.79,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2TlGaBr6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.1285975584089494,
+    "predicted_bg_corrected": 1.51,
+    "energy_above_hull_eV": 0.0906,
+    "pd_score": 0.79,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2NaSbI6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.1572061536901503,
+    "predicted_bg_corrected": 1.539,
+    "energy_above_hull_eV": 0.0523,
+    "pd_score": 0.79,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "K2TlInBr6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.258817728491939,
+    "predicted_bg_corrected": 1.641,
+    "energy_above_hull_eV": 0.0756,
+    "pd_score": 0.79,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2GaAgCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.7081721226577633,
+    "predicted_bg_corrected": 1.09,
+    "energy_above_hull_eV": 0.0619,
+    "pd_score": 0.79,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2InGaCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.151753074225795,
+    "predicted_bg_corrected": 1.534,
+    "energy_above_hull_eV": 0.0551,
+    "pd_score": 0.79,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2InGaBr6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.58847844011772,
+    "predicted_bg_corrected": 0.97,
+    "energy_above_hull_eV": 0.0503,
+    "pd_score": 0.79,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2BiAuBr6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.1908780964352332,
+    "predicted_bg_corrected": 0.573,
+    "energy_above_hull_eV": 0.0846,
+    "pd_score": 0.79,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2LiBiI6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.489656979995189,
+    "predicted_bg_corrected": 1.871,
+    "energy_above_hull_eV": 0.0514,
+    "pd_score": 0.79,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2CuBiF6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.8049966193686835,
+    "predicted_bg_corrected": 1.187,
+    "energy_above_hull_eV": 0.0892,
+    "pd_score": 0.79,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "K2NaInI6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.2388043109864215,
+    "predicted_bg_corrected": 0.621,
+    "energy_above_hull_eV": 0.0972,
+    "pd_score": 0.79,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "K2NaInBr6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.366048854485661,
+    "predicted_bg_corrected": 1.748,
+    "energy_above_hull_eV": 0.056,
+    "pd_score": 0.79,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "K2LiBiI6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.433997000425433,
+    "predicted_bg_corrected": 1.816,
+    "energy_above_hull_eV": 0.0783,
+    "pd_score": 0.79,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "K2InSbCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.7963154393097145,
+    "predicted_bg_corrected": 1.178,
+    "energy_above_hull_eV": 0.0988,
+    "pd_score": 0.79,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "K2AgBiI6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.1470832665949122,
+    "predicted_bg_corrected": 0.529,
+    "energy_above_hull_eV": 0.0764,
+    "pd_score": 0.79,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "K2BiAuBr6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.1325273312420046,
+    "predicted_bg_corrected": 0.514,
+    "energy_above_hull_eV": 0.0911,
+    "pd_score": 0.79,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "K2GaAgCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.7195839959333752,
+    "predicted_bg_corrected": 1.101,
+    "energy_above_hull_eV": 0.0734,
+    "pd_score": 0.79,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "K2BiAuCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.3723374629911882,
+    "predicted_bg_corrected": 0.754,
+    "energy_above_hull_eV": 0.068,
+    "pd_score": 0.79,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "K2InGaCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.2058378743719045,
+    "predicted_bg_corrected": 1.588,
+    "energy_above_hull_eV": 0.0863,
+    "pd_score": 0.79,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "K2InGaBr6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.5505310326875117,
+    "predicted_bg_corrected": 0.932,
+    "energy_above_hull_eV": 0.0875,
+    "pd_score": 0.79,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2BiAuBr6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.2024803538549538,
+    "predicted_bg_corrected": 0.584,
+    "energy_above_hull_eV": 0.0691,
+    "pd_score": 0.79,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2BiAuCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.4404309357344915,
+    "predicted_bg_corrected": 0.822,
+    "energy_above_hull_eV": 0.0811,
+    "pd_score": 0.79,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2CuBiF6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.9148113152786528,
+    "predicted_bg_corrected": 1.297,
+    "energy_above_hull_eV": 0.062,
+    "pd_score": 0.79,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2NaGaBr6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.9009267315054943,
+    "predicted_bg_corrected": 1.283,
+    "energy_above_hull_eV": 0.0763,
+    "pd_score": 0.79,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2GaAgCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.635505957764657,
+    "predicted_bg_corrected": 1.017,
+    "energy_above_hull_eV": 0.0682,
+    "pd_score": 0.79,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2InSbCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.8903700991318664,
+    "predicted_bg_corrected": 1.272,
+    "energy_above_hull_eV": 0.0606,
+    "pd_score": 0.79,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "K2LiSbI6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.098998906502884,
+    "predicted_bg_corrected": 1.481,
+    "energy_above_hull_eV": 0.0737,
+    "pd_score": 0.79,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2SbAuCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 1.1814960240696566,
+    "predicted_bg_corrected": 0.563,
+    "energy_above_hull_eV": 0.0872,
+    "pd_score": 0.79,
+    "application": "NIR PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "K2NaBiI6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.388492683695165,
+    "predicted_bg_corrected": 1.77,
+    "energy_above_hull_eV": 0.0804,
+    "pd_score": 0.79,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2NaSbBr6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.937845831155939,
+    "predicted_bg_corrected": 2.32,
+    "energy_above_hull_eV": 0.0136,
+    "pd_score": 0.71,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2LiSbBr6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.6433408232870925,
+    "predicted_bg_corrected": 2.025,
+    "energy_above_hull_eV": 0.023,
+    "pd_score": 0.71,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "K3Bi2I9",
+    "perovskite_type": "Sb_Bi_ternary",
+    "predicted_bg": 2.8033615568194814,
+    "predicted_bg_corrected": 2.185,
+    "energy_above_hull_eV": 0.0169,
+    "pd_score": 0.71,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "KPbI3",
+    "perovskite_type": "single",
+    "predicted_bg": 2.496188346360329,
+    "predicted_bg_corrected": 1.878,
+    "energy_above_hull_eV": 0.0143,
+    "pd_score": 0.71,
+    "application": "Visible PD",
+    "lead_free": false
+  },
+  {
+    "formula_actual": "K2NaSbBr6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.922845037438754,
+    "predicted_bg_corrected": 2.305,
+    "energy_above_hull_eV": 0.0288,
+    "pd_score": 0.71,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "KSnBr3",
+    "perovskite_type": "single",
+    "predicted_bg": 2.510288801057984,
+    "predicted_bg_corrected": 1.892,
+    "energy_above_hull_eV": 0.0123,
+    "pd_score": 0.71,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "TlPbI3",
+    "perovskite_type": "single",
+    "predicted_bg": 2.265204957641302,
+    "predicted_bg_corrected": 1.647,
+    "energy_above_hull_eV": 0.0114,
+    "pd_score": 0.71,
+    "application": "Visible PD",
+    "lead_free": false
+  },
+  {
+    "formula_actual": "Rb2LiSbBr6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.680245961902436,
+    "predicted_bg_corrected": 2.062,
+    "energy_above_hull_eV": 0.0329,
+    "pd_score": 0.71,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "K2LiSbBr6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.763492064587166,
+    "predicted_bg_corrected": 2.145,
+    "energy_above_hull_eV": 0.025,
+    "pd_score": 0.71,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2TlInCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 3.1401427007475182,
+    "predicted_bg_corrected": 2.522,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.6,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs3Bi2Cl9",
+    "perovskite_type": "Sb_Bi_ternary",
+    "predicted_bg": 3.690999694652693,
+    "predicted_bg_corrected": 3.073,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.6,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2ZrCl6",
+    "perovskite_type": "vacancy_ordered",
+    "predicted_bg": 4.099433812844493,
+    "predicted_bg_corrected": 3.481,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.6,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs3Bi2Br9",
+    "perovskite_type": "Sb_Bi_ternary",
+    "predicted_bg": 3.2188635868383813,
+    "predicted_bg_corrected": 2.601,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.6,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "K2LiBiCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 4.091324291161338,
+    "predicted_bg_corrected": 3.473,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.6,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2TlBiF6",
+    "perovskite_type": "double",
+    "predicted_bg": 3.7944077984301,
+    "predicted_bg_corrected": 3.176,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.6,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "RbSnCl3",
+    "perovskite_type": "single",
+    "predicted_bg": 3.718256943196328,
+    "predicted_bg_corrected": 3.1,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.6,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "RbGeCl3",
+    "perovskite_type": "single",
+    "predicted_bg": 3.6241986132628026,
+    "predicted_bg_corrected": 3.006,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.6,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "TlGeCl3",
+    "perovskite_type": "single",
+    "predicted_bg": 3.144481037188735,
+    "predicted_bg_corrected": 2.526,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.6,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "RbGeBr3",
+    "perovskite_type": "single",
+    "predicted_bg": 3.009758311025533,
+    "predicted_bg_corrected": 2.392,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.6,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb3Bi2Br9",
+    "perovskite_type": "Sb_Bi_ternary",
+    "predicted_bg": 3.3445073635514087,
+    "predicted_bg_corrected": 2.726,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.6,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2TlInCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 3.257424409413324,
+    "predicted_bg_corrected": 2.639,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.6,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2TeCl6",
+    "perovskite_type": "vacancy_ordered",
+    "predicted_bg": 3.045108171257388,
+    "predicted_bg_corrected": 2.427,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.6,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2SnCl6",
+    "perovskite_type": "vacancy_ordered",
+    "predicted_bg": 3.038942258328511,
+    "predicted_bg_corrected": 2.421,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.6,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2NaSbCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 3.6443338134157512,
+    "predicted_bg_corrected": 3.026,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.6,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2NaInCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 3.476163016348274,
+    "predicted_bg_corrected": 2.858,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.6,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2LiSbCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 3.4326341556415207,
+    "predicted_bg_corrected": 2.814,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.6,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2NaBiCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 4.040100309403558,
+    "predicted_bg_corrected": 3.422,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.6,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2PtF6",
+    "perovskite_type": "vacancy_ordered",
+    "predicted_bg": 3.385832354760773,
+    "predicted_bg_corrected": 2.768,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.6,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Na2PtF6",
+    "perovskite_type": "vacancy_ordered",
+    "predicted_bg": 3.396789446952236,
+    "predicted_bg_corrected": 2.779,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.6,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2LiBiCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 4.063070987284022,
+    "predicted_bg_corrected": 3.445,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.6,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2LiInCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 3.354581697599075,
+    "predicted_bg_corrected": 2.736,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.6,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2LiInCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 3.225379156461498,
+    "predicted_bg_corrected": 2.607,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.6,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2NaSbCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 3.540961386272601,
+    "predicted_bg_corrected": 2.923,
+    "energy_above_hull_eV": 0.002,
+    "pd_score": 0.6,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2NaBiCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 3.8772850311622737,
+    "predicted_bg_corrected": 3.259,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.6,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2NaInCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 3.470572487772189,
+    "predicted_bg_corrected": 2.852,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.6,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2PdF6",
+    "perovskite_type": "vacancy_ordered",
+    "predicted_bg": 3.301926020777964,
+    "predicted_bg_corrected": 2.684,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.6,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2HfBr6",
+    "perovskite_type": "vacancy_ordered",
+    "predicted_bg": 3.9234323490269873,
+    "predicted_bg_corrected": 3.305,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.6,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2NaBiBr6",
+    "perovskite_type": "double",
+    "predicted_bg": 3.2636570739489943,
+    "predicted_bg_corrected": 2.645,
+    "energy_above_hull_eV": 0.0022,
+    "pd_score": 0.6,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2LiBiCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 3.691046211966276,
+    "predicted_bg_corrected": 3.073,
+    "energy_above_hull_eV": 0.009,
+    "pd_score": 0.6,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2PtF6",
+    "perovskite_type": "vacancy_ordered",
+    "predicted_bg": 3.297042738005109,
+    "predicted_bg_corrected": 2.679,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.6,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "KGeBr3",
+    "perovskite_type": "single",
+    "predicted_bg": 3.1694265495975427,
+    "predicted_bg_corrected": 2.551,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.6,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "KGeCl3",
+    "perovskite_type": "single",
+    "predicted_bg": 3.285134063625124,
+    "predicted_bg_corrected": 2.667,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.6,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "K2SnCl6",
+    "perovskite_type": "vacancy_ordered",
+    "predicted_bg": 3.115820794556878,
+    "predicted_bg_corrected": 2.498,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.6,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "K2PtF6",
+    "perovskite_type": "vacancy_ordered",
+    "predicted_bg": 3.365320377210376,
+    "predicted_bg_corrected": 2.747,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.6,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "CsPbBr3",
+    "perovskite_type": "single",
+    "predicted_bg": 2.9158814976909584,
+    "predicted_bg_corrected": 2.298,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.6,
+    "application": "Visible PD",
+    "lead_free": false
+  },
+  {
+    "formula_actual": "Cs2AgSbF6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.9298878842556486,
+    "predicted_bg_corrected": 2.312,
+    "energy_above_hull_eV": 0.089,
+    "pd_score": 0.59,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2InSbF6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.640816913425472,
+    "predicted_bg_corrected": 2.023,
+    "energy_above_hull_eV": 0.0863,
+    "pd_score": 0.59,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2AgSbF6",
+    "perovskite_type": "double",
+    "predicted_bg": 2.7694013685653105,
+    "predicted_bg_corrected": 2.151,
+    "energy_above_hull_eV": 0.0791,
+    "pd_score": 0.59,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "TlGeF3",
+    "perovskite_type": "single",
+    "predicted_bg": 3.1330902594144434,
+    "predicted_bg_corrected": 2.515,
+    "energy_above_hull_eV": 0.028,
+    "pd_score": 0.51,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "LiSnCl3",
+    "perovskite_type": "single",
+    "predicted_bg": 3.778366824653208,
+    "predicted_bg_corrected": 3.16,
+    "energy_above_hull_eV": 0.0103,
+    "pd_score": 0.51,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2LiBiBr6",
+    "perovskite_type": "double",
+    "predicted_bg": 3.4371921173494093,
+    "predicted_bg_corrected": 2.819,
+    "energy_above_hull_eV": 0.0332,
+    "pd_score": 0.51,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "K2NaInCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 3.51556913798918,
+    "predicted_bg_corrected": 2.897,
+    "energy_above_hull_eV": 0.03,
+    "pd_score": 0.51,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2TlSbF6",
+    "perovskite_type": "double",
+    "predicted_bg": 3.41198906318994,
+    "predicted_bg_corrected": 2.794,
+    "energy_above_hull_eV": 0.0313,
+    "pd_score": 0.51,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "K2LiInCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 3.3691831513347577,
+    "predicted_bg_corrected": 2.751,
+    "energy_above_hull_eV": 0.0158,
+    "pd_score": 0.51,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "K2NaBiBr6",
+    "perovskite_type": "double",
+    "predicted_bg": 3.594785403484364,
+    "predicted_bg_corrected": 2.977,
+    "energy_above_hull_eV": 0.0434,
+    "pd_score": 0.51,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2LiSbCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 3.3693003345708528,
+    "predicted_bg_corrected": 2.751,
+    "energy_above_hull_eV": 0.0187,
+    "pd_score": 0.51,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2LiBiBr6",
+    "perovskite_type": "double",
+    "predicted_bg": 3.3782355781864486,
+    "predicted_bg_corrected": 2.76,
+    "energy_above_hull_eV": 0.0112,
+    "pd_score": 0.51,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2TlSbF6",
+    "perovskite_type": "double",
+    "predicted_bg": 3.315159492755999,
+    "predicted_bg_corrected": 2.697,
+    "energy_above_hull_eV": 0.0464,
+    "pd_score": 0.51,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2InBiF6",
+    "perovskite_type": "double",
+    "predicted_bg": 3.2618150015840035,
+    "predicted_bg_corrected": 2.644,
+    "energy_above_hull_eV": 0.0402,
+    "pd_score": 0.51,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "K2LiSbCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 3.3509930631150384,
+    "predicted_bg_corrected": 2.733,
+    "energy_above_hull_eV": 0.0394,
+    "pd_score": 0.51,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "K2LiBiBr6",
+    "perovskite_type": "double",
+    "predicted_bg": 3.499198365774037,
+    "predicted_bg_corrected": 2.881,
+    "energy_above_hull_eV": 0.0401,
+    "pd_score": 0.51,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "K2TlInCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 3.1691168771486096,
+    "predicted_bg_corrected": 2.551,
+    "energy_above_hull_eV": 0.0444,
+    "pd_score": 0.51,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2AgBiF6",
+    "perovskite_type": "double",
+    "predicted_bg": 3.0613314821795257,
+    "predicted_bg_corrected": 2.443,
+    "energy_above_hull_eV": 0.0166,
+    "pd_score": 0.51,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2NaSbBr6",
+    "perovskite_type": "double",
+    "predicted_bg": 3.001886022150796,
+    "predicted_bg_corrected": 2.384,
+    "energy_above_hull_eV": 0.0314,
+    "pd_score": 0.51,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "K2NaSbCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 3.546465253715171,
+    "predicted_bg_corrected": 2.928,
+    "energy_above_hull_eV": 0.0416,
+    "pd_score": 0.51,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2NaBiBr6",
+    "perovskite_type": "double",
+    "predicted_bg": 3.4802652805511327,
+    "predicted_bg_corrected": 2.862,
+    "energy_above_hull_eV": 0.0314,
+    "pd_score": 0.51,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2TlBiF6",
+    "perovskite_type": "double",
+    "predicted_bg": 3.926828634592102,
+    "predicted_bg_corrected": 3.309,
+    "energy_above_hull_eV": 0.0293,
+    "pd_score": 0.51,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "CsPbCl3",
+    "perovskite_type": "single",
+    "predicted_bg": 3.93315454629288,
+    "predicted_bg_corrected": 3.315,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.4,
+    "application": "UV-Vis PD",
+    "lead_free": false
+  },
+  {
+    "formula_actual": "RbPbCl3",
+    "perovskite_type": "single",
+    "predicted_bg": 4.00858723967696,
+    "predicted_bg_corrected": 3.39,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.4,
+    "application": "UV-Vis PD",
+    "lead_free": false
+  },
+  {
+    "formula_actual": "RbPbBr3",
+    "perovskite_type": "single",
+    "predicted_bg": 3.073271556051848,
+    "predicted_bg_corrected": 2.455,
+    "energy_above_hull_eV": 0.0,
+    "pd_score": 0.4,
+    "application": "Visible PD",
+    "lead_free": false
+  },
+  {
+    "formula_actual": "Cs2NaGaCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 3.256869333603757,
+    "predicted_bg_corrected": 2.639,
+    "energy_above_hull_eV": 0.0549,
+    "pd_score": 0.39,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "K2AgBiF6",
+    "perovskite_type": "double",
+    "predicted_bg": 3.009023708332207,
+    "predicted_bg_corrected": 2.391,
+    "energy_above_hull_eV": 0.0858,
+    "pd_score": 0.39,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2TlGaCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 3.073326768381113,
+    "predicted_bg_corrected": 2.455,
+    "energy_above_hull_eV": 0.056,
+    "pd_score": 0.39,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Cs2InGaF6",
+    "perovskite_type": "double",
+    "predicted_bg": 3.965395088001584,
+    "predicted_bg_corrected": 3.347,
+    "energy_above_hull_eV": 0.085,
+    "pd_score": 0.39,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "K2NaGaCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 3.2770149539833184,
+    "predicted_bg_corrected": 2.659,
+    "energy_above_hull_eV": 0.0766,
+    "pd_score": 0.39,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2InBiF6",
+    "perovskite_type": "double",
+    "predicted_bg": 3.226452274139059,
+    "predicted_bg_corrected": 2.608,
+    "energy_above_hull_eV": 0.0815,
+    "pd_score": 0.39,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2NaGaCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 3.277876622882224,
+    "predicted_bg_corrected": 2.66,
+    "energy_above_hull_eV": 0.0565,
+    "pd_score": 0.39,
+    "application": "UV-Vis PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "Rb2TlGaCl6",
+    "perovskite_type": "double",
+    "predicted_bg": 3.1006134199976816,
+    "predicted_bg_corrected": 2.482,
+    "energy_above_hull_eV": 0.0764,
+    "pd_score": 0.39,
+    "application": "Visible PD",
+    "lead_free": true
+  },
+  {
+    "formula_actual": "TlPbCl3",
+    "perovskite_type": "single",
+    "predicted_bg": 3.0020347585335294,
+    "predicted_bg_corrected": 2.384,
+    "energy_above_hull_eV": 0.0525,
+    "pd_score": 0.19,
+    "application": "Visible PD",
+    "lead_free": false
+  }
+]

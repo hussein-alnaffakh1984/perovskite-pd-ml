@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PerovskitePD — ML-Driven Photodetector Discovery</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#0a0a0f; --bg2:#111118; --bg3:#1a1a24;
+  --accent:#00d4ff; --accent2:#7c3aed; --accent3:#10b981;
+  --warn:#f59e0b; --text:#e8e8f0; --text2:#9090a8;
+  --border:rgba(255,255,255,0.08);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(0,212,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,212,255,0.03) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;z-index:0;}
+header{position:sticky;top:0;z-index:100;padding:0 2rem;height:60px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);background:rgba(10,10,15,0.95);backdrop-filter:blur(20px);}
+.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;letter-spacing:-0.02em;}
+.logo span{color:var(--accent);}
+nav{display:flex;gap:1.5rem;}
+nav a{color:var(--text2);text-decoration:none;font-size:0.85rem;font-weight:500;transition:color 0.2s;cursor:pointer;padding:0.3rem 0;}
+nav a:hover,nav a.active{color:var(--accent);border-bottom:2px solid var(--accent);}
+.page{display:none;position:relative;z-index:1;}
+.page.active{display:block;}
+.hero{padding:5rem 2rem 3rem;max-width:1100px;margin:0 auto;}
+.badge{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(0,212,255,0.1);border:1px solid rgba(0,212,255,0.3);color:var(--accent);padding:0.3rem 0.9rem;border-radius:100px;font-size:0.72rem;font-family:'Space Mono',monospace;margin-bottom:1.5rem;}
+.badge::before{content:'';width:6px;height:6px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.3;}}
+h1{font-family:'Syne',sans-serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:800;line-height:1.1;letter-spacing:-0.03em;margin-bottom:1rem;}
+h1 em{font-style:normal;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-desc{color:var(--text2);font-size:1rem;line-height:1.7;max-width:600px;margin-bottom:2rem;}
+.stats{display:flex;gap:2rem;flex-wrap:wrap;margin-bottom:2rem;}
+.stat{display:flex;flex-direction:column;gap:0.2rem;}
+.stat-val{font-family:'Space Mono',monospace;font-size:1.6rem;font-weight:700;color:var(--accent);line-height:1;}
+.stat-lbl{font-size:0.7rem;color:var(--text2);text-transform:uppercase;letter-spacing:0.1em;}
+.stat-sep{width:1px;background:var(--border);align-self:stretch;}
+.section{max-width:1100px;margin:0 auto;padding:2rem;}
+.sec-title{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:700;margin-bottom:0.4rem;display:flex;align-items:center;gap:0.6rem;}
+.sec-title::before{content:'';width:3px;height:1.2rem;background:var(--accent);border-radius:2px;}
+.sec-sub{color:var(--text2);font-size:0.85rem;margin-bottom:1.5rem;}
+.controls{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:1.2rem 1.5rem;margin-bottom:1.5rem;display:flex;gap:1.2rem;flex-wrap:wrap;align-items:flex-end;}
+.cg{display:flex;flex-direction:column;gap:0.4rem;flex:1;min-width:140px;}
+.cg label{font-size:0.7rem;color:var(--text2);text-transform:uppercase;letter-spacing:0.08em;}
+.cg select,.cg input{background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:0.5rem 0.8rem;border-radius:8px;font-size:0.85rem;font-family:inherit;outline:none;width:100%;}
+.cg select:focus,.cg input:focus{border-color:var(--accent);}
+.cnt{background:rgba(0,212,255,0.1);border:1px solid rgba(0,212,255,0.3);color:var(--accent);padding:0.5rem 1rem;border-radius:8px;font-family:'Space Mono',monospace;font-size:0.82rem;white-space:nowrap;align-self:flex-end;}
+.tbl-wrap{background:var(--bg2);border:1px solid var(--border);border-radius:14px;overflow:auto;}
+table{width:100%;border-collapse:collapse;font-size:0.85rem;}
+thead{background:var(--bg3);border-bottom:1px solid var(--border);}
+th{padding:0.8rem 1rem;text-align:left;font-size:0.68rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text2);font-weight:600;cursor:pointer;white-space:nowrap;user-select:none;}
+th:hover{color:var(--accent);}
+td{padding:0.75rem 1rem;border-bottom:1px solid var(--border);vertical-align:middle;}
+tr:last-child td{border-bottom:none;}
+tr:hover td{background:rgba(255,255,255,0.02);}
+.fml{font-family:'Space Mono',monospace;font-size:0.82rem;font-weight:700;}
+.badge-t{display:inline-flex;align-items:center;padding:0.18rem 0.55rem;border-radius:5px;font-size:0.68rem;font-weight:600;text-transform:uppercase;letter-spacing:0.04em;white-space:nowrap;}
+.t-d{background:rgba(0,212,255,0.12);color:var(--accent);}
+.t-v{background:rgba(124,58,237,0.12);color:#a78bfa;}
+.t-s{background:rgba(16,185,129,0.12);color:var(--accent3);}
+.t-sb{background:rgba(245,158,11,0.12);color:var(--warn);}
+.badge-a{display:inline-flex;align-items:center;padding:0.18rem 0.55rem;border-radius:5px;font-size:0.68rem;font-weight:600;white-space:nowrap;}
+.a-nir{background:rgba(16,185,129,0.12);color:var(--accent3);}
+.a-vis{background:rgba(0,212,255,0.12);color:var(--accent);}
+.a-uv{background:rgba(124,58,237,0.12);color:#a78bfa;}
+.bar-wrap{display:flex;align-items:center;gap:0.5rem;}
+.bar-track{width:60px;height:4px;background:var(--bg3);border-radius:2px;flex-shrink:0;}
+.bar-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--accent3),var(--accent));}
+.mono{font-family:'Space Mono',monospace;font-size:0.78rem;}
+.green{color:var(--accent3);}
+.red{color:#ef4444;}
+.cyan{color:var(--accent);}
+.pg{display:flex;align-items:center;justify-content:center;gap:0.4rem;margin-top:1.2rem;}
+.pbtn{background:var(--bg2);border:1px solid var(--border);color:var(--text2);width:34px;height:34px;border-radius:7px;cursor:pointer;font-family:'Space Mono',monospace;font-size:0.75rem;display:flex;align-items:center;justify-content:center;transition:all 0.2s;}
+.pbtn:hover,.pbtn.act{border-color:var(--accent);color:var(--accent);background:rgba(0,212,255,0.1);}
+.pbtn:disabled{opacity:0.3;cursor:not-allowed;}
+.mcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin-bottom:2rem;}
+.mcard{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:1.3rem;transition:border-color 0.2s,transform 0.2s;}
+.mcard:hover{border-color:rgba(0,212,255,0.3);transform:translateY(-2px);}
+.mval{font-family:'Space Mono',monospace;font-size:1.8rem;font-weight:700;color:var(--accent);line-height:1;margin-bottom:0.4rem;}
+.mlbl{font-size:0.75rem;color:var(--text2);line-height:1.4;}
+.our-row td{background:rgba(0,212,255,0.04)!important;}
+footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:1.5rem 2rem;text-align:center;color:var(--text2);font-size:0.78rem;margin-top:4rem;}
+footer a{color:var(--accent);text-decoration:none;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Perovskite<span>PD</span></div>
+  <nav>
+    <a class="active" onclick="nav(this,'screening')">Screening</a>
+    <a onclick="nav(this,'model')">Model</a>
+    <a onclick="nav(this,'literature')">Literature</a>
+    <a onclick="nav(this,'about')">About</a>
+  </nav>
+</header>
+
+<!-- SCREENING -->
+<div id="pg-screening" class="page active">
+  <div class="hero">
+    <div class="badge">ML-Driven Discovery · 2026</div>
+    <h1>Inorganic Perovskite<br><em>Photodetector Discovery</em></h1>
+    <p class="hero-desc">Machine learning framework screening 370 inorganic perovskites across 4 structural families. Physics-informed Δxc corrections · Spearman r = 0.829</p>
+    <div class="stats">
+      <div class="stat"><div class="stat-val">370</div><div class="stat-lbl">Materials</div></div>
+      <div class="stat-sep"></div>
+      <div class="stat"><div class="stat-val">253</div><div class="stat-lbl">PD Candidates</div></div>
+      <div class="stat-sep"></div>
+      <div class="stat"><div class="stat-val">97%</div><div class="stat-lbl">Lead-Free</div></div>
+      <div class="stat-sep"></div>
+      <div class="stat"><div class="stat-val">0.919</div><div class="stat-lbl">Model R²</div></div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="sec-title">Candidate Database</div>
+    <div class="sec-sub">253 stable photodetector candidates — filter, sort, and explore</div>
+    <div class="controls">
+      <div class="cg"><label>Application</label>
+        <select id="f-app" onchange="filter()">
+          <option value="">All</option>
+          <option value="NIR PD">NIR PD (0.5–1.5 eV)</option>
+          <option value="Visible PD">Visible PD (1.5–2.5 eV)</option>
+          <option value="UV-Vis PD">UV-Vis PD (2.5–3.5 eV)</option>
+        </select>
+      </div>
+      <div class="cg"><label>Structure Type</label>
+        <select id="f-type" onchange="filter()">
+          <option value="">All Types</option>
+          <option value="double">Double A₂B'B''X₆</option>
+          <option value="vacancy_ordered">Vacancy-ordered A₂BX₆</option>
+          <option value="single">Single ABX₃</option>
+        </select>
+      </div>
+      <div class="cg"><label>Lead-Free</label>
+        <select id="f-lf" onchange="filter()">
+          <option value="">All</option>
+          <option value="true">Lead-Free Only</option>
+        </select>
+      </div>
+      <div class="cg"><label>Max E_hull</label>
+        <input id="f-hull" type="number" value="0.1" step="0.05" min="0" max="0.2" onchange="filter()">
+      </div>
+      <div class="cg"><label>Search</label>
+        <input id="f-srch" type="text" placeholder="Cs2Ag..." oninput="filter()">
+      </div>
+      <div class="cnt" id="cnt">— materials</div>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr>
+          <th onclick="srt('formula_actual')"># Formula</th>
+          <th onclick="srt('perovskite_type')">Type</th>
+          <th onclick="srt('predicted_bg_corrected')">Eg (eV) ↓</th>
+          <th onclick="srt('energy_above_hull_eV')">E_hull</th>
+          <th>Application</th>
+          <th>Lead-Free</th>
+          <th onclick="srt('pd_score')">PD Score ↓</th>
+        </tr></thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+    <div class="pg" id="pg"></div>
+  </div>
+</div>
+
+<!-- MODEL -->
+<div id="pg-model" class="page">
+  <div class="hero">
+    <div class="badge">LightGBM + Optuna + SHAP</div>
+    <h1>Model <em>Performance</em></h1>
+    <p class="hero-desc">Physics-informed LightGBM trained on 370 inorganic perovskites with derivative discontinuity corrections.</p>
+  </div>
+  <div class="section">
+    <div class="mcards">
+      <div class="mcard"><div class="mval">0.911</div><div class="mlbl">5-fold CV R²<br>± 0.009</div></div>
+      <div class="mcard"><div class="mval">0.919</div><div class="mlbl">Test R²<br>(held-out 20%)</div></div>
+      <div class="mcard"><div class="mval">0.236</div><div class="mlbl">External MAE eV<br>bias-corrected</div></div>
+      <div class="mcard"><div class="mval">0.829</div><div class="mlbl">Spearman r<br>p = 0.042</div></div>
+      <div class="mcard"><div class="mval">370</div><div class="mlbl">Training materials<br>4 families</div></div>
+      <div class="mcard"><div class="mval">26</div><div class="mlbl">Physics descriptors</div></div>
+    </div>
+    <div class="sec-title">Per-Type Performance</div>
+    <div class="sec-sub" style="margin-bottom:1rem">Model accuracy by structural family</div>
+    <div class="tbl-wrap" style="margin-bottom:2.5rem">
+      <table><thead><tr><th>Family</th><th>n</th><th>R²</th><th>Note</th></tr></thead>
+      <tbody>
+        <tr><td><span class="badge-t t-v">Vacancy-ordered A₂BX₆</span></td><td class="mono">69</td><td class="mono cyan">0.936</td><td class="green">★ First ML for PDs</td></tr>
+        <tr><td><span class="badge-t t-d">Double A₂B'B''X₆</span></td><td class="mono">247</td><td class="mono cyan">0.789</td><td style="color:var(--text2)">Good</td></tr>
+        <tr><td><span class="badge-t t-s">Single ABX₃</span></td><td class="mono">43</td><td class="mono cyan">0.736</td><td style="color:var(--text2)">Acceptable</td></tr>
+      </tbody></table>
+    </div>
+    <div class="sec-title">SHAP Feature Importance</div>
+    <div class="sec-sub" style="margin-bottom:1rem">Top physics-informed descriptors</div>
+    <div id="shap" style="display:flex;flex-direction:column;gap:0.55rem;max-width:560px;margin-bottom:2.5rem"></div>
+    <div class="sec-title">Δxc Calibration</div>
+    <div class="sec-sub" style="margin-bottom:1rem">Derivative discontinuity corrections from experimental data</div>
+    <div class="tbl-wrap">
+      <table><thead><tr><th>Material</th><th>Eg,DFT (eV)</th><th>Eg,exp (eV)</th><th>Δxc (eV)</th></tr></thead>
+      <tbody>
+        <tr><td class="fml">CsPbI₃</td><td class="mono">1.479</td><td class="mono green">1.73</td><td class="mono cyan">0.252</td></tr>
+        <tr><td class="fml">CsPbBr₃</td><td class="mono">1.782</td><td class="mono green">2.25</td><td class="mono cyan">0.468</td></tr>
+        <tr><td class="fml">CsPbCl₃</td><td class="mono">2.188</td><td class="mono green">2.99</td><td class="mono cyan">0.802</td></tr>
+        <tr><td class="fml">CsSnI₃</td><td class="mono">0.770</td><td class="mono green">1.31</td><td class="mono cyan">0.540</td></tr>
+        <tr><td class="fml">CsSnBr₃</td><td class="mono">1.388</td><td class="mono green">1.75</td><td class="mono cyan">0.362</td></tr>
+        <tr><td class="fml">CsGeI₃</td><td class="mono">1.271</td><td class="mono green">1.63</td><td class="mono cyan">0.359</td></tr>
+      </tbody></table>
+    </div>
+  </div>
+</div>
+
+<!-- LITERATURE -->
+<div id="pg-literature" class="page">
+  <div class="hero">
+    <div class="badge">Comparative Analysis</div>
+    <h1>Literature <em>Comparison</em></h1>
+    <p class="hero-desc">How our framework compares to prior ML studies on perovskite bandgap prediction.</p>
+  </div>
+  <div class="section">
+    <div class="tbl-wrap">
+      <table><thead><tr>
+        <th>Study</th><th>Year</th><th>Families</th><th>R²</th><th>MAE (eV)</th>
+        <th>Ext. Val.</th><th>PD Focus</th><th>Vacancy</th>
+      </tr></thead>
+      <tbody>
+        <tr><td>Fatima et al.</td><td>2025</td><td>1</td><td class="mono">0.817</td><td class="mono" style="color:var(--warn)">0.443</td><td class="red">✗</td><td class="red">✗</td><td class="red">✗</td></tr>
+        <tr><td>Guo &amp; Lin</td><td>2021</td><td>1</td><td class="mono">0.941</td><td class="mono">0.149</td><td class="red">✗</td><td class="red">✗</td><td class="red">✗</td></tr>
+        <tr><td>Sabagh Moeini</td><td>2025</td><td>2</td><td class="mono">0.911</td><td class="mono">0.088*</td><td class="red">✗</td><td class="red">✗</td><td class="red">✗</td></tr>
+        <tr><td>Mater. Futures</td><td>2025</td><td>1</td><td class="mono">0.801</td><td class="mono">0.285</td><td class="red">✗</td><td class="red">✗</td><td class="red">✗</td></tr>
+        <tr class="our-row"><td><strong class="cyan">This Work</strong></td><td>2026</td><td><strong class="cyan">4</strong></td><td class="mono cyan"><strong>0.919</strong></td><td class="mono green"><strong>0.236†</strong></td><td class="green">✓</td><td class="green">✓</td><td class="green">✓</td></tr>
+      </tbody></table>
+    </div>
+    <p style="color:var(--text2);font-size:0.78rem;margin-top:1rem">*Includes hybrid organic-inorganic. †Bias-corrected MAE vs 6 external experimental measurements.</p>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div id="pg-about" class="page">
+  <div class="hero">
+    <div class="badge">Research Framework · 2026</div>
+    <h1>About <em>This Work</em></h1>
+    <p class="hero-desc">First unified ML framework for multi-family inorganic perovskite photodetector discovery with experimental validation.</p>
+  </div>
+  <div class="section">
+    <div class="mcards">
+      <div class="mcard"><div class="mval" style="font-size:1rem;color:var(--text)">LightGBM</div><div class="mlbl">Optimized with Optuna Bayesian search (150 trials)</div></div>
+      <div class="mcard"><div class="mval" style="font-size:1rem;color:var(--text)">Δxc Physics</div><div class="mlbl">Composition-dependent DFT correction calibrated from 6 experimental references</div></div>
+      <div class="mcard"><div class="mval" style="font-size:1rem;color:var(--text)">SHAP XAI</div><div class="mlbl">SHapley values for global and local model interpretability</div></div>
+      <div class="mcard"><div class="mval" style="font-size:1rem;color:var(--text)">Materials Project</div><div class="mlbl">Dataset from MP API with best-phase polymorph selection</div></div>
+    </div>
+    <div class="sec-title">Novel Contributions</div>
+    <div style="display:flex;flex-direction:column;gap:0.8rem;margin-top:1.2rem">
+      ${[
+        ['★','First ML for vacancy-ordered A₂BX₆ as photodetectors','R² = 0.936 — no prior ML benchmark for photodetector applications in this family.'],
+        ['①','Multi-family framework (4 structural types)','Single ABX₃, double A₂B\'B\'\'X₆, vacancy-ordered A₂BX₆, and Sb/Bi ternary in one model.'],
+        ['②','Physics-informed Δxc correction','Reduces experimental MAE from >0.6 eV to 0.236 eV with systematic bias correction.'],
+        ['③','Spearman-validated screening (r = 0.829)','Statistically confirms correct material ordering for comparative screening (p = 0.042).'],
+        ['④','253 lead-free PD candidates','NIR, visible, UV-Vis with thermodynamic stability and toxicity constraints applied.'],
+      ].map(([n,t,d])=>`<div style="background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:1.2rem;display:flex;gap:1rem">
+        <span style="font-family:Space Mono;font-size:1.3rem;color:var(--accent);flex-shrink:0">${n}</span>
+        <div><div style="font-family:Syne;font-weight:700;margin-bottom:0.3rem">${t}</div><div style="color:var(--text2);font-size:0.85rem;line-height:1.5">${d}</div></div>
+      </div>`).join('')}
+    </div>
+  </div>
+</div>
+
+<footer>
+  PerovskitePD · ML Framework for Inorganic Perovskite Photodetector Discovery · 2026 ·
+  <a href="https://github.com/hussein-alnaffakh1984/perovskite-pd-ml" target="_blank">GitHub</a>
+</footer>
+
+<script>
+let all=[],filtered=[],sKey='pd_score',sAsc=false,pg=1;
+const PER=20;
+
+async function loadData(){
+  try{
+    const r=await fetch('data/candidates.json');
+    all=await r.json();
+  }catch{
+    all=[
+      {formula_actual:"Cs2AgBiBr6",perovskite_type:"double",predicted_bg_corrected:1.181,energy_above_hull_eV:0.006,pd_score:1.0,application:"NIR PD",lead_free:true},
+      {formula_actual:"Cs2AgBiCl6",perovskite_type:"double",predicted_bg_corrected:1.664,energy_above_hull_eV:0.000,pd_score:1.0,application:"Visible PD",lead_free:true},
+      {formula_actual:"Cs2AgSbCl6",perovskite_type:"double",predicted_bg_corrected:1.510,energy_above_hull_eV:0.000,pd_score:1.0,application:"Visible PD",lead_free:true},
+      {formula_actual:"Cs2InAgCl6",perovskite_type:"double",predicted_bg_corrected:1.152,energy_above_hull_eV:0.000,pd_score:1.0,application:"NIR PD",lead_free:true},
+      {formula_actual:"Cs2PdBr6",perovskite_type:"vacancy_ordered",predicted_bg_corrected:0.519,energy_above_hull_eV:0.000,pd_score:1.0,application:"NIR PD",lead_free:true},
+      {formula_actual:"Cs2PdCl6",perovskite_type:"vacancy_ordered",predicted_bg_corrected:0.629,energy_above_hull_eV:0.000,pd_score:1.0,application:"NIR PD",lead_free:true},
+      {formula_actual:"Cs2PtBr6",perovskite_type:"vacancy_ordered",predicted_bg_corrected:1.116,energy_above_hull_eV:0.000,pd_score:1.0,application:"NIR PD",lead_free:true},
+      {formula_actual:"Cs2SnI6",perovskite_type:"vacancy_ordered",predicted_bg_corrected:0.501,energy_above_hull_eV:0.000,pd_score:1.0,application:"NIR PD",lead_free:true},
+    ];
+  }
+  filter();
+}
+
+function filter(){
+  const app=document.getElementById('f-app').value;
+  const typ=document.getElementById('f-type').value;
+  const lf=document.getElementById('f-lf').value;
+  const hull=parseFloat(document.getElementById('f-hull').value)||0.1;
+  const srch=document.getElementById('f-srch').value.toLowerCase();
+  filtered=all.filter(d=>{
+    if(app&&d.application!==app)return false;
+    if(typ&&d.perovskite_type!==typ)return false;
+    if(lf==='true'&&!d.lead_free)return false;
+    if(d.energy_above_hull_eV>hull)return false;
+    if(srch&&!d.formula_actual.toLowerCase().includes(srch))return false;
+    return true;
+  });
+  sort();pg=1;
+  document.getElementById('cnt').textContent=filtered.length+' materials';
+  render();renderPg();
+}
+
+function srt(k){if(sKey===k)sAsc=!sAsc;else{sKey=k;sAsc=k==='formula_actual';}sort();render();}
+function sort(){filtered.sort((a,b)=>{let va=a[sKey],vb=b[sKey];if(typeof va==='string'){va=va.toLowerCase();vb=vb.toLowerCase();}return sAsc?(va<vb?-1:va>vb?1:0):(va>vb?-1:va<vb?1:0);});}
+
+function render(){
+  const s=(pg-1)*PER,sl=filtered.slice(s,s+PER);
+  const tc={double:'t-d',vacancy_ordered:'t-v',single:'t-s',Sb_Bi_ternary:'t-sb'};
+  const tn={double:'Double',vacancy_ordered:'Vacancy-ord.',single:'Single',Sb_Bi_ternary:'Sb/Bi'};
+  const ac=d=>d.includes('NIR')?'a-nir':d.includes('Visible')?'a-vis':'a-uv';
+  document.getElementById('tbody').innerHTML=sl.map((d,i)=>`<tr>
+    <td><span class="fml">${s+i+1}. ${d.formula_actual}</span></td>
+    <td><span class="badge-t ${tc[d.perovskite_type]||'t-s'}">${tn[d.perovskite_type]||d.perovskite_type}</span></td>
+    <td><div class="bar-wrap"><span class="mono" style="min-width:38px">${d.predicted_bg_corrected.toFixed(3)}</span><div class="bar-track"><div class="bar-fill" style="width:${Math.min(d.predicted_bg_corrected/3.5*100,100)}%"></div></div></div></td>
+    <td><span class="mono ${d.energy_above_hull_eV===0?'green':''}">${d.energy_above_hull_eV.toFixed(4)}</span></td>
+    <td><span class="badge-a ${ac(d.application||'')}">${d.application||'—'}</span></td>
+    <td><span class="${d.lead_free?'green':'red'}">${d.lead_free?'✓':'✗'}</span></td>
+    <td><span class="mono cyan">${d.pd_score.toFixed(3)}</span></td>
+  </tr>`).join('');
+}
+
+function renderPg(){
+  const tot=Math.ceil(filtered.length/PER);
+  const el=document.getElementById('pg');
+  if(tot<=1){el.innerHTML='';return;}
+  let h=`<button class="pbtn" onclick="goPg(${pg-1})" ${pg===1?'disabled':''}>←</button>`;
+  for(let i=1;i<=Math.min(tot,7);i++)h+=`<button class="pbtn ${i===pg?'act':''}" onclick="goPg(${i})">${i}</button>`;
+  if(tot>7)h+=`<span style="color:var(--text2);padding:0 0.4rem">…</span><button class="pbtn ${tot===pg?'act':''}" onclick="goPg(${tot})">${tot}</button>`;
+  h+=`<button class="pbtn" onclick="goPg(${pg+1})" ${pg===tot?'disabled':''}>→</button>`;
+  el.innerHTML=h;
+}
+
+function goPg(n){const tot=Math.ceil(filtered.length/PER);if(n<1||n>tot)return;pg=n;render();renderPg();document.querySelector('.tbl-wrap')?.scrollIntoView({behavior:'smooth',block:'start'});}
+
+function nav(el,name){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('nav a').forEach(a=>a.classList.remove('active'));
+  document.getElementById('pg-'+name).classList.add('active');
+  el.classList.add('active');
+}
+
+function renderSHAP(){
+  const feats=[
+    {n:'Formation Energy',v:0.92},{n:'Lattice Anisotropy',v:0.71},
+    {n:'ΔχBX Electronegativity',v:0.48},{n:'χB (B-site)',v:0.38},
+    {n:'Volume/Atom',v:0.31},{n:'Mass B (SOC proxy)',v:0.24},
+    {n:'Type (structure)',v:0.19},{n:'N sites',v:0.16},
+    {n:'log(SOC)',v:0.13},{n:'Δxc correction',v:0.11},
+  ];
+  document.getElementById('shap').innerHTML=feats.map(f=>`
+    <div style="display:flex;align-items:center;gap:0.8rem">
+      <div style="width:150px;font-size:0.75rem;color:var(--text2);text-align:right;flex-shrink:0">${f.n}</div>
+      <div style="flex:1;height:5px;background:var(--bg3);border-radius:3px;max-width:350px">
+        <div style="height:100%;width:${f.v/0.92*100}%;background:linear-gradient(90deg,var(--accent2),var(--accent));border-radius:3px"></div>
+      </div>
+      <div style="font-family:Space Mono;font-size:0.72rem;color:var(--accent);width:30px">${f.v}</div>
+    </div>`).join('');
+}
+
+loadData();renderSHAP();
+</script>
+</body>
+</html>

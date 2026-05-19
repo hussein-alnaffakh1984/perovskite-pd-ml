@@ -1,0 +1,6 @@
+study,journal,year,perovskite_type,n_materials,model,r2_bandgap,mae_eV,external_validation,photodetector_focus,vacancy_ordered,structural_families,note,spearman_ranking,n_candidates
+Fatima et al. 2025,Journal of Power Sources,2025,Inorganic cubic ABX3,1185,XGBoost,0.817,0.443,False,False,False,1,,,
+RF (Guo & Lin) 2021,Solar Energy,2021,Lead-free double halide,DFT,Random Forest,0.941,0.149,False,False,False,1,,,
+Sabagh Moeini 2025,Int. J. Energy Research,2025,Hybrid + Inorganic,7382,ABR (Advanced Boosting),0.911,0.088,False,False,False,2,Hybrid organic included,,
+Mater. Futures 2025,Materials Futures,2025,Halide perovskites (HSE),1923,XGBoost,0.801,0.285,False,False,False,1,,,
+Our Work,TBD,2026,Inorganic halide (4 families),370,LightGBM + Optuna + Δxc,0.9189,0.2364,True,True,True,4,,0.8286,253.0
