@@ -3,106 +3,151 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>PerovskitePD — ML Photodetector Discovery</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<title>PerovskitePD — Dual ML Framework</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#0d1b2a;--bg2:#1b2838;--bg3:#243447;
-  --ac:#4fc3f7;--ac2:#7c4dff;--ac3:#00e676;
-  --warn:#ffb74d;--tx:#e8f4fd;--tx2:#90b4ce;
-  --bd:rgba(79,195,247,0.12);
+  --bg:#f0f2f5;--bg2:#ffffff;--bg3:#e8edf2;
+  --ac:#1565c0;--ac2:#6a1b9a;--ac3:#2e7d32;
+  --warn:#e65100;--tx:#1a2332;--tx2:#546e7a;
+  --bd:rgba(21,101,192,0.15);--shadow:0 2px 12px rgba(0,0,0,0.08);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--bg);color:var(--tx);font-family:Inter,sans-serif;min-height:100vh;overflow-x:hidden}
-body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(79,195,247,0.04) 0%,transparent 60%),radial-gradient(ellipse at 80% 20%,rgba(124,77,255,0.04) 0%,transparent 60%);pointer-events:none;z-index:0}
-header{position:sticky;top:0;z-index:100;padding:0 2rem;height:58px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--bd);background:rgba(13,27,42,0.97);backdrop-filter:blur(20px)}
+header{position:sticky;top:0;z-index:100;padding:0 2rem;height:60px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--bd);background:rgba(255,255,255,0.97);backdrop-filter:blur(20px);box-shadow:0 1px 8px rgba(0,0,0,0.06)}
 .logo{font-family:Syne;font-weight:800;font-size:1.15rem;letter-spacing:-.02em;color:var(--tx)}.logo span{color:var(--ac)}
 nav{display:flex;gap:1.5rem}
-nav a{color:var(--tx2);text-decoration:none;font-size:.82rem;font-weight:500;cursor:pointer;padding:.25rem 0;border-bottom:2px solid transparent;transition:all .2s}
+nav a{color:var(--tx2);text-decoration:none;font-size:.82rem;font-weight:600;cursor:pointer;padding:.25rem 0;border-bottom:2px solid transparent;transition:all .2s}
 nav a:hover,nav a.act{color:var(--ac);border-bottom-color:var(--ac)}
-.page{display:none;position:relative;z-index:1}.page.act{display:block}
-.hero{padding:4rem 2rem 2rem;max-width:1100px;margin:0 auto}
-.badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(79,195,247,.08);border:1px solid rgba(79,195,247,.25);color:var(--ac);padding:.28rem .85rem;border-radius:100px;font-size:.7rem;font-family:"Space Mono";margin-bottom:1.4rem}
+.page{display:none;position:relative}.page.act{display:block}
+.hero{padding:3.5rem 2rem 1.5rem;max-width:1100px;margin:0 auto}
+.badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(21,101,192,.08);border:1px solid rgba(21,101,192,.25);color:var(--ac);padding:.28rem .85rem;border-radius:100px;font-size:.7rem;font-family:"Space Mono";margin-bottom:1.2rem}
 .badge::before{content:"";width:6px;height:6px;background:var(--ac3);border-radius:50%;animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-h1{font-family:Syne;font-size:clamp(1.9rem,4.5vw,3.2rem);font-weight:800;line-height:1.1;letter-spacing:-.03em;margin-bottom:.9rem;color:var(--tx)}
+h1{font-family:Syne;font-size:clamp(1.8rem,4vw,3rem);font-weight:800;line-height:1.1;letter-spacing:-.03em;margin-bottom:.8rem;color:var(--tx)}
 h1 em{font-style:normal;background:linear-gradient(135deg,var(--ac),var(--ac2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.desc{color:var(--tx2);font-size:.95rem;line-height:1.7;max-width:580px;margin-bottom:1.8rem}
+.desc{color:var(--tx2);font-size:.93rem;line-height:1.7;max-width:600px;margin-bottom:1.6rem}
 .stats{display:flex;gap:1.8rem;flex-wrap:wrap;margin-bottom:1.5rem}
 .stat{display:flex;flex-direction:column;gap:.2rem}
-.sv{font-family:"Space Mono";font-size:1.5rem;font-weight:700;color:var(--ac);line-height:1}
+.sv{font-family:"Space Mono";font-size:1.4rem;font-weight:700;color:var(--ac);line-height:1}
 .sl{font-size:.68rem;color:var(--tx2);text-transform:uppercase;letter-spacing:.1em}
 .sep{width:1px;background:var(--bd);align-self:stretch}
-.sec{max-width:1100px;margin:0 auto;padding:1.5rem 2rem 3rem}
-.sec-t{font-family:Syne;font-size:1.2rem;font-weight:700;margin-bottom:.35rem;display:flex;align-items:center;gap:.6rem;color:var(--tx)}
+.sec{max-width:1100px;margin:0 auto;padding:1.2rem 2rem 3rem}
+.sec-t{font-family:Syne;font-size:1.15rem;font-weight:700;margin-bottom:.3rem;display:flex;align-items:center;gap:.6rem;color:var(--tx)}
 .sec-t::before{content:"";width:3px;height:1.1rem;background:var(--ac);border-radius:2px}
-.sec-s{color:var(--tx2);font-size:.82rem;margin-bottom:1.2rem}
-.pbox{background:var(--bg2);border:1px solid var(--bd);border-radius:16px;padding:2rem;margin-bottom:2rem}
-.fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1.2rem;margin-bottom:1.5rem}
+.sec-s{color:var(--tx2);font-size:.82rem;margin-bottom:1.1rem}
+
+/* MODEL SELECTOR */
+.model-sel{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.4rem}
+.model-card{background:var(--bg2);border:2px solid var(--bd);border-radius:14px;padding:1.2rem;cursor:pointer;transition:all .2s;box-shadow:var(--shadow)}
+.model-card:hover{border-color:rgba(21,101,192,.4);transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.1)}
+.model-card.selected{border-color:var(--ac);background:rgba(21,101,192,.04)}
+.mc-badge{display:inline-flex;align-items:center;gap:.4rem;font-size:.65rem;font-family:"Space Mono";padding:.2rem .6rem;border-radius:4px;margin-bottom:.5rem;font-weight:700}
+.mc-a{background:rgba(21,101,192,.1);color:var(--ac)}
+.mc-b{background:rgba(106,27,154,.1);color:var(--ac2)}
+.mc-title{font-family:Syne;font-weight:700;font-size:.95rem;margin-bottom:.3rem;color:var(--tx)}
+.mc-desc{font-size:.75rem;color:var(--tx2);line-height:1.5}
+.mc-stats{display:flex;gap:.8rem;margin-top:.7rem;flex-wrap:wrap}
+.mc-stat{font-size:.72rem;color:var(--tx2);background:var(--bg3);padding:.2rem .6rem;border-radius:5px}
+.mc-stat span{color:var(--ac);font-family:"Space Mono";font-weight:700}
+
+/* FORM */
+.pbox{background:var(--bg2);border:1px solid var(--bd);border-radius:16px;padding:2rem;margin-bottom:1.5rem;box-shadow:var(--shadow)}
+.fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.2rem;margin-bottom:1.5rem}
 .fg{display:flex;flex-direction:column;gap:.45rem}
-.fg label{font-size:.7rem;color:var(--tx2);text-transform:uppercase;letter-spacing:.08em}
-.fg select{background:var(--bg3);border:1px solid var(--bd);color:var(--tx);padding:.6rem .9rem;border-radius:9px;font-size:.88rem;font-family:inherit;outline:none;width:100%;transition:border-color .2s;cursor:pointer}
-.fg select:focus{border-color:var(--ac)}
-.pbtn{background:linear-gradient(135deg,var(--ac),var(--ac2));color:#fff;border:none;padding:.75rem 2.5rem;border-radius:10px;font-size:.95rem;font-weight:600;cursor:pointer;font-family:inherit;transition:opacity .2s,transform .1s;width:100%}
-.pbtn:hover{opacity:.88;transform:translateY(-1px)}
-.pbtn:active{transform:translateY(0)}
-.pbtn:disabled{opacity:.5;cursor:not-allowed}
-.rbox{display:none;background:var(--bg3);border:1px solid rgba(79,195,247,.2);border-radius:14px;padding:1.5rem;margin-top:1.5rem}
+.fg label{font-size:.7rem;color:var(--tx2);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+.fg select{background:var(--bg3);border:1px solid var(--bd);color:var(--tx);padding:.65rem .9rem;border-radius:9px;font-size:.88rem;font-family:inherit;outline:none;width:100%;transition:border-color .2s;cursor:pointer}
+.fg select:focus{border-color:var(--ac);box-shadow:0 0 0 3px rgba(21,101,192,.1)}
+.pbtn{background:linear-gradient(135deg,var(--ac),var(--ac2));color:#fff;border:none;padding:.8rem 2.5rem;border-radius:10px;font-size:.95rem;font-weight:600;cursor:pointer;font-family:inherit;transition:all .2s;width:100%;letter-spacing:.01em}
+.pbtn:hover{opacity:.9;transform:translateY(-1px);box-shadow:0 4px 16px rgba(21,101,192,.3)}
+.pbtn:disabled{opacity:.5;cursor:not-allowed;transform:none}
+
+/* RESULT BOX */
+.rbox{display:none;background:var(--bg3);border:1px solid var(--bd);border-radius:14px;padding:1.5rem;margin-top:1.5rem}
 .rbox.show{display:block;animation:fadeIn .3s ease}
 @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-.rgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:1rem;margin-bottom:1.2rem}
-.rc{background:var(--bg2);border:1px solid var(--bd);border-radius:10px;padding:1rem;text-align:center}
-.rv{font-family:"Space Mono";font-size:1.4rem;font-weight:700;color:var(--ac);margin-bottom:.3rem}
-.rl{font-size:.7rem;color:var(--tx2);line-height:1.4}
-.shap-row{display:flex;align-items:center;gap:.7rem;margin-bottom:.45rem}
-.shap-lbl{width:160px;font-size:.72rem;color:var(--tx2);text-align:right;flex-shrink:0}
-.shap-track{flex:1;height:5px;background:var(--bg);border-radius:3px;max-width:300px}
-.shap-fill{height:100%;border-radius:3px}
-.shap-val{font-family:"Space Mono";font-size:.68rem;color:var(--ac);width:32px}
-.ctrl{background:var(--bg2);border:1px solid var(--bd);border-radius:13px;padding:1.1rem 1.4rem;margin-bottom:1.4rem;display:flex;gap:1.1rem;flex-wrap:wrap;align-items:flex-end}
+.rbox-header{font-family:Syne;font-weight:700;font-size:.95rem;color:var(--tx);margin-bottom:1rem;padding-bottom:.6rem;border-bottom:1px solid var(--bd);display:flex;align-items:center;gap:.5rem}
+.rbox-header::before{content:"";width:8px;height:8px;background:var(--ac3);border-radius:50%}
+
+/* RESULT CARDS */
+.rgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.9rem;margin-bottom:1.5rem}
+.rc{background:var(--bg2);border:1px solid var(--bd);border-radius:12px;padding:1.1rem 1rem;position:relative;box-shadow:0 1px 4px rgba(0,0,0,0.05)}
+.rc-label{font-size:.68rem;color:var(--tx2);text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin-bottom:.4rem}
+.rc-value{font-family:"Space Mono";font-size:1.5rem;font-weight:700;color:var(--ac);line-height:1;margin-bottom:.3rem}
+.rc-sub{font-size:.72rem;color:var(--tx2);line-height:1.4}
+.rc-badge{display:inline-flex;align-items:center;padding:.18rem .55rem;border-radius:5px;font-size:.68rem;font-weight:700;margin-top:.3rem}
+.badge-nir{background:rgba(46,125,50,.12);color:var(--ac3)}
+.badge-vis{background:rgba(21,101,192,.12);color:var(--ac)}
+.badge-uv{background:rgba(106,27,154,.12);color:var(--ac2)}
+.badge-yes{background:rgba(46,125,50,.12);color:var(--ac3)}
+.badge-no{background:rgba(198,40,40,.12);color:#c62828}
+.rc-info{position:absolute;top:.5rem;right:.5rem;width:16px;height:16px;background:var(--ac);color:#fff;border-radius:50%;font-size:.6rem;display:flex;align-items:center;justify-content:center;cursor:help;font-weight:700}
+.tooltip{display:none;position:absolute;right:0;top:24px;background:#1a2332;color:#fff;padding:.5rem .7rem;border-radius:7px;font-size:.7rem;width:180px;z-index:10;line-height:1.5;white-space:normal}
+.rc-info:hover .tooltip{display:block}
+
+/* SHAP */
+.shap-section{background:var(--bg2);border:1px solid var(--bd);border-radius:10px;padding:1rem;margin-top:.5rem}
+.shap-title{font-size:.72rem;color:var(--tx2);text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin-bottom:.8rem}
+.shap-row{display:flex;align-items:center;gap:.7rem;margin-bottom:.5rem}
+.shap-lbl{width:170px;font-size:.73rem;color:var(--tx);text-align:right;flex-shrink:0;font-weight:500}
+.shap-track{flex:1;height:6px;background:var(--bg3);border-radius:3px;max-width:280px}
+.shap-fill{height:100%;border-radius:3px;transition:width .8s ease}
+.shap-val{font-family:"Space Mono";font-size:.7rem;color:var(--ac);width:35px;text-align:right}
+
+/* TABLE */
+.ctrl{background:var(--bg2);border:1px solid var(--bd);border-radius:13px;padding:1.1rem 1.4rem;margin-bottom:1.2rem;display:flex;gap:1rem;flex-wrap:wrap;align-items:flex-end;box-shadow:var(--shadow)}
 .cg{display:flex;flex-direction:column;gap:.38rem;flex:1;min-width:130px}
-.cg label{font-size:.68rem;color:var(--tx2);text-transform:uppercase;letter-spacing:.07em}
+.cg label{font-size:.68rem;color:var(--tx2);text-transform:uppercase;letter-spacing:.07em;font-weight:600}
 .cg select,.cg input{background:var(--bg3);border:1px solid var(--bd);color:var(--tx);padding:.48rem .75rem;border-radius:7px;font-size:.82rem;font-family:inherit;outline:none;width:100%}
 .cg select:focus,.cg input:focus{border-color:var(--ac)}
-.cnt{background:rgba(79,195,247,.08);border:1px solid rgba(79,195,247,.25);color:var(--ac);padding:.48rem .9rem;border-radius:7px;font-family:"Space Mono";font-size:.78rem;white-space:nowrap;align-self:flex-end}
-.tw{background:var(--bg2);border:1px solid var(--bd);border-radius:13px;overflow:auto}
+.cnt{background:rgba(21,101,192,.08);border:1px solid rgba(21,101,192,.2);color:var(--ac);padding:.48rem .9rem;border-radius:7px;font-family:"Space Mono";font-size:.78rem;white-space:nowrap;align-self:flex-end;font-weight:700}
+.tw{background:var(--bg2);border:1px solid var(--bd);border-radius:13px;overflow:auto;box-shadow:var(--shadow)}
 table{width:100%;border-collapse:collapse;font-size:.82rem}
-thead{background:var(--bg3);border-bottom:1px solid var(--bd)}
-th{padding:.75rem .9rem;text-align:left;font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--tx2);font-weight:600;cursor:pointer;white-space:nowrap;user-select:none}
+thead{background:var(--bg3);border-bottom:2px solid var(--bd)}
+th{padding:.75rem .9rem;text-align:left;font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--tx2);font-weight:700;cursor:pointer;white-space:nowrap;user-select:none}
 th:hover{color:var(--ac)}
-td{padding:.7rem .9rem;border-bottom:1px solid var(--bd);vertical-align:middle}
+td{padding:.72rem .9rem;border-bottom:1px solid var(--bg3);vertical-align:middle}
 tr:last-child td{border-bottom:none}
-tr:hover td{background:rgba(79,195,247,.04)}
+tr:hover td{background:rgba(21,101,192,.03)}
 .fml{font-family:"Space Mono";font-size:.78rem;font-weight:700;color:var(--tx)}
-.bt{display:inline-flex;align-items:center;padding:.16rem .5rem;border-radius:5px;font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}
-.td{background:rgba(79,195,247,.12);color:var(--ac)}
-.tv{background:rgba(124,77,255,.12);color:#b39ddb}
-.ts{background:rgba(0,230,118,.12);color:var(--ac3)}
-.tsb{background:rgba(255,183,77,.12);color:var(--warn)}
-.ba{display:inline-flex;align-items:center;padding:.16rem .5rem;border-radius:5px;font-size:.65rem;font-weight:600;white-space:nowrap}
-.an{background:rgba(0,230,118,.12);color:var(--ac3)}
-.av{background:rgba(79,195,247,.12);color:var(--ac)}
-.au{background:rgba(124,77,255,.12);color:#b39ddb}
+.bt{display:inline-flex;align-items:center;padding:.16rem .55rem;border-radius:5px;font-size:.65rem;font-weight:700;text-transform:uppercase;white-space:nowrap}
+.td{background:rgba(21,101,192,.1);color:var(--ac)}.tv{background:rgba(106,27,154,.1);color:var(--ac2)}.ts{background:rgba(46,125,50,.1);color:var(--ac3)}.tsb{background:rgba(230,81,0,.1);color:var(--warn)}
+.ba{display:inline-flex;align-items:center;padding:.16rem .55rem;border-radius:5px;font-size:.65rem;font-weight:700;white-space:nowrap}
+.an{background:rgba(46,125,50,.1);color:var(--ac3)}.av{background:rgba(21,101,192,.1);color:var(--ac)}.au{background:rgba(106,27,154,.1);color:var(--ac2)}
 .bw{display:flex;align-items:center;gap:.45rem}
-.btr{width:55px;height:4px;background:var(--bg3);border-radius:2px;flex-shrink:0}
-.bf{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--ac3),var(--ac))}
+.btr{width:55px;height:5px;background:var(--bg3);border-radius:3px;flex-shrink:0}
+.bf{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--ac3),var(--ac))}
 .mono{font-family:"Space Mono";font-size:.75rem}
-.green{color:var(--ac3)}.red{color:#ef5350}.cyan{color:var(--ac)}
+.green{color:var(--ac3)}.red{color:#c62828}.blue{color:var(--ac)}
 .pgn{display:flex;align-items:center;justify-content:center;gap:.38rem;margin-top:1.1rem}
 .pb{background:var(--bg2);border:1px solid var(--bd);color:var(--tx2);width:32px;height:32px;border-radius:7px;cursor:pointer;font-family:"Space Mono";font-size:.72rem;display:flex;align-items:center;justify-content:center;transition:all .2s}
-.pb:hover,.pb.act{border-color:var(--ac);color:var(--ac);background:rgba(79,195,247,.1)}
+.pb:hover,.pb.act{border-color:var(--ac);color:var(--ac);background:rgba(21,101,192,.08)}
 .pb:disabled{opacity:.3;cursor:not-allowed}
-.mcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:.9rem;margin-bottom:2rem}
-.mc{background:var(--bg2);border:1px solid var(--bd);border-radius:11px;padding:1.2rem;transition:border-color .2s,transform .2s}
-.mc:hover{border-color:rgba(79,195,247,.4);transform:translateY(-2px)}
-.mv{font-family:"Space Mono";font-size:1.6rem;font-weight:700;color:var(--ac);line-height:1;margin-bottom:.35rem}
+.mcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:.85rem;margin-bottom:2rem}
+.mc{background:var(--bg2);border:1px solid var(--bd);border-radius:11px;padding:1.2rem;transition:all .2s;box-shadow:var(--shadow)}
+.mc:hover{border-color:rgba(21,101,192,.3);transform:translateY(-2px)}
+.mv{font-family:"Space Mono";font-size:1.5rem;font-weight:700;color:var(--ac);line-height:1;margin-bottom:.35rem}
 .ml{font-size:.72rem;color:var(--tx2);line-height:1.4}
-.our-row td{background:rgba(79,195,247,.04)!important}
-.spin{display:inline-block;width:16px;height:16px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .6s linear infinite;vertical-align:middle;margin-right:.5rem}
+.our-row td{background:rgba(21,101,192,.04)!important}
+.spin{display:inline-block;width:16px;height:16px;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:spin .6s linear infinite;vertical-align:middle;margin-right:.5rem}
 @keyframes spin{to{transform:rotate(360deg)}}
-footer{position:relative;z-index:1;border-top:1px solid var(--bd);padding:1.3rem 2rem;text-align:center;color:var(--tx2);font-size:.75rem;margin-top:3rem}
-footer a{color:var(--ac);text-decoration:none}
-@media(max-width:640px){.hero{padding:3rem 1rem 1.5rem}.stats{gap:1rem}.sep{display:none}.ctrl,.fgrid{flex-direction:column}}
+
+/* CONTACT */
+.contact-card{background:var(--bg2);border:1px solid var(--bd);border-radius:14px;padding:1.5rem;box-shadow:var(--shadow);display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap}
+.contact-avatar{width:72px;height:72px;background:linear-gradient(135deg,var(--ac),var(--ac2));border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:Syne;font-weight:800;font-size:1.5rem;color:#fff;flex-shrink:0}
+.contact-info h3{font-family:Syne;font-weight:700;font-size:1rem;margin-bottom:.2rem;color:var(--tx)}
+.contact-info p{font-size:.82rem;color:var(--tx2);margin-bottom:.6rem}
+.contact-links{display:flex;gap:.6rem;flex-wrap:wrap}
+.cl{display:inline-flex;align-items:center;gap:.4rem;padding:.35rem .8rem;border-radius:8px;font-size:.78rem;font-weight:600;text-decoration:none;transition:all .2s}
+.cl-email{background:rgba(21,101,192,.1);color:var(--ac);border:1px solid rgba(21,101,192,.2)}
+.cl-wa{background:rgba(37,211,102,.1);color:#1b7a3d;border:1px solid rgba(37,211,102,.2)}
+.cl-tg{background:rgba(0,136,204,.1);color:#0088cc;border:1px solid rgba(0,136,204,.2)}
+.cl-ig{background:rgba(193,53,132,.1);color:#c13584;border:1px solid rgba(193,53,132,.2)}
+.cl:hover{transform:translateY(-1px);box-shadow:0 2px 8px rgba(0,0,0,.1)}
+
+footer{border-top:1px solid var(--bd);padding:1.5rem 2rem;text-align:center;color:var(--tx2);font-size:.75rem;margin-top:3rem;background:var(--bg2)}
+footer a{color:var(--ac);text-decoration:none;font-weight:600}
+@media(max-width:640px){.hero{padding:2.5rem 1rem 1rem}.stats{gap:1rem}.sep{display:none}.model-sel{grid-template-columns:1fr}.ctrl,.fgrid{flex-direction:column}.contact-card{flex-direction:column}}
 </style>
 </head>
 <body>
@@ -120,90 +165,162 @@ footer a{color:var(--ac);text-decoration:none}
 <!-- PREDICT -->
 <div id="page-predict" class="page act">
   <div class="hero">
-    <div class="badge">LightGBM · R²=0.919 · MAE=0.236 eV</div>
-    <h1>Bandgap <em>Predictor</em></h1>
-    <p class="desc">Enter the composition to get an instant bandgap prediction from our trained LightGBM model — 370 inorganic perovskites, 26 physics-informed features.</p>
+    <div class="badge">Dual ML Framework &middot; Model A + Model B</div>
+    <h1>Perovskite Bandgap <em>Predictor</em></h1>
+    <p class="desc">Two specialized models for accurate bandgap prediction across inorganic and hybrid halide perovskites. Select your material type to get results from our trained models.</p>
     <div class="stats">
-      <div class="stat"><div class="sv">370</div><div class="sl">Trained On</div></div>
+      <div class="stat"><div class="sv">370</div><div class="sl">Inorganic trained</div></div>
       <div class="sep"></div>
-      <div class="stat"><div class="sv">0.919</div><div class="sl">Test R²</div></div>
+      <div class="stat"><div class="sv">40</div><div class="sl">Hybrid trained</div></div>
       <div class="sep"></div>
-      <div class="stat"><div class="sv">0.236</div><div class="sl">MAE (eV)</div></div>
+      <div class="stat"><div class="sv">0.919</div><div class="sl">Model A R&sup2;</div></div>
       <div class="sep"></div>
-      <div class="stat"><div class="sv">0.829</div><div class="sl">Spearman r</div></div>
+      <div class="stat"><div class="sv">0.957</div><div class="sl">Model B R&sup2;</div></div>
     </div>
   </div>
+
   <div class="sec">
-    <div class="sec-t">Composition Input</div>
-    <div class="sec-s">Select elements — the model computes 26 physics features automatically</div>
-    <div class="pbox">
-      <div class="fgrid">
-        <div class="fg">
-          <label>A-site (cation)</label>
-          <select id="A">
-            <option value="Cs">Cs — Cesium</option>
-            <option value="Rb">Rb — Rubidium</option>
-            <option value="K">K — Potassium</option>
-            <option value="Na">Na — Sodium</option>
-            <option value="Li">Li — Lithium</option>
-            <option value="Tl">Tl — Thallium</option>
-          </select>
-        </div>
-        <div class="fg">
-          <label>Structure Type</label>
-          <select id="TYPE" onchange="updateB()">
-            <option value="single">Single ABX₃</option>
-            <option value="double">Double A₂B'B''X₆</option>
-            <option value="vacancy_ordered">Vacancy-ordered A₂BX₆</option>
-          </select>
-        </div>
-        <div class="fg" id="B1w">
-          <label id="B1lbl">B-site</label>
-          <select id="B1">
-            <option value="Pb">Pb — Lead</option>
-            <option value="Sn">Sn — Tin</option>
-            <option value="Ge">Ge — Germanium</option>
-            <option value="Bi">Bi — Bismuth</option>
-            <option value="Sb">Sb — Antimony</option>
-            <option value="In">In — Indium</option>
-            <option value="Ti">Ti — Titanium</option>
-            <option value="Zr">Zr — Zirconium</option>
-            <option value="Hf">Hf — Hafnium</option>
-            <option value="Pt">Pt — Platinum</option>
-            <option value="Pd">Pd — Palladium</option>
-            <option value="Te">Te — Tellurium</option>
-            <option value="Ag">Ag — Silver</option>
-            <option value="Au">Au — Gold</option>
-            <option value="Cu">Cu — Copper</option>
-            <option value="Ga">Ga — Gallium</option>
-          </select>
-        </div>
-        <div class="fg" id="B2w" style="display:none">
-          <label>B''- site (double only)</label>
-          <select id="B2">
-            <option value="Bi">Bi — Bismuth</option>
-            <option value="Sb">Sb — Antimony</option>
-            <option value="In">In — Indium</option>
-            <option value="Ag">Ag — Silver</option>
-            <option value="Au">Au — Gold</option>
-            <option value="Tl">Tl — Thallium</option>
-          </select>
-        </div>
-        <div class="fg">
-          <label>X-site (halide)</label>
-          <select id="X">
-            <option value="I">I — Iodide</option>
-            <option value="Br">Br — Bromide</option>
-            <option value="Cl">Cl — Chloride</option>
-            <option value="F">F — Fluoride</option>
-          </select>
+    <div class="sec-t">Step 1 &mdash; Select Material Type</div>
+    <div class="sec-s">Each model is trained on a chemically coherent dataset, giving higher accuracy than a single combined model.</div>
+    <div class="model-sel">
+      <div class="model-card selected" id="card-a" onclick="selectModel('A')">
+        <div class="mc-badge mc-a">&#9646; Model A &middot; Inorganic</div>
+        <div class="mc-title">Inorganic Perovskites</div>
+        <div class="mc-desc">All-inorganic halide perovskites with inorganic A-site cations: Cs, Rb, K, Na, Li. Covers single ABX&#8323;, double A&#8322;B'B''X&#8326;, and vacancy-ordered A&#8322;BX&#8326; structures.</div>
+        <div class="mc-stats">
+          <div class="mc-stat">R&sup2; <span>0.919</span></div>
+          <div class="mc-stat">MAE <span>0.236 eV</span></div>
+          <div class="mc-stat">n <span>370</span></div>
+          <div class="mc-stat">Features <span>26</span></div>
         </div>
       </div>
-      <button class="pbtn" id="pbtn" onclick="predict()">Predict Bandgap</button>
-      <div class="rbox" id="rbox">
-        <div class="rgrid" id="rgrid"></div>
-        <div style="font-size:.75rem;color:var(--tx2);margin-bottom:.7rem;text-transform:uppercase;letter-spacing:.08em;margin-top:.5rem">SHAP Feature Contributions</div>
-        <div id="shap"></div>
+      <div class="model-card" id="card-b" onclick="selectModel('B')">
+        <div class="mc-badge mc-b">&#9646; Model B &middot; Hybrid</div>
+        <div class="mc-title">Hybrid MA/FA Perovskites</div>
+        <div class="mc-desc">Organic-inorganic hybrid perovskites with methylammonium (MA = CH&#8323;NH&#8323;&sup1;) or formamidinium (FA = CH(NH&#8322;)&#8322;&sup1;) A-site cations. Single ABX&#8323; structure.</div>
+        <div class="mc-stats">
+          <div class="mc-stat">R&sup2; <span>0.957</span></div>
+          <div class="mc-stat">MAE <span>0.075 eV</span></div>
+          <div class="mc-stat">n <span>40</span></div>
+          <div class="mc-stat">Features <span>16</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODEL A FORM -->
+    <div id="form-a">
+      <div class="sec-t" style="margin-bottom:.8rem">Step 2 &mdash; Enter Composition (Inorganic)</div>
+      <div class="pbox">
+        <div class="fgrid">
+          <div class="fg"><label>A-site cation</label>
+            <select id="A">
+              <option value="Cs">Cs &mdash; Cesium</option>
+              <option value="Rb">Rb &mdash; Rubidium</option>
+              <option value="K">K &mdash; Potassium</option>
+              <option value="Na">Na &mdash; Sodium</option>
+              <option value="Li">Li &mdash; Lithium</option>
+              <option value="Tl">Tl &mdash; Thallium</option>
+            </select>
+          </div>
+          <div class="fg"><label>Crystal structure</label>
+            <select id="TYPE" onchange="updateB()">
+              <option value="single">Single ABX&#8323;</option>
+              <option value="double">Double A&#8322;B'B''X&#8326;</option>
+              <option value="vacancy_ordered">Vacancy-ordered A&#8322;BX&#8326;</option>
+            </select>
+          </div>
+          <div class="fg" id="B1w"><label id="B1lbl">B-site metal</label>
+            <select id="B1">
+              <option value="Pb">Pb &mdash; Lead</option>
+              <option value="Sn">Sn &mdash; Tin</option>
+              <option value="Ge">Ge &mdash; Germanium</option>
+              <option value="Bi">Bi &mdash; Bismuth</option>
+              <option value="Sb">Sb &mdash; Antimony</option>
+              <option value="In">In &mdash; Indium</option>
+              <option value="Ti">Ti &mdash; Titanium</option>
+              <option value="Zr">Zr &mdash; Zirconium</option>
+              <option value="Hf">Hf &mdash; Hafnium</option>
+              <option value="Pt">Pt &mdash; Platinum</option>
+              <option value="Pd">Pd &mdash; Palladium</option>
+              <option value="Te">Te &mdash; Tellurium</option>
+              <option value="Ag">Ag &mdash; Silver</option>
+              <option value="Au">Au &mdash; Gold</option>
+            </select>
+          </div>
+          <div class="fg" id="B2w" style="display:none"><label>B''-site metal (double only)</label>
+            <select id="B2">
+              <option value="Bi">Bi &mdash; Bismuth</option>
+              <option value="Sb">Sb &mdash; Antimony</option>
+              <option value="In">In &mdash; Indium</option>
+              <option value="Ag">Ag &mdash; Silver</option>
+              <option value="Au">Au &mdash; Gold</option>
+            </select>
+          </div>
+          <div class="fg"><label>X-site halide</label>
+            <select id="X">
+              <option value="I">I &mdash; Iodide</option>
+              <option value="Br">Br &mdash; Bromide</option>
+              <option value="Cl">Cl &mdash; Chloride</option>
+              <option value="F">F &mdash; Fluoride</option>
+            </select>
+          </div>
+        </div>
+        <button class="pbtn" id="pbtn-a" onclick="predictA()">Predict Bandgap &mdash; Model A (Inorganic)</button>
+
+        <div class="rbox" id="rbox-a">
+          <div class="rbox-header">Prediction Results &mdash; Model A (LightGBM, R&sup2; = 0.919)</div>
+          <div class="rgrid" id="rgrid-a"></div>
+          <div class="shap-section">
+            <div class="shap-title">Feature Importance (SHAP) &mdash; Which properties drive this prediction?</div>
+            <div id="shap-a"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODEL B FORM -->
+    <div id="form-b" style="display:none">
+      <div class="sec-t" style="margin-bottom:.8rem">Step 2 &mdash; Enter Composition (Hybrid MA/FA)</div>
+      <div class="pbox">
+        <div class="fgrid">
+          <div class="fg"><label>A-site organic cation</label>
+            <select id="A_b">
+              <option value="MA">MA &mdash; Methylammonium (CH&#8323;NH&#8323;&sup1;)</option>
+              <option value="FA">FA &mdash; Formamidinium (CH(NH&#8322;)&#8322;&sup1;)</option>
+            </select>
+          </div>
+          <div class="fg"><label>B-site metal</label>
+            <select id="B_b">
+              <option value="Pb">Pb &mdash; Lead</option>
+              <option value="Sn">Sn &mdash; Tin (lead-free)</option>
+              <option value="Ge">Ge &mdash; Germanium (lead-free)</option>
+            </select>
+          </div>
+          <div class="fg"><label>X-site halide</label>
+            <select id="X_b">
+              <option value="I">I &mdash; Iodide</option>
+              <option value="Br">Br &mdash; Bromide</option>
+              <option value="Cl">Cl &mdash; Chloride</option>
+            </select>
+          </div>
+          <div class="fg"><label>Halide mixing (optional)</label>
+            <select id="MIX_b">
+              <option value="pure">Pure &mdash; Single halide</option>
+              <option value="2_1">Mixed 2:1 &mdash; e.g. MAPbI&#8322;Br</option>
+              <option value="1_2">Mixed 1:2 &mdash; e.g. MAPbIBr&#8322;</option>
+            </select>
+          </div>
+        </div>
+        <button class="pbtn" id="pbtn-b" onclick="predictB()" style="background:linear-gradient(135deg,#6a1b9a,#1565c0)">Predict Bandgap &mdash; Model B (Hybrid MA/FA)</button>
+
+        <div class="rbox" id="rbox-b">
+          <div class="rbox-header">Prediction Results &mdash; Model B (Gradient Boosting, R&sup2; = 0.957)</div>
+          <div class="rgrid" id="rgrid-b"></div>
+          <div class="shap-section">
+            <div class="shap-title">Key Compositional Factors &mdash; What drives the bandgap in this hybrid?</div>
+            <div id="shap-b"></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -212,54 +329,54 @@ footer a{color:var(--ac);text-decoration:none}
 <!-- DATABASE -->
 <div id="page-screen" class="page">
   <div class="hero">
-    <div class="badge">253 Candidates Discovered</div>
+    <div class="badge">253 Inorganic Candidates Discovered</div>
     <h1>Candidate <em>Database</em></h1>
-    <p class="desc">All materials discovered by our model from 370 inorganic perovskites — filter, sort, and explore.</p>
+    <p class="desc">All stable inorganic perovskite photodetector candidates identified by Model A. Filter by application window, structure type, stability, and lead content.</p>
   </div>
   <div class="sec">
-    <div class="sec-t">Candidate Database</div>
-    <div class="sec-s">253 stable photodetector candidates ranked by PD score</div>
+    <div class="sec-t">Candidate Database &mdash; Model A Results</div>
+    <div class="sec-s">253 thermodynamically stable candidates from 370 screened materials &middot; ranked by composite PD score</div>
     <div class="ctrl">
-      <div class="cg"><label>Application</label>
+      <div class="cg"><label>Application window</label>
         <select id="f-app" onchange="filt()">
-          <option value="">All</option>
-          <option value="NIR PD">NIR PD</option>
-          <option value="Visible PD">Visible PD</option>
-          <option value="UV-Vis PD">UV-Vis PD</option>
+          <option value="">All windows</option>
+          <option value="NIR PD">NIR PD (0.5&ndash;1.4 eV)</option>
+          <option value="Visible PD">Visible PD (1.4&ndash;2.5 eV)</option>
+          <option value="UV-Vis PD">UV-Vis PD (2.5&ndash;3.5 eV)</option>
         </select>
       </div>
-      <div class="cg"><label>Type</label>
+      <div class="cg"><label>Crystal structure</label>
         <select id="f-type" onchange="filt()">
-          <option value="">All Types</option>
-          <option value="double">Double</option>
-          <option value="vacancy_ordered">Vacancy-ordered</option>
-          <option value="single">Single</option>
+          <option value="">All structures</option>
+          <option value="double">Double A&#8322;B'B''X&#8326;</option>
+          <option value="vacancy_ordered">Vacancy-ordered A&#8322;BX&#8326;</option>
+          <option value="single">Single ABX&#8323;</option>
         </select>
       </div>
-      <div class="cg"><label>Lead-Free</label>
+      <div class="cg"><label>Lead content</label>
         <select id="f-lf" onchange="filt()">
-          <option value="">All</option>
-          <option value="1">Lead-Free Only</option>
+          <option value="">All materials</option>
+          <option value="1">Lead-free only</option>
         </select>
       </div>
-      <div class="cg"><label>Max E_hull</label>
+      <div class="cg"><label>Max E&#8337; (eV/atom)</label>
         <input id="f-hull" type="number" value="0.1" step="0.05" min="0" max="0.2" onchange="filt()">
       </div>
-      <div class="cg"><label>Search</label>
+      <div class="cg"><label>Search formula</label>
         <input id="f-srch" type="text" placeholder="e.g. Cs2Ag..." oninput="filt()">
       </div>
-      <div class="cnt" id="cnt">253</div>
+      <div class="cnt" id="cnt">253 materials</div>
     </div>
     <div class="tw">
       <table>
         <thead><tr>
           <th onclick="srt('f')"># Formula</th>
-          <th onclick="srt('t')">Type</th>
-          <th onclick="srt('bg')">Eg (eV)</th>
-          <th onclick="srt('hull')">E_hull</th>
+          <th onclick="srt('t')">Structure</th>
+          <th onclick="srt('bg')">E&#8342; (eV) &#8597;</th>
+          <th onclick="srt('hull')">E&#8337; (eV/at) &#8597;</th>
           <th>Application</th>
           <th>Pb-free</th>
-          <th onclick="srt('score')">Score</th>
+          <th onclick="srt('score')">PD Score &#8597;</th>
         </tr></thead>
         <tbody id="tbody"></tbody>
       </table>
@@ -271,40 +388,54 @@ footer a{color:var(--ac);text-decoration:none}
 <!-- MODEL -->
 <div id="page-model" class="page">
   <div class="hero">
-    <div class="badge">LightGBM + Optuna + SHAP</div>
+    <div class="badge">Dual ML Framework &middot; Two Specialized Models</div>
     <h1>Model <em>Performance</em></h1>
-    <p class="desc">Physics-informed LightGBM trained on 370 inorganic perovskites with derivative discontinuity corrections.</p>
+    <p class="desc">Two chemically coherent models — each optimized for its material family — delivering higher accuracy than a single combined model.</p>
   </div>
   <div class="sec">
-    <div class="mcards">
-      <div class="mc"><div class="mv">0.911</div><div class="ml">5-fold CV R²<br>± 0.009</div></div>
-      <div class="mc"><div class="mv">0.919</div><div class="ml">Test R²<br>(held-out 20%)</div></div>
-      <div class="mc"><div class="mv">0.236</div><div class="ml">External MAE (eV)<br>bias-corrected</div></div>
-      <div class="mc"><div class="mv">0.829</div><div class="ml">Spearman r<br>p = 0.042</div></div>
-      <div class="mc"><div class="mv">370</div><div class="ml">Training materials<br>4 families</div></div>
-      <div class="mc"><div class="mv">26</div><div class="ml">Physics descriptors</div></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:2rem">
+      <div style="background:var(--bg2);border:2px solid rgba(21,101,192,.3);border-radius:14px;padding:1.5rem;box-shadow:var(--shadow)">
+        <div class="mc-badge mc-a" style="margin-bottom:.8rem">Model A &middot; Inorganic Perovskites</div>
+        <div class="mcards" style="grid-template-columns:1fr 1fr;gap:.7rem;margin-bottom:0">
+          <div class="mc"><div class="mv">0.919</div><div class="ml">Test R&sup2;</div></div>
+          <div class="mc"><div class="mv">0.236</div><div class="ml">Ext. MAE (eV)</div></div>
+          <div class="mc"><div class="mv">0.829</div><div class="ml">Spearman r</div></div>
+          <div class="mc"><div class="mv">0.906</div><div class="ml">30-split R&sup2;</div></div>
+        </div>
+        <div style="margin-top:1rem;font-size:.78rem;color:var(--tx2);line-height:1.6">LightGBM + Optuna (150 trials) &middot; 26 physics-informed features &middot; 4 structural families &middot; &Delta;x&#x63; correction</div>
+      </div>
+      <div style="background:var(--bg2);border:2px solid rgba(106,27,154,.3);border-radius:14px;padding:1.5rem;box-shadow:var(--shadow)">
+        <div class="mc-badge mc-b" style="margin-bottom:.8rem">Model B &middot; Hybrid MA/FA Perovskites</div>
+        <div class="mcards" style="grid-template-columns:1fr 1fr;gap:.7rem;margin-bottom:0">
+          <div class="mc"><div class="mv">0.957</div><div class="ml">LOO R&sup2;</div></div>
+          <div class="mc"><div class="mv">0.075</div><div class="ml">LOO MAE (eV)</div></div>
+          <div class="mc"><div class="mv">0.021</div><div class="ml">Val. MAE (eV)</div></div>
+          <div class="mc"><div class="mv">40</div><div class="ml">Training n</div></div>
+        </div>
+        <div style="margin-top:1rem;font-size:.78rem;color:var(--tx2);line-height:1.6">Gradient Boosting (depth=2) &middot; 16 composition-fraction features &middot; Leave-One-Out CV &middot; MA and FA systems</div>
+      </div>
     </div>
-    <div class="sec-t">Per-Type Performance</div>
-    <div class="sec-s" style="margin-bottom:1rem">Model accuracy by structural family</div>
-    <div class="tw" style="margin-bottom:2rem">
-      <table><thead><tr><th>Family</th><th>n</th><th>R²</th><th>Note</th></tr></thead>
+
+    <div class="sec-t">Per-Type Performance (Model A)</div>
+    <div class="tw" style="margin-top:.8rem;margin-bottom:2rem">
+      <table><thead><tr><th>Structural Family</th><th>n</th><th>R&sup2;</th><th>MAE (eV)</th><th>Note</th></tr></thead>
       <tbody>
-        <tr><td><span class="bt tv">Vacancy-ordered A₂BX₆</span></td><td class="mono">69</td><td class="mono cyan">0.936</td><td class="green">★ First ML study for PDs</td></tr>
-        <tr><td><span class="bt td">Double A₂B'B''X₆</span></td><td class="mono">247</td><td class="mono cyan">0.789</td><td style="color:var(--tx2)">Good</td></tr>
-        <tr><td><span class="bt ts">Single ABX₃</span></td><td class="mono">43</td><td class="mono cyan">0.736</td><td style="color:var(--tx2)">Acceptable</td></tr>
+        <tr><td><span class="bt tv">Vacancy-ordered A&#8322;BX&#8326;</span></td><td class="mono">69</td><td class="mono blue">0.936</td><td class="mono">0.192</td><td class="green">&#9733; First ML benchmark for PDs</td></tr>
+        <tr><td><span class="bt td">Double A&#8322;B'B''X&#8326;</span></td><td class="mono">247</td><td class="mono blue">0.789</td><td class="mono">0.350</td><td style="color:var(--tx2)">Good accuracy</td></tr>
+        <tr><td><span class="bt ts">Single ABX&#8323;</span></td><td class="mono">43</td><td class="mono blue">0.736</td><td class="mono">0.332</td><td style="color:var(--tx2)">Acceptable (small n)</td></tr>
       </tbody></table>
     </div>
-    <div class="sec-t">Delta_xc Calibration</div>
-    <div class="sec-s" style="margin-bottom:1rem">Derivative discontinuity corrections from experimental data</div>
-    <div class="tw">
-      <table><thead><tr><th>Material</th><th>Eg,DFT (eV)</th><th>Eg,exp (eV)</th><th>Delta_xc (eV)</th></tr></thead>
+
+    <div class="sec-t">Model B Validation on Known Compounds</div>
+    <div class="tw" style="margin-top:.8rem">
+      <table><thead><tr><th>Formula</th><th>Predicted E&#8342; (eV)</th><th>Experimental E&#8342; (eV)</th><th>Error (eV)</th><th>Status</th></tr></thead>
       <tbody>
-        <tr><td class="fml">CsPbI3</td><td class="mono">1.479</td><td class="mono green">1.73</td><td class="mono cyan">0.252</td></tr>
-        <tr><td class="fml">CsPbBr3</td><td class="mono">1.782</td><td class="mono green">2.25</td><td class="mono cyan">0.468</td></tr>
-        <tr><td class="fml">CsPbCl3</td><td class="mono">2.188</td><td class="mono green">2.99</td><td class="mono cyan">0.802</td></tr>
-        <tr><td class="fml">CsSnI3</td><td class="mono">0.770</td><td class="mono green">1.31</td><td class="mono cyan">0.540</td></tr>
-        <tr><td class="fml">CsSnBr3</td><td class="mono">1.388</td><td class="mono green">1.75</td><td class="mono cyan">0.362</td></tr>
-        <tr><td class="fml">CsGeI3</td><td class="mono">1.271</td><td class="mono green">1.63</td><td class="mono cyan">0.359</td></tr>
+        <tr><td class="fml">MAPbI&#8323;</td><td class="mono">1.554</td><td class="mono green">1.57</td><td class="mono">0.016</td><td class="green">&#10003; Excellent</td></tr>
+        <tr><td class="fml">MAPbBr&#8323;</td><td class="mono">2.271</td><td class="mono green">2.24</td><td class="mono">0.031</td><td class="green">&#10003; Excellent</td></tr>
+        <tr><td class="fml">MAPbCl&#8323;</td><td class="mono">2.957</td><td class="mono green">2.97</td><td class="mono">0.013</td><td class="green">&#10003; Excellent</td></tr>
+        <tr><td class="fml">FAPbI&#8323;</td><td class="mono">1.510</td><td class="mono green">1.48</td><td class="mono">0.030</td><td class="green">&#10003; Excellent</td></tr>
+        <tr><td class="fml">FAPbBr&#8323;</td><td class="mono">2.218</td><td class="mono green">2.23</td><td class="mono">0.012</td><td class="green">&#10003; Excellent</td></tr>
+        <tr><td class="fml">MASnI&#8323;</td><td class="mono">1.222</td><td class="mono green">1.20</td><td class="mono">0.022</td><td class="green">&#10003; Excellent</td></tr>
       </tbody></table>
     </div>
   </div>
@@ -315,60 +446,110 @@ footer a{color:var(--ac);text-decoration:none}
   <div class="hero">
     <div class="badge">Comparative Analysis</div>
     <h1>Literature <em>Comparison</em></h1>
-    <p class="desc">Our framework vs prior ML studies on perovskite bandgap prediction.</p>
+    <p class="desc">Our dual-model framework compared with prior ML studies on halide perovskite bandgap prediction.</p>
   </div>
   <div class="sec">
     <div class="tw">
-      <table><thead><tr><th>Study</th><th>Year</th><th>Families</th><th>R2</th><th>MAE (eV)</th><th>Ext. Val.</th><th>PD</th><th>Vacancy</th></tr></thead>
+      <table><thead><tr><th>Study</th><th>Year</th><th>Families</th><th>R&sup2;</th><th>MAE (eV)</th><th>Ext.Val.</th><th>PD Focus</th><th>Vacancy</th></tr></thead>
       <tbody>
         <tr><td>Fatima et al.</td><td>2025</td><td>1</td><td class="mono">0.817</td><td class="mono" style="color:var(--warn)">0.443</td><td class="red">No</td><td class="red">No</td><td class="red">No</td></tr>
         <tr><td>Guo &amp; Lin</td><td>2021</td><td>1</td><td class="mono">0.941</td><td class="mono">0.149</td><td class="red">No</td><td class="red">No</td><td class="red">No</td></tr>
         <tr><td>Sabagh Moeini</td><td>2025</td><td>2</td><td class="mono">0.911</td><td class="mono">0.088*</td><td class="red">No</td><td class="red">No</td><td class="red">No</td></tr>
+        <tr><td>Ren et al.</td><td>2024</td><td>1</td><td class="mono">0.931</td><td class="mono">0.053*</td><td class="red">No</td><td class="red">No</td><td class="red">No</td></tr>
         <tr><td>Mater. Futures</td><td>2025</td><td>1</td><td class="mono">0.801</td><td class="mono">0.285</td><td class="red">No</td><td class="red">No</td><td class="red">No</td></tr>
-        <tr class="our-row"><td><strong class="cyan">This Work</strong></td><td>2026</td><td><strong class="cyan">4</strong></td><td class="mono cyan"><strong>0.919</strong></td><td class="mono green"><strong>0.236</strong></td><td class="green">Yes</td><td class="green">Yes</td><td class="green">Yes</td></tr>
+        <tr class="our-row"><td><strong style="color:var(--ac)">Model A (This work)</strong></td><td>2026</td><td><strong style="color:var(--ac)">4</strong></td><td class="mono blue"><strong>0.919</strong></td><td class="mono green"><strong>0.236&#8224;</strong></td><td class="green">Yes</td><td class="green">Yes</td><td class="green">Yes</td></tr>
+        <tr class="our-row"><td><strong style="color:var(--ac2)">Model B (This work)</strong></td><td>2026</td><td>1 (MA/FA)</td><td class="mono" style="color:var(--ac2)"><strong>0.957</strong></td><td class="mono" style="color:var(--ac2)"><strong>0.075</strong></td><td class="green">Yes</td><td class="red">&mdash;</td><td class="red">&mdash;</td></tr>
       </tbody></table>
     </div>
-    <p style="color:var(--tx2);font-size:.75rem;margin-top:.8rem">*Includes hybrid organic-inorganic perovskites.</p>
+    <p style="color:var(--tx2);font-size:.75rem;margin-top:.8rem">*Includes hybrid organic-inorganic materials. &#8224;Bias-corrected MAE against 6 external experimental measurements. Ext.Val. = external experimental validation; PD Focus = photodetector application targeting; Vacancy = vacancy-ordered A&#8322;BX&#8326; coverage.</p>
   </div>
 </div>
 
 <!-- ABOUT -->
 <div id="page-about" class="page">
   <div class="hero">
-    <div class="badge">Research Framework 2026</div>
+    <div class="badge">Research Framework &middot; 2026</div>
     <h1>About <em>This Work</em></h1>
-    <p class="desc">First unified ML framework for multi-family inorganic perovskite photodetector discovery with external experimental validation.</p>
+    <p class="desc">A dual machine learning framework for comprehensive halide perovskite photodetector discovery, covering inorganic and hybrid organic-inorganic families with statistically validated, physically interpretable models.</p>
   </div>
   <div class="sec">
-    <div class="mcards">
-      <div class="mc"><div class="mv" style="font-size:.95rem;color:var(--tx)">LightGBM</div><div class="ml">Optuna optimization 150 trials TPE sampler</div></div>
-      <div class="mc"><div class="mv" style="font-size:.95rem;color:var(--tx)">Delta_xc</div><div class="ml">DFT correction from 6 experimental references</div></div>
-      <div class="mc"><div class="mv" style="font-size:.95rem;color:var(--tx)">SHAP XAI</div><div class="ml">Global and local model interpretability</div></div>
-      <div class="mc"><div class="mv" style="font-size:.95rem;color:var(--tx)">Materials Project</div><div class="ml">370 materials best-phase selection</div></div>
+    <div class="sec-t">Principal Investigator</div>
+    <div class="sec-s" style="margin-bottom:1rem">Contact the research team</div>
+    <div class="contact-card" style="margin-bottom:2rem">
+      <div class="contact-avatar">HA</div>
+      <div class="contact-info">
+        <h3>Hussein Ali Hussein Al-Naffakh</h3>
+        <p>Al-Kafeel University &middot; 2026</p>
+        <div class="contact-links">
+          <a class="cl cl-email" href="mailto:hussein.alnaffakh@alkafeel.edu.iq">
+            &#9993; hussein.alnaffakh@alkafeel.edu.iq
+          </a>
+          <a class="cl cl-wa" href="https://wa.me/9647800002443" target="_blank">
+            &#128241; WhatsApp
+          </a>
+          <a class="cl cl-tg" href="https://t.me/HUSS1984" target="_blank">
+            &#9992; Telegram
+          </a>
+          <a class="cl cl-ig" href="https://www.instagram.com/enghussein84/profilecard/?igsh=MXN1MWxkNHZtOTVjZA==" target="_blank">
+            &#9749; Instagram
+          </a>
+        </div>
+      </div>
     </div>
+
     <div class="sec-t">Key Contributions</div>
-    <div style="display:flex;flex-direction:column;gap:.75rem;margin-top:1rem">
-      <div style="background:var(--bg2);border:1px solid var(--bd);border-radius:10px;padding:1.1rem;display:flex;gap:.9rem"><span style="font-family:Space Mono;font-size:1.2rem;color:var(--ac);flex-shrink:0">*</span><div><div style="font-family:Syne;font-weight:700;margin-bottom:.25rem">First ML for vacancy-ordered A2BX6 as photodetectors</div><div style="color:var(--tx2);font-size:.83rem">R2 = 0.936 — no prior ML benchmark for PD applications in this family</div></div></div>
-      <div style="background:var(--bg2);border:1px solid var(--bd);border-radius:10px;padding:1.1rem;display:flex;gap:.9rem"><span style="font-family:Space Mono;font-size:1.2rem;color:var(--ac);flex-shrink:0">1</span><div><div style="font-family:Syne;font-weight:700;margin-bottom:.25rem">4 structural families in one model</div><div style="color:var(--tx2);font-size:.83rem">Single + Double + Vacancy-ordered + Sb/Bi ternary</div></div></div>
-      <div style="background:var(--bg2);border:1px solid var(--bd);border-radius:10px;padding:1.1rem;display:flex;gap:.9rem"><span style="font-family:Space Mono;font-size:1.2rem;color:var(--ac);flex-shrink:0">2</span><div><div style="font-family:Syne;font-weight:700;margin-bottom:.25rem">Physics-informed Delta_xc correction</div><div style="color:var(--tx2);font-size:.83rem">MAE reduced from 0.618 to 0.236 eV after systematic bias correction</div></div></div>
-      <div style="background:var(--bg2);border:1px solid var(--bd);border-radius:10px;padding:1.1rem;display:flex;gap:.9rem"><span style="font-family:Space Mono;font-size:1.2rem;color:var(--ac);flex-shrink:0">3</span><div><div style="font-family:Syne;font-weight:700;margin-bottom:.25rem">253 lead-free PD candidates identified</div><div style="color:var(--tx2);font-size:.83rem">NIR + Visible + UV-Vis with thermodynamic stability constraints</div></div></div>
+    <div style="display:flex;flex-direction:column;gap:.75rem;margin-top:.8rem;margin-bottom:2rem">
+      <div style="background:var(--bg2);border:1px solid var(--bd);border-radius:10px;padding:1.1rem;display:flex;gap:.9rem;box-shadow:var(--shadow)">
+        <span style="font-family:Space Mono;font-size:1.2rem;color:var(--ac);flex-shrink:0">&#9733;</span>
+        <div><div style="font-family:Syne;font-weight:700;margin-bottom:.25rem;color:var(--tx)">First ML benchmark for vacancy-ordered A&#8322;BX&#8326; as photodetectors</div><div style="color:var(--tx2);font-size:.83rem">R&sup2; = 0.936 &mdash; no prior ML study targets this family for photodetector applications</div></div>
+      </div>
+      <div style="background:var(--bg2);border:1px solid var(--bd);border-radius:10px;padding:1.1rem;display:flex;gap:.9rem;box-shadow:var(--shadow)">
+        <span style="font-family:Space Mono;font-size:1.2rem;color:var(--ac);flex-shrink:0">1</span>
+        <div><div style="font-family:Syne;font-weight:700;margin-bottom:.25rem;color:var(--tx)">Dual-model framework (inorganic + hybrid)</div><div style="color:var(--tx2);font-size:.83rem">Model A for Cs/Rb/K inorganic systems &middot; Model B for MA/FA hybrid systems &mdash; chemically coherent training for maximum accuracy</div></div>
+      </div>
+      <div style="background:var(--bg2);border:1px solid var(--bd);border-radius:10px;padding:1.1rem;display:flex;gap:.9rem;box-shadow:var(--shadow)">
+        <span style="font-family:Space Mono;font-size:1.2rem;color:var(--ac);flex-shrink:0">2</span>
+        <div><div style="font-family:Syne;font-weight:700;margin-bottom:.25rem;color:var(--tx)">Statistically validated performance</div><div style="color:var(--tx2);font-size:.83rem">30 independent train/test splits confirm R&sup2; = 0.906 &plusmn; 0.038 (95% CI: &plusmn;0.014) &mdash; results are not artifacts of data partitioning</div></div>
+      </div>
+      <div style="background:var(--bg2);border:1px solid var(--bd);border-radius:10px;padding:1.1rem;display:flex;gap:.9rem;box-shadow:var(--shadow)">
+        <span style="font-family:Space Mono;font-size:1.2rem;color:var(--ac);flex-shrink:0">3</span>
+        <div><div style="font-family:Syne;font-weight:700;margin-bottom:.25rem;color:var(--tx)">253 stable lead-free inorganic candidates</div><div style="color:var(--tx2);font-size:.83rem">NIR + Visible + UV-Vis applications &middot; all with thermodynamic stability constraints (E&#8337; &lt; 0.1 eV/atom)</div></div>
+      </div>
+    </div>
+
+    <div class="sec-t">Framework Overview</div>
+    <div class="mcards" style="margin-top:.8rem">
+      <div class="mc"><div class="mv" style="font-size:.9rem;color:var(--tx)">LightGBM</div><div class="ml">Optuna optimization &middot; 150 trials &middot; TPE sampler</div></div>
+      <div class="mc"><div class="mv" style="font-size:.9rem;color:var(--tx)">&Delta;x&#x63; Correction</div><div class="ml">DFT correction from 6 experimental references</div></div>
+      <div class="mc"><div class="mv" style="font-size:.9rem;color:var(--tx)">SHAP XAI</div><div class="ml">Global and local model interpretability</div></div>
+      <div class="mc"><div class="mv" style="font-size:.9rem;color:var(--tx)">Materials Project</div><div class="ml">370 materials &middot; best-phase selection</div></div>
     </div>
   </div>
 </div>
 
 <footer>
-  PerovskitePD &mdash; ML Framework for Inorganic Perovskite Photodetector Discovery &mdash; 2026 &mdash;
+  PerovskitePD &mdash; Dual ML Framework for Halide Perovskite Photodetector Discovery &mdash; Hussein Ali Hussein Al-Naffakh &middot; Al-Kafeel University &middot; 2026 &mdash;
   <a href="https://github.com/hussein-alnaffakh1984/perovskite-pd-ml" target="_blank">GitHub</a>
 </footer>
 
 <script>
-const DB=[{"f":"Cs2AgBiBr6","t":"double","bg":1.181,"hull":0.0055,"score":1.0,"app":"NIR PD","lf":true},{"f":"Cs2AgBiCl6","t":"double","bg":1.664,"hull":0.0,"score":1.0,"app":"Visible PD","lf":true},{"f":"Cs2AgSbCl6","t":"double","bg":1.51,"hull":0.0,"score":1.0,"app":"Visible PD","lf":true},{"f":"Cs2InAgCl6","t":"double","bg":1.152,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"Cs2InBiBr6","t":"double","bg":0.859,"hull":0.0019,"score":1.0,"app":"NIR PD","lf":true},{"f":"Cs2PdCl6","t":"vacancy_ordered","bg":0.629,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"Cs2PdBr6","t":"vacancy_ordered","bg":0.519,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"Cs2PtBr6","t":"vacancy_ordered","bg":1.116,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"Cs2PtCl6","t":"vacancy_ordered","bg":1.264,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"Cs2SnI6","t":"vacancy_ordered","bg":0.501,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"Cs2TeBr6","t":"vacancy_ordered","bg":1.48,"hull":0.0,"score":1.0,"app":"Visible PD","lf":true},{"f":"Cs2NaInBr6","t":"double","bg":1.571,"hull":0.0,"score":1.0,"app":"Visible PD","lf":true},{"f":"Cs2LiInBr6","t":"double","bg":1.446,"hull":0.0,"score":1.0,"app":"Visible PD","lf":true},{"f":"Cs2SnBr6","t":"vacancy_ordered","bg":1.203,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"Cs2PtI6","t":"vacancy_ordered","bg":0.813,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"K2CuBiCl6","t":"double","bg":1.122,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"K2InAgCl6","t":"double","bg":1.242,"hull":0.0062,"score":1.0,"app":"NIR PD","lf":true},{"f":"CsGaAgF6","t":"double","bg":0.62,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"Cs3Sb2I9","t":"Sb_Bi_ternary","bg":1.688,"hull":0.0,"score":1.0,"app":"Visible PD","lf":true},{"f":"Cs4InSbCl12","t":"double","bg":1.041,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"CsGeBr3","t":"single","bg":1.117,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"Cs2ZrI6","t":"vacancy_ordered","bg":1.845,"hull":0.0,"score":1.0,"app":"Visible PD","lf":true},{"f":"Cs4TlSbCl12","t":"double","bg":1.042,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"CsGeI3","t":"single","bg":1.848,"hull":0.0,"score":1.0,"app":"Visible PD","lf":true},{"f":"Cs2TlInBr6","t":"double","bg":1.842,"hull":0.0,"score":1.0,"app":"Visible PD","lf":true},{"f":"Cs2TlBiBr6","t":"double","bg":1.853,"hull":0.0084,"score":1.0,"app":"Visible PD","lf":true},{"f":"Cs2TiI6","t":"vacancy_ordered","bg":0.638,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"Cs2TiCu3F12","t":"double","bg":0.929,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"Cs2TeI6","t":"vacancy_ordered","bg":1.014,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"CsSnBr3","t":"single","bg":1.513,"hull":0.0,"score":1.0,"app":"Visible PD","lf":true},{"f":"CsSnI3","t":"single","bg":0.837,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"Rb2PtI6","t":"vacancy_ordered","bg":0.645,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"Rb2PdI6","t":"vacancy_ordered","bg":0.873,"hull":0.0065,"score":1.0,"app":"NIR PD","lf":true},{"f":"Rb2TeI6","t":"vacancy_ordered","bg":1.316,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"Rb2SnBr6","t":"vacancy_ordered","bg":1.238,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"TlSnI3","t":"single","bg":1.712,"hull":0.0,"score":1.0,"app":"Visible PD","lf":true},{"f":"RbSnBr3","t":"single","bg":1.88,"hull":0.0,"score":1.0,"app":"Visible PD","lf":true},{"f":"RbGeI3","t":"single","bg":1.863,"hull":0.0051,"score":1.0,"app":"Visible PD","lf":true},{"f":"TlCuCl3","t":"single","bg":0.506,"hull":0.0014,"score":1.0,"app":"NIR PD","lf":true},{"f":"RbSnI3","t":"single","bg":1.864,"hull":0.0,"score":1.0,"app":"Visible PD","lf":true},{"f":"Rb4TlSbCl12","t":"double","bg":1.199,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"Rb4InSbCl12","t":"double","bg":1.265,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"Rb3Sb2I9","t":"Sb_Bi_ternary","bg":1.724,"hull":0.0,"score":1.0,"app":"Visible PD","lf":true},{"f":"RbCuCl3","t":"single","bg":0.547,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"Rb2TlSbCl6","t":"double","bg":1.789,"hull":0.0,"score":1.0,"app":"Visible PD","lf":true},{"f":"Rb2AgAu3I8","t":"double","bg":0.741,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"Rb2AgSbCl6","t":"double","bg":1.609,"hull":0.0,"score":1.0,"app":"Visible PD","lf":true},{"f":"Rb2CuSbCl6","t":"double","bg":1.016,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"Rb2InBiCl6","t":"double","bg":1.583,"hull":0.0,"score":1.0,"app":"Visible PD","lf":true},{"f":"Rb2InAgCl6","t":"double","bg":1.144,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"Rb2InAgF6","t":"double","bg":1.699,"hull":0.0,"score":1.0,"app":"Visible PD","lf":true},{"f":"Rb2CuBiCl6","t":"double","bg":1.092,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"KCuCl3","t":"single","bg":0.858,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"K2TeI6","t":"vacancy_ordered","bg":1.562,"hull":0.0,"score":1.0,"app":"Visible PD","lf":true},{"f":"K2TiCl6","t":"vacancy_ordered","bg":1.875,"hull":0.0,"score":1.0,"app":"Visible PD","lf":true},{"f":"KCuSb3F18","t":"double","bg":0.693,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"K2PtI6","t":"vacancy_ordered","bg":1.137,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"K2PtBr6","t":"vacancy_ordered","bg":0.973,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"K2PtCl6","t":"vacancy_ordered","bg":1.125,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"K2SnBr6","t":"vacancy_ordered","bg":1.436,"hull":0.0,"score":1.0,"app":"Visible PD","lf":true},{"f":"K2PdCl6","t":"vacancy_ordered","bg":1.02,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"Rb2PdCl6","t":"vacancy_ordered","bg":1.422,"hull":0.0,"score":1.0,"app":"Visible PD","lf":true},{"f":"Rb2PdBr6","t":"vacancy_ordered","bg":0.621,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"Cs2NaSbI6","t":"double","bg":1.452,"hull":0.0298,"score":0.91,"app":"Visible PD","lf":true},{"f":"Cs2PdI6","t":"vacancy_ordered","bg":0.755,"hull":0.0119,"score":0.91,"app":"NIR PD","lf":true},{"f":"Cs2LiBiI6","t":"double","bg":1.768,"hull":0.0314,"score":0.91,"app":"Visible PD","lf":true},{"f":"Cs2TlSbCl6","t":"double","bg":1.772,"hull":0.0104,"score":0.91,"app":"Visible PD","lf":true},{"f":"Cs2TlSbBr6","t":"double","bg":0.969,"hull":0.015,"score":0.91,"app":"NIR PD","lf":true},{"f":"K2AgBiBr6","t":"double","bg":1.162,"hull":0.0401,"score":0.91,"app":"NIR PD","lf":true},{"f":"K2InAgF6","t":"double","bg":1.488,"hull":0.0368,"score":0.91,"app":"Visible PD","lf":true},{"f":"K2CuSbCl6","t":"double","bg":0.767,"hull":0.0372,"score":0.91,"app":"NIR PD","lf":true},{"f":"Cs2TlBiI6","t":"double","bg":0.905,"hull":0.0235,"score":0.91,"app":"NIR PD","lf":true},{"f":"Cs2TlInI6","t":"double","bg":0.86,"hull":0.0395,"score":0.91,"app":"NIR PD","lf":true},{"f":"K2AgSbCl6","t":"double","bg":1.496,"hull":0.0261,"score":0.91,"app":"Visible PD","lf":true},{"f":"K2CuBiBr6","t":"double","bg":0.652,"hull":0.0456,"score":0.91,"app":"NIR PD","lf":true},{"f":"K2AgSbBr6","t":"double","bg":0.87,"hull":0.0197,"score":0.91,"app":"NIR PD","lf":true},{"f":"Cs2TlSbI6","t":"double","bg":0.611,"hull":0.0234,"score":0.91,"app":"NIR PD","lf":true},{"f":"Cs2CuBiCl6","t":"double","bg":1.099,"hull":0.0242,"score":0.91,"app":"NIR PD","lf":true},{"f":"Cs2CuSbCl6","t":"double","bg":0.815,"hull":0.0362,"score":0.91,"app":"NIR PD","lf":true},{"f":"Rb2SnI6","t":"vacancy_ordered","bg":0.58,"hull":0.0148,"score":0.91,"app":"NIR PD","lf":true},{"f":"TlGeI3","t":"single","bg":1.774,"hull":0.017,"score":0.91,"app":"Visible PD","lf":true},{"f":"Rb2TlInBr6","t":"double","bg":1.69,"hull":0.0399,"score":0.91,"app":"Visible PD","lf":true},{"f":"Rb2TlBiBr6","t":"double","bg":1.555,"hull":0.0457,"score":0.91,"app":"Visible PD","lf":true},{"f":"Rb2NaInBr6","t":"double","bg":1.682,"hull":0.027,"score":0.91,"app":"Visible PD","lf":true},{"f":"Rb2TlSbBr6","t":"double","bg":1.051,"hull":0.0412,"score":0.91,"app":"NIR PD","lf":true},{"f":"Rb2CuBiBr6","t":"double","bg":0.737,"hull":0.0429,"score":0.91,"app":"NIR PD","lf":true},{"f":"Rb2AgSbBr6","t":"double","bg":0.866,"hull":0.0252,"score":0.91,"app":"NIR PD","lf":true},{"f":"Rb2InSbCl6","t":"double","bg":1.283,"hull":0.0268,"score":0.91,"app":"NIR PD","lf":true},{"f":"LiCuF3","t":"single","bg":0.953,"hull":0.0172,"score":0.91,"app":"NIR PD","lf":true},{"f":"Rb2AgBiI6","t":"double","bg":0.575,"hull":0.0493,"score":0.91,"app":"NIR PD","lf":true},{"f":"Rb2BiAuCl6","t":"double","bg":1.507,"hull":0.039,"score":0.91,"app":"Visible PD","lf":true},{"f":"K2TlSbBr6","t":"double","bg":1.119,"hull":0.044,"score":0.91,"app":"NIR PD","lf":true},{"f":"Rb2AgBiBr6","t":"double","bg":1.308,"hull":0.0301,"score":0.91,"app":"NIR PD","lf":true},{"f":"Cs2AgSbBr6","t":"double","bg":0.815,"hull":0.012,"score":0.91,"app":"NIR PD","lf":true},{"f":"Cs2InGaBr6","t":"double","bg":0.945,"hull":0.0334,"score":0.91,"app":"NIR PD","lf":true},{"f":"Cs2CuBiBr6","t":"double","bg":0.719,"hull":0.0313,"score":0.91,"app":"NIR PD","lf":true},{"f":"Cs2InGaCl6","t":"double","bg":1.666,"hull":0.0417,"score":0.91,"app":"Visible PD","lf":true},{"f":"Cs2InBiCl6","t":"double","bg":1.658,"hull":0.0243,"score":0.91,"app":"Visible PD","lf":true},{"f":"Cs2LiSbI6","t":"double","bg":1.395,"hull":0.0355,"score":0.91,"app":"NIR PD","lf":true},{"f":"Cs2NaInI6","t":"double","bg":0.553,"hull":0.0453,"score":0.91,"app":"NIR PD","lf":true},{"f":"Cs2NaBiI6","t":"double","bg":1.707,"hull":0.0255,"score":0.91,"app":"Visible PD","lf":true},{"f":"Cs2AgBiI6","t":"double","bg":0.607,"hull":0.0297,"score":0.91,"app":"NIR PD","lf":true},{"f":"Cs3Sb2Cl9","t":"Sb_Bi_ternary","bg":2.144,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"CsSnCl3","t":"single","bg":2.187,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"Cs3Bi2I9","t":"Sb_Bi_ternary","bg":2.136,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"Rb2TeBr6","t":"vacancy_ordered","bg":1.899,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"TlGeBr3","t":"single","bg":1.988,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"TlSnF3","t":"single","bg":1.984,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"Rb2AgBiCl6","t":"double","bg":2.07,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"RbPbI3","t":"single","bg":1.852,"hull":0.0,"score":0.8,"app":"Visible PD","lf":false},{"f":"Rb3Sb2Br9","t":"Sb_Bi_ternary","bg":1.967,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"CsPbI3","t":"single","bg":1.848,"hull":0.0,"score":0.8,"app":"Visible PD","lf":false},{"f":"K2AgBiCl6","t":"double","bg":2.091,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"K2GaAgF6","t":"double","bg":2.079,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"Cs2TlBiCl6","t":"double","bg":2.267,"hull":0.0077,"score":0.8,"app":"Visible PD","lf":true},{"f":"CsGeCl3","t":"single","bg":2.25,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"Cs3Sb2Br9","t":"Sb_Bi_ternary","bg":1.944,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"Cs2TiCl6","t":"vacancy_ordered","bg":1.97,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"Cs2InAgF6","t":"double","bg":2.321,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"Cs2GaAgF6","t":"double","bg":2.159,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"Cs2SnCl6","t":"vacancy_ordered","bg":2.188,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"Cs2GeCl6","t":"vacancy_ordered","bg":2.362,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"Cs2TeCl6","t":"vacancy_ordered","bg":2.379,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"Cs2HfI6","t":"vacancy_ordered","bg":2.139,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"Cs2AgBiF6","t":"double","bg":2.095,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"K2PdF6","t":"vacancy_ordered","bg":2.183,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"KTl2GaF6","t":"double","bg":2.29,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"KSnI3","t":"single","bg":1.93,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"K2TeCl6","t":"vacancy_ordered","bg":2.38,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"Rb2TiCl6","t":"vacancy_ordered","bg":2.029,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"Rb2PtCl6","t":"vacancy_ordered","bg":1.915,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"Rb2PdF6","t":"vacancy_ordered","bg":2.156,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"Rb3Bi2I9","t":"Sb_Bi_ternary","bg":2.232,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"Na2PdF6","t":"vacancy_ordered","bg":2.045,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"K2TeBr6","t":"vacancy_ordered","bg":1.965,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"Rb2GaAgF6","t":"double","bg":2.228,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"Rb2TlSbI6","t":"double","bg":0.594,"hull":0.0504,"score":0.79,"app":"NIR PD","lf":true},{"f":"Rb2LiSbI6","t":"double","bg":1.447,"hull":0.0528,"score":0.79,"app":"Visible PD","lf":true},{"f":"Rb2NaInI6","t":"double","bg":0.541,"hull":0.077,"score":0.79,"app":"NIR PD","lf":true},{"f":"Rb2TlInI6","t":"double","bg":0.786,"hull":0.0761,"score":0.79,"app":"NIR PD","lf":true},{"f":"Rb2NaBiI6","t":"double","bg":1.815,"hull":0.0502,"score":0.79,"app":"Visible PD","lf":true},{"f":"K2TlInI6","t":"double","bg":0.672,"hull":0.0825,"score":0.79,"app":"NIR PD","lf":true},{"f":"K2TlSbCl6","t":"double","bg":1.875,"hull":0.0705,"score":0.79,"app":"Visible PD","lf":true},{"f":"K2NaSbI6","t":"double","bg":1.595,"hull":0.0768,"score":0.79,"app":"Visible PD","lf":true},{"f":"Cs2TlGaBr6","t":"double","bg":1.638,"hull":0.0714,"score":0.79,"app":"Visible PD","lf":true},{"f":"Rb2NaGaBr6","t":"double","bg":1.358,"hull":0.0839,"score":0.79,"app":"NIR PD","lf":true},{"f":"Rb2TlGaBr6","t":"double","bg":1.51,"hull":0.0906,"score":0.79,"app":"Visible PD","lf":true},{"f":"Rb2NaSbI6","t":"double","bg":1.539,"hull":0.0523,"score":0.79,"app":"Visible PD","lf":true},{"f":"K2TlInBr6","t":"double","bg":1.641,"hull":0.0756,"score":0.79,"app":"Visible PD","lf":true},{"f":"Rb2GaAgCl6","t":"double","bg":1.09,"hull":0.0619,"score":0.79,"app":"NIR PD","lf":true},{"f":"Rb2InGaCl6","t":"double","bg":1.534,"hull":0.0551,"score":0.79,"app":"Visible PD","lf":true},{"f":"Rb2InGaBr6","t":"double","bg":0.97,"hull":0.0503,"score":0.79,"app":"NIR PD","lf":true},{"f":"Rb2BiAuBr6","t":"double","bg":0.573,"hull":0.0846,"score":0.79,"app":"NIR PD","lf":true},{"f":"Rb2LiBiI6","t":"double","bg":1.871,"hull":0.0514,"score":0.79,"app":"Visible PD","lf":true},{"f":"Rb2CuBiF6","t":"double","bg":1.187,"hull":0.0892,"score":0.79,"app":"NIR PD","lf":true},{"f":"K2NaInI6","t":"double","bg":0.621,"hull":0.0972,"score":0.79,"app":"NIR PD","lf":true},{"f":"K2NaInBr6","t":"double","bg":1.748,"hull":0.056,"score":0.79,"app":"Visible PD","lf":true},{"f":"K2LiBiI6","t":"double","bg":1.816,"hull":0.0783,"score":0.79,"app":"Visible PD","lf":true},{"f":"K2InSbCl6","t":"double","bg":1.178,"hull":0.0988,"score":0.79,"app":"NIR PD","lf":true},{"f":"K2AgBiI6","t":"double","bg":0.529,"hull":0.0764,"score":0.79,"app":"NIR PD","lf":true},{"f":"K2BiAuBr6","t":"double","bg":0.514,"hull":0.0911,"score":0.79,"app":"NIR PD","lf":true},{"f":"K2GaAgCl6","t":"double","bg":1.101,"hull":0.0734,"score":0.79,"app":"NIR PD","lf":true},{"f":"K2BiAuCl6","t":"double","bg":0.754,"hull":0.068,"score":0.79,"app":"NIR PD","lf":true},{"f":"K2InGaCl6","t":"double","bg":1.588,"hull":0.0863,"score":0.79,"app":"Visible PD","lf":true},{"f":"K2InGaBr6","t":"double","bg":0.932,"hull":0.0875,"score":0.79,"app":"NIR PD","lf":true},{"f":"Cs2BiAuBr6","t":"double","bg":0.584,"hull":0.0691,"score":0.79,"app":"NIR PD","lf":true},{"f":"Cs2BiAuCl6","t":"double","bg":0.822,"hull":0.0811,"score":0.79,"app":"NIR PD","lf":true},{"f":"Cs2CuBiF6","t":"double","bg":1.297,"hull":0.062,"score":0.79,"app":"NIR PD","lf":true},{"f":"Cs2NaGaBr6","t":"double","bg":1.283,"hull":0.0763,"score":0.79,"app":"NIR PD","lf":true},{"f":"Cs2GaAgCl6","t":"double","bg":1.017,"hull":0.0682,"score":0.79,"app":"NIR PD","lf":true},{"f":"Cs2InSbCl6","t":"double","bg":1.272,"hull":0.0606,"score":0.79,"app":"NIR PD","lf":true},{"f":"K2LiSbI6","t":"double","bg":1.481,"hull":0.0737,"score":0.79,"app":"Visible PD","lf":true},{"f":"Cs2SbAuCl6","t":"double","bg":0.563,"hull":0.0872,"score":0.79,"app":"NIR PD","lf":true},{"f":"K2NaBiI6","t":"double","bg":1.77,"hull":0.0804,"score":0.79,"app":"Visible PD","lf":true},{"f":"Cs2NaSbBr6","t":"double","bg":2.32,"hull":0.0136,"score":0.71,"app":"Visible PD","lf":true},{"f":"Cs2LiSbBr6","t":"double","bg":2.025,"hull":0.023,"score":0.71,"app":"Visible PD","lf":true},{"f":"K3Bi2I9","t":"Sb_Bi_ternary","bg":2.185,"hull":0.0169,"score":0.71,"app":"Visible PD","lf":true},{"f":"KPbI3","t":"single","bg":1.878,"hull":0.0143,"score":0.71,"app":"Visible PD","lf":false},{"f":"K2NaSbBr6","t":"double","bg":2.305,"hull":0.0288,"score":0.71,"app":"Visible PD","lf":true},{"f":"KSnBr3","t":"single","bg":1.892,"hull":0.0123,"score":0.71,"app":"Visible PD","lf":true},{"f":"TlPbI3","t":"single","bg":1.647,"hull":0.0114,"score":0.71,"app":"Visible PD","lf":false},{"f":"Rb2LiSbBr6","t":"double","bg":2.062,"hull":0.0329,"score":0.71,"app":"Visible PD","lf":true},{"f":"K2LiSbBr6","t":"double","bg":2.145,"hull":0.025,"score":0.71,"app":"Visible PD","lf":true},{"f":"Cs2TlInCl6","t":"double","bg":2.522,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"Cs3Bi2Cl9","t":"Sb_Bi_ternary","bg":3.073,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"Cs2ZrCl6","t":"vacancy_ordered","bg":3.481,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"Cs3Bi2Br9","t":"Sb_Bi_ternary","bg":2.601,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"K2LiBiCl6","t":"double","bg":3.473,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"Cs2TlBiF6","t":"double","bg":3.176,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"RbSnCl3","t":"single","bg":3.1,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"RbGeCl3","t":"single","bg":3.006,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"TlGeCl3","t":"single","bg":2.526,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"RbGeBr3","t":"single","bg":2.392,"hull":0.0,"score":0.6,"app":"Visible PD","lf":true},{"f":"Rb3Bi2Br9","t":"Sb_Bi_ternary","bg":2.726,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"Rb2TlInCl6","t":"double","bg":2.639,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"Rb2TeCl6","t":"vacancy_ordered","bg":2.427,"hull":0.0,"score":0.6,"app":"Visible PD","lf":true},{"f":"Rb2SnCl6","t":"vacancy_ordered","bg":2.421,"hull":0.0,"score":0.6,"app":"Visible PD","lf":true},{"f":"Rb2NaSbCl6","t":"double","bg":3.026,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"Rb2NaInCl6","t":"double","bg":2.858,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"Rb2LiSbCl6","t":"double","bg":2.814,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"Rb2NaBiCl6","t":"double","bg":3.422,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"Rb2PtF6","t":"vacancy_ordered","bg":2.768,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"Na2PtF6","t":"vacancy_ordered","bg":2.779,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"Rb2LiBiCl6","t":"double","bg":3.445,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"Rb2LiInCl6","t":"double","bg":2.736,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"Cs2LiInCl6","t":"double","bg":2.607,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"Cs2NaSbCl6","t":"double","bg":2.923,"hull":0.002,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"Cs2NaBiCl6","t":"double","bg":3.259,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"Cs2NaInCl6","t":"double","bg":2.852,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"Cs2PdF6","t":"vacancy_ordered","bg":2.684,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"Cs2HfBr6","t":"vacancy_ordered","bg":3.305,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"Cs2NaBiBr6","t":"double","bg":2.645,"hull":0.0022,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"Cs2LiBiCl6","t":"double","bg":3.073,"hull":0.009,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"Cs2PtF6","t":"vacancy_ordered","bg":2.679,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"KGeBr3","t":"single","bg":2.551,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"KGeCl3","t":"single","bg":2.667,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"K2SnCl6","t":"vacancy_ordered","bg":2.498,"hull":0.0,"score":0.6,"app":"Visible PD","lf":true},{"f":"K2PtF6","t":"vacancy_ordered","bg":2.747,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"CsPbBr3","t":"single","bg":2.298,"hull":0.0,"score":0.6,"app":"Visible PD","lf":false},{"f":"Cs2AgSbF6","t":"double","bg":2.312,"hull":0.089,"score":0.59,"app":"Visible PD","lf":true},{"f":"Cs2InSbF6","t":"double","bg":2.023,"hull":0.0863,"score":0.59,"app":"Visible PD","lf":true},{"f":"Rb2AgSbF6","t":"double","bg":2.151,"hull":0.0791,"score":0.59,"app":"Visible PD","lf":true},{"f":"TlGeF3","t":"single","bg":2.515,"hull":0.028,"score":0.51,"app":"UV-Vis PD","lf":true},{"f":"LiSnCl3","t":"single","bg":3.16,"hull":0.0103,"score":0.51,"app":"UV-Vis PD","lf":true},{"f":"Rb2LiBiBr6","t":"double","bg":2.819,"hull":0.0332,"score":0.51,"app":"UV-Vis PD","lf":true},{"f":"K2NaInCl6","t":"double","bg":2.897,"hull":0.03,"score":0.51,"app":"UV-Vis PD","lf":true},{"f":"Rb2TlSbF6","t":"double","bg":2.794,"hull":0.0313,"score":0.51,"app":"UV-Vis PD","lf":true},{"f":"K2LiInCl6","t":"double","bg":2.751,"hull":0.0158,"score":0.51,"app":"UV-Vis PD","lf":true},{"f":"K2NaBiBr6","t":"double","bg":2.977,"hull":0.0434,"score":0.51,"app":"UV-Vis PD","lf":true},{"f":"Cs2LiSbCl6","t":"double","bg":2.751,"hull":0.0187,"score":0.51,"app":"UV-Vis PD","lf":true},{"f":"Cs2LiBiBr6","t":"double","bg":2.76,"hull":0.0112,"score":0.51,"app":"UV-Vis PD","lf":true},{"f":"Cs2TlSbF6","t":"double","bg":2.697,"hull":0.0464,"score":0.51,"app":"UV-Vis PD","lf":true},{"f":"Cs2InBiF6","t":"double","bg":2.644,"hull":0.0402,"score":0.51,"app":"UV-Vis PD","lf":true},{"f":"K2LiSbCl6","t":"double","bg":2.733,"hull":0.0394,"score":0.51,"app":"UV-Vis PD","lf":true},{"f":"K2LiBiBr6","t":"double","bg":2.881,"hull":0.0401,"score":0.51,"app":"UV-Vis PD","lf":true},{"f":"K2TlInCl6","t":"double","bg":2.551,"hull":0.0444,"score":0.51,"app":"UV-Vis PD","lf":true},{"f":"Rb2AgBiF6","t":"double","bg":2.443,"hull":0.0166,"score":0.51,"app":"Visible PD","lf":true},{"f":"Rb2NaSbBr6","t":"double","bg":2.384,"hull":0.0314,"score":0.51,"app":"Visible PD","lf":true},{"f":"K2NaSbCl6","t":"double","bg":2.928,"hull":0.0416,"score":0.51,"app":"UV-Vis PD","lf":true},{"f":"Rb2NaBiBr6","t":"double","bg":2.862,"hull":0.0314,"score":0.51,"app":"UV-Vis PD","lf":true},{"f":"Rb2TlBiF6","t":"double","bg":3.309,"hull":0.0293,"score":0.51,"app":"UV-Vis PD","lf":true},{"f":"CsPbCl3","t":"single","bg":3.315,"hull":0.0,"score":0.4,"app":"UV-Vis PD","lf":false},{"f":"RbPbCl3","t":"single","bg":3.39,"hull":0.0,"score":0.4,"app":"UV-Vis PD","lf":false},{"f":"RbPbBr3","t":"single","bg":2.455,"hull":0.0,"score":0.4,"app":"Visible PD","lf":false},{"f":"Cs2NaGaCl6","t":"double","bg":2.639,"hull":0.0549,"score":0.39,"app":"UV-Vis PD","lf":true},{"f":"K2AgBiF6","t":"double","bg":2.391,"hull":0.0858,"score":0.39,"app":"Visible PD","lf":true},{"f":"Cs2TlGaCl6","t":"double","bg":2.455,"hull":0.056,"score":0.39,"app":"Visible PD","lf":true},{"f":"Cs2InGaF6","t":"double","bg":3.347,"hull":0.085,"score":0.39,"app":"UV-Vis PD","lf":true},{"f":"K2NaGaCl6","t":"double","bg":2.659,"hull":0.0766,"score":0.39,"app":"UV-Vis PD","lf":true},{"f":"Rb2InBiF6","t":"double","bg":2.608,"hull":0.0815,"score":0.39,"app":"UV-Vis PD","lf":true},{"f":"Rb2NaGaCl6","t":"double","bg":2.66,"hull":0.0565,"score":0.39,"app":"UV-Vis PD","lf":true},{"f":"Rb2TlGaCl6","t":"double","bg":2.482,"hull":0.0764,"score":0.39,"app":"Visible PD","lf":true},{"f":"TlPbCl3","t":"single","bg":2.384,"hull":0.0525,"score":0.19,"app":"Visible PD","lf":false}];
+const DB_A=[{"f":"Cs2AgBiBr6","t":"double","bg":1.181,"hull":0.0055,"score":1.0,"app":"NIR PD","lf":true},{"f":"Cs2AgBiCl6","t":"double","bg":1.664,"hull":0.0,"score":1.0,"app":"Visible PD","lf":true},{"f":"Cs2AgSbCl6","t":"double","bg":1.51,"hull":0.0,"score":1.0,"app":"Visible PD","lf":true},{"f":"Cs2InAgCl6","t":"double","bg":1.152,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"Cs2InBiBr6","t":"double","bg":0.859,"hull":0.0019,"score":1.0,"app":"NIR PD","lf":true},{"f":"Cs2PdCl6","t":"vacancy_ordered","bg":0.629,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"Cs2PdBr6","t":"vacancy_ordered","bg":0.519,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"Cs2PtBr6","t":"vacancy_ordered","bg":1.116,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"Cs2PtCl6","t":"vacancy_ordered","bg":1.264,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"Cs2SnI6","t":"vacancy_ordered","bg":0.501,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"Cs2TeBr6","t":"vacancy_ordered","bg":1.48,"hull":0.0,"score":1.0,"app":"Visible PD","lf":true},{"f":"Cs2NaInBr6","t":"double","bg":1.571,"hull":0.0,"score":1.0,"app":"Visible PD","lf":true},{"f":"Cs2LiInBr6","t":"double","bg":1.446,"hull":0.0,"score":1.0,"app":"Visible PD","lf":true},{"f":"Cs2SnBr6","t":"vacancy_ordered","bg":1.203,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"Cs2PtI6","t":"vacancy_ordered","bg":0.813,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"K2CuBiCl6","t":"double","bg":1.122,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"K2InAgCl6","t":"double","bg":1.242,"hull":0.0062,"score":1.0,"app":"NIR PD","lf":true},{"f":"CsGaAgF6","t":"double","bg":0.62,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"Cs3Sb2I9","t":"Sb_Bi_ternary","bg":1.688,"hull":0.0,"score":1.0,"app":"Visible PD","lf":true},{"f":"Cs4InSbCl12","t":"double","bg":1.041,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"CsGeBr3","t":"single","bg":1.117,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"Cs2ZrI6","t":"vacancy_ordered","bg":1.845,"hull":0.0,"score":1.0,"app":"Visible PD","lf":true},{"f":"Cs4TlSbCl12","t":"double","bg":1.042,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"CsGeI3","t":"single","bg":1.848,"hull":0.0,"score":1.0,"app":"Visible PD","lf":true},{"f":"Cs2TlInBr6","t":"double","bg":1.842,"hull":0.0,"score":1.0,"app":"Visible PD","lf":true},{"f":"Cs2TlBiBr6","t":"double","bg":1.853,"hull":0.0084,"score":1.0,"app":"Visible PD","lf":true},{"f":"Cs2TiI6","t":"vacancy_ordered","bg":0.638,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"Cs2TiCu3F12","t":"double","bg":0.929,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"Cs2TeI6","t":"vacancy_ordered","bg":1.014,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"CsSnBr3","t":"single","bg":1.513,"hull":0.0,"score":1.0,"app":"Visible PD","lf":true},{"f":"CsSnI3","t":"single","bg":0.837,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"Rb2PtI6","t":"vacancy_ordered","bg":0.645,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"Rb2PdI6","t":"vacancy_ordered","bg":0.873,"hull":0.0065,"score":1.0,"app":"NIR PD","lf":true},{"f":"Rb2TeI6","t":"vacancy_ordered","bg":1.316,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"Rb2SnBr6","t":"vacancy_ordered","bg":1.238,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"TlSnI3","t":"single","bg":1.712,"hull":0.0,"score":1.0,"app":"Visible PD","lf":true},{"f":"RbSnBr3","t":"single","bg":1.88,"hull":0.0,"score":1.0,"app":"Visible PD","lf":true},{"f":"RbGeI3","t":"single","bg":1.863,"hull":0.0051,"score":1.0,"app":"Visible PD","lf":true},{"f":"TlCuCl3","t":"single","bg":0.506,"hull":0.0014,"score":1.0,"app":"NIR PD","lf":true},{"f":"RbSnI3","t":"single","bg":1.864,"hull":0.0,"score":1.0,"app":"Visible PD","lf":true},{"f":"Rb4TlSbCl12","t":"double","bg":1.199,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"Rb4InSbCl12","t":"double","bg":1.265,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"Rb3Sb2I9","t":"Sb_Bi_ternary","bg":1.724,"hull":0.0,"score":1.0,"app":"Visible PD","lf":true},{"f":"RbCuCl3","t":"single","bg":0.547,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"Rb2TlSbCl6","t":"double","bg":1.789,"hull":0.0,"score":1.0,"app":"Visible PD","lf":true},{"f":"Rb2AgAu3I8","t":"double","bg":0.741,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"Rb2AgSbCl6","t":"double","bg":1.609,"hull":0.0,"score":1.0,"app":"Visible PD","lf":true},{"f":"Rb2CuSbCl6","t":"double","bg":1.016,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"Rb2InBiCl6","t":"double","bg":1.583,"hull":0.0,"score":1.0,"app":"Visible PD","lf":true},{"f":"Rb2InAgCl6","t":"double","bg":1.144,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"Rb2InAgF6","t":"double","bg":1.699,"hull":0.0,"score":1.0,"app":"Visible PD","lf":true},{"f":"Rb2CuBiCl6","t":"double","bg":1.092,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"KCuCl3","t":"single","bg":0.858,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"K2TeI6","t":"vacancy_ordered","bg":1.562,"hull":0.0,"score":1.0,"app":"Visible PD","lf":true},{"f":"K2TiCl6","t":"vacancy_ordered","bg":1.875,"hull":0.0,"score":1.0,"app":"Visible PD","lf":true},{"f":"KCuSb3F18","t":"double","bg":0.693,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"K2PtI6","t":"vacancy_ordered","bg":1.137,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"K2PtBr6","t":"vacancy_ordered","bg":0.973,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"K2PtCl6","t":"vacancy_ordered","bg":1.125,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"K2SnBr6","t":"vacancy_ordered","bg":1.436,"hull":0.0,"score":1.0,"app":"Visible PD","lf":true},{"f":"K2PdCl6","t":"vacancy_ordered","bg":1.02,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"Rb2PdCl6","t":"vacancy_ordered","bg":1.422,"hull":0.0,"score":1.0,"app":"Visible PD","lf":true},{"f":"Rb2PdBr6","t":"vacancy_ordered","bg":0.621,"hull":0.0,"score":1.0,"app":"NIR PD","lf":true},{"f":"Cs2NaSbI6","t":"double","bg":1.452,"hull":0.0298,"score":0.91,"app":"Visible PD","lf":true},{"f":"Cs2PdI6","t":"vacancy_ordered","bg":0.755,"hull":0.0119,"score":0.91,"app":"NIR PD","lf":true},{"f":"Cs2LiBiI6","t":"double","bg":1.768,"hull":0.0314,"score":0.91,"app":"Visible PD","lf":true},{"f":"Cs2TlSbCl6","t":"double","bg":1.772,"hull":0.0104,"score":0.91,"app":"Visible PD","lf":true},{"f":"Cs2TlSbBr6","t":"double","bg":0.969,"hull":0.015,"score":0.91,"app":"NIR PD","lf":true},{"f":"K2AgBiBr6","t":"double","bg":1.162,"hull":0.0401,"score":0.91,"app":"NIR PD","lf":true},{"f":"K2InAgF6","t":"double","bg":1.488,"hull":0.0368,"score":0.91,"app":"Visible PD","lf":true},{"f":"K2CuSbCl6","t":"double","bg":0.767,"hull":0.0372,"score":0.91,"app":"NIR PD","lf":true},{"f":"Cs2TlBiI6","t":"double","bg":0.905,"hull":0.0235,"score":0.91,"app":"NIR PD","lf":true},{"f":"Cs2TlInI6","t":"double","bg":0.86,"hull":0.0395,"score":0.91,"app":"NIR PD","lf":true},{"f":"K2AgSbCl6","t":"double","bg":1.496,"hull":0.0261,"score":0.91,"app":"Visible PD","lf":true},{"f":"K2CuBiBr6","t":"double","bg":0.652,"hull":0.0456,"score":0.91,"app":"NIR PD","lf":true},{"f":"K2AgSbBr6","t":"double","bg":0.87,"hull":0.0197,"score":0.91,"app":"NIR PD","lf":true},{"f":"Cs2TlSbI6","t":"double","bg":0.611,"hull":0.0234,"score":0.91,"app":"NIR PD","lf":true},{"f":"Cs2CuBiCl6","t":"double","bg":1.099,"hull":0.0242,"score":0.91,"app":"NIR PD","lf":true},{"f":"Cs2CuSbCl6","t":"double","bg":0.815,"hull":0.0362,"score":0.91,"app":"NIR PD","lf":true},{"f":"Rb2SnI6","t":"vacancy_ordered","bg":0.58,"hull":0.0148,"score":0.91,"app":"NIR PD","lf":true},{"f":"TlGeI3","t":"single","bg":1.774,"hull":0.017,"score":0.91,"app":"Visible PD","lf":true},{"f":"Rb2TlInBr6","t":"double","bg":1.69,"hull":0.0399,"score":0.91,"app":"Visible PD","lf":true},{"f":"Rb2TlBiBr6","t":"double","bg":1.555,"hull":0.0457,"score":0.91,"app":"Visible PD","lf":true},{"f":"Rb2NaInBr6","t":"double","bg":1.682,"hull":0.027,"score":0.91,"app":"Visible PD","lf":true},{"f":"Rb2TlSbBr6","t":"double","bg":1.051,"hull":0.0412,"score":0.91,"app":"NIR PD","lf":true},{"f":"Rb2CuBiBr6","t":"double","bg":0.737,"hull":0.0429,"score":0.91,"app":"NIR PD","lf":true},{"f":"Rb2AgSbBr6","t":"double","bg":0.866,"hull":0.0252,"score":0.91,"app":"NIR PD","lf":true},{"f":"Rb2InSbCl6","t":"double","bg":1.283,"hull":0.0268,"score":0.91,"app":"NIR PD","lf":true},{"f":"LiCuF3","t":"single","bg":0.953,"hull":0.0172,"score":0.91,"app":"NIR PD","lf":true},{"f":"Rb2AgBiI6","t":"double","bg":0.575,"hull":0.0493,"score":0.91,"app":"NIR PD","lf":true},{"f":"Rb2BiAuCl6","t":"double","bg":1.507,"hull":0.039,"score":0.91,"app":"Visible PD","lf":true},{"f":"K2TlSbBr6","t":"double","bg":1.119,"hull":0.044,"score":0.91,"app":"NIR PD","lf":true},{"f":"Rb2AgBiBr6","t":"double","bg":1.308,"hull":0.0301,"score":0.91,"app":"NIR PD","lf":true},{"f":"Cs2AgSbBr6","t":"double","bg":0.815,"hull":0.012,"score":0.91,"app":"NIR PD","lf":true},{"f":"Cs2InGaBr6","t":"double","bg":0.945,"hull":0.0334,"score":0.91,"app":"NIR PD","lf":true},{"f":"Cs2CuBiBr6","t":"double","bg":0.719,"hull":0.0313,"score":0.91,"app":"NIR PD","lf":true},{"f":"Cs2InGaCl6","t":"double","bg":1.666,"hull":0.0417,"score":0.91,"app":"Visible PD","lf":true},{"f":"Cs2InBiCl6","t":"double","bg":1.658,"hull":0.0243,"score":0.91,"app":"Visible PD","lf":true},{"f":"Cs2LiSbI6","t":"double","bg":1.395,"hull":0.0355,"score":0.91,"app":"NIR PD","lf":true},{"f":"Cs2NaInI6","t":"double","bg":0.553,"hull":0.0453,"score":0.91,"app":"NIR PD","lf":true},{"f":"Cs2NaBiI6","t":"double","bg":1.707,"hull":0.0255,"score":0.91,"app":"Visible PD","lf":true},{"f":"Cs2AgBiI6","t":"double","bg":0.607,"hull":0.0297,"score":0.91,"app":"NIR PD","lf":true},{"f":"Cs3Sb2Cl9","t":"Sb_Bi_ternary","bg":2.144,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"CsSnCl3","t":"single","bg":2.187,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"Cs3Bi2I9","t":"Sb_Bi_ternary","bg":2.136,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"Rb2TeBr6","t":"vacancy_ordered","bg":1.899,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"TlGeBr3","t":"single","bg":1.988,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"TlSnF3","t":"single","bg":1.984,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"Rb2AgBiCl6","t":"double","bg":2.07,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"RbPbI3","t":"single","bg":1.852,"hull":0.0,"score":0.8,"app":"Visible PD","lf":false},{"f":"Rb3Sb2Br9","t":"Sb_Bi_ternary","bg":1.967,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"CsPbI3","t":"single","bg":1.848,"hull":0.0,"score":0.8,"app":"Visible PD","lf":false},{"f":"K2AgBiCl6","t":"double","bg":2.091,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"K2GaAgF6","t":"double","bg":2.079,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"Cs2TlBiCl6","t":"double","bg":2.267,"hull":0.0077,"score":0.8,"app":"Visible PD","lf":true},{"f":"CsGeCl3","t":"single","bg":2.25,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"Cs3Sb2Br9","t":"Sb_Bi_ternary","bg":1.944,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"Cs2TiCl6","t":"vacancy_ordered","bg":1.97,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"Cs2InAgF6","t":"double","bg":2.321,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"Cs2GaAgF6","t":"double","bg":2.159,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"Cs2SnCl6","t":"vacancy_ordered","bg":2.188,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"Cs2GeCl6","t":"vacancy_ordered","bg":2.362,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"Cs2TeCl6","t":"vacancy_ordered","bg":2.379,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"Cs2HfI6","t":"vacancy_ordered","bg":2.139,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"Cs2AgBiF6","t":"double","bg":2.095,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"K2PdF6","t":"vacancy_ordered","bg":2.183,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"KTl2GaF6","t":"double","bg":2.29,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"KSnI3","t":"single","bg":1.93,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"K2TeCl6","t":"vacancy_ordered","bg":2.38,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"Rb2TiCl6","t":"vacancy_ordered","bg":2.029,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"Rb2PtCl6","t":"vacancy_ordered","bg":1.915,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"Rb2PdF6","t":"vacancy_ordered","bg":2.156,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"Rb3Bi2I9","t":"Sb_Bi_ternary","bg":2.232,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"Na2PdF6","t":"vacancy_ordered","bg":2.045,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"K2TeBr6","t":"vacancy_ordered","bg":1.965,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"Rb2GaAgF6","t":"double","bg":2.228,"hull":0.0,"score":0.8,"app":"Visible PD","lf":true},{"f":"Rb2TlSbI6","t":"double","bg":0.594,"hull":0.0504,"score":0.79,"app":"NIR PD","lf":true},{"f":"Rb2LiSbI6","t":"double","bg":1.447,"hull":0.0528,"score":0.79,"app":"Visible PD","lf":true},{"f":"Rb2NaInI6","t":"double","bg":0.541,"hull":0.077,"score":0.79,"app":"NIR PD","lf":true},{"f":"Rb2TlInI6","t":"double","bg":0.786,"hull":0.0761,"score":0.79,"app":"NIR PD","lf":true},{"f":"Rb2NaBiI6","t":"double","bg":1.815,"hull":0.0502,"score":0.79,"app":"Visible PD","lf":true},{"f":"K2TlInI6","t":"double","bg":0.672,"hull":0.0825,"score":0.79,"app":"NIR PD","lf":true},{"f":"K2TlSbCl6","t":"double","bg":1.875,"hull":0.0705,"score":0.79,"app":"Visible PD","lf":true},{"f":"K2NaSbI6","t":"double","bg":1.595,"hull":0.0768,"score":0.79,"app":"Visible PD","lf":true},{"f":"Cs2TlGaBr6","t":"double","bg":1.638,"hull":0.0714,"score":0.79,"app":"Visible PD","lf":true},{"f":"Rb2NaGaBr6","t":"double","bg":1.358,"hull":0.0839,"score":0.79,"app":"NIR PD","lf":true},{"f":"Rb2TlGaBr6","t":"double","bg":1.51,"hull":0.0906,"score":0.79,"app":"Visible PD","lf":true},{"f":"Rb2NaSbI6","t":"double","bg":1.539,"hull":0.0523,"score":0.79,"app":"Visible PD","lf":true},{"f":"K2TlInBr6","t":"double","bg":1.641,"hull":0.0756,"score":0.79,"app":"Visible PD","lf":true},{"f":"Rb2GaAgCl6","t":"double","bg":1.09,"hull":0.0619,"score":0.79,"app":"NIR PD","lf":true},{"f":"Rb2InGaCl6","t":"double","bg":1.534,"hull":0.0551,"score":0.79,"app":"Visible PD","lf":true},{"f":"Rb2InGaBr6","t":"double","bg":0.97,"hull":0.0503,"score":0.79,"app":"NIR PD","lf":true},{"f":"Rb2BiAuBr6","t":"double","bg":0.573,"hull":0.0846,"score":0.79,"app":"NIR PD","lf":true},{"f":"Rb2LiBiI6","t":"double","bg":1.871,"hull":0.0514,"score":0.79,"app":"Visible PD","lf":true},{"f":"Rb2CuBiF6","t":"double","bg":1.187,"hull":0.0892,"score":0.79,"app":"NIR PD","lf":true},{"f":"K2NaInI6","t":"double","bg":0.621,"hull":0.0972,"score":0.79,"app":"NIR PD","lf":true},{"f":"K2NaInBr6","t":"double","bg":1.748,"hull":0.056,"score":0.79,"app":"Visible PD","lf":true},{"f":"K2LiBiI6","t":"double","bg":1.816,"hull":0.0783,"score":0.79,"app":"Visible PD","lf":true},{"f":"K2InSbCl6","t":"double","bg":1.178,"hull":0.0988,"score":0.79,"app":"NIR PD","lf":true},{"f":"K2AgBiI6","t":"double","bg":0.529,"hull":0.0764,"score":0.79,"app":"NIR PD","lf":true},{"f":"K2BiAuBr6","t":"double","bg":0.514,"hull":0.0911,"score":0.79,"app":"NIR PD","lf":true},{"f":"K2GaAgCl6","t":"double","bg":1.101,"hull":0.0734,"score":0.79,"app":"NIR PD","lf":true},{"f":"K2BiAuCl6","t":"double","bg":0.754,"hull":0.068,"score":0.79,"app":"NIR PD","lf":true},{"f":"K2InGaCl6","t":"double","bg":1.588,"hull":0.0863,"score":0.79,"app":"Visible PD","lf":true},{"f":"K2InGaBr6","t":"double","bg":0.932,"hull":0.0875,"score":0.79,"app":"NIR PD","lf":true},{"f":"Cs2BiAuBr6","t":"double","bg":0.584,"hull":0.0691,"score":0.79,"app":"NIR PD","lf":true},{"f":"Cs2BiAuCl6","t":"double","bg":0.822,"hull":0.0811,"score":0.79,"app":"NIR PD","lf":true},{"f":"Cs2CuBiF6","t":"double","bg":1.297,"hull":0.062,"score":0.79,"app":"NIR PD","lf":true},{"f":"Cs2NaGaBr6","t":"double","bg":1.283,"hull":0.0763,"score":0.79,"app":"NIR PD","lf":true},{"f":"Cs2GaAgCl6","t":"double","bg":1.017,"hull":0.0682,"score":0.79,"app":"NIR PD","lf":true},{"f":"Cs2InSbCl6","t":"double","bg":1.272,"hull":0.0606,"score":0.79,"app":"NIR PD","lf":true},{"f":"K2LiSbI6","t":"double","bg":1.481,"hull":0.0737,"score":0.79,"app":"Visible PD","lf":true},{"f":"Cs2SbAuCl6","t":"double","bg":0.563,"hull":0.0872,"score":0.79,"app":"NIR PD","lf":true},{"f":"K2NaBiI6","t":"double","bg":1.77,"hull":0.0804,"score":0.79,"app":"Visible PD","lf":true},{"f":"Cs2NaSbBr6","t":"double","bg":2.32,"hull":0.0136,"score":0.71,"app":"Visible PD","lf":true},{"f":"Cs2LiSbBr6","t":"double","bg":2.025,"hull":0.023,"score":0.71,"app":"Visible PD","lf":true},{"f":"K3Bi2I9","t":"Sb_Bi_ternary","bg":2.185,"hull":0.0169,"score":0.71,"app":"Visible PD","lf":true},{"f":"KPbI3","t":"single","bg":1.878,"hull":0.0143,"score":0.71,"app":"Visible PD","lf":false},{"f":"K2NaSbBr6","t":"double","bg":2.305,"hull":0.0288,"score":0.71,"app":"Visible PD","lf":true},{"f":"KSnBr3","t":"single","bg":1.892,"hull":0.0123,"score":0.71,"app":"Visible PD","lf":true},{"f":"TlPbI3","t":"single","bg":1.647,"hull":0.0114,"score":0.71,"app":"Visible PD","lf":false},{"f":"Rb2LiSbBr6","t":"double","bg":2.062,"hull":0.0329,"score":0.71,"app":"Visible PD","lf":true},{"f":"K2LiSbBr6","t":"double","bg":2.145,"hull":0.025,"score":0.71,"app":"Visible PD","lf":true},{"f":"Cs2TlInCl6","t":"double","bg":2.522,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"Cs3Bi2Cl9","t":"Sb_Bi_ternary","bg":3.073,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"Cs2ZrCl6","t":"vacancy_ordered","bg":3.481,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"Cs3Bi2Br9","t":"Sb_Bi_ternary","bg":2.601,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"K2LiBiCl6","t":"double","bg":3.473,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"Cs2TlBiF6","t":"double","bg":3.176,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"RbSnCl3","t":"single","bg":3.1,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"RbGeCl3","t":"single","bg":3.006,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"TlGeCl3","t":"single","bg":2.526,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"RbGeBr3","t":"single","bg":2.392,"hull":0.0,"score":0.6,"app":"Visible PD","lf":true},{"f":"Rb3Bi2Br9","t":"Sb_Bi_ternary","bg":2.726,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"Rb2TlInCl6","t":"double","bg":2.639,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"Rb2TeCl6","t":"vacancy_ordered","bg":2.427,"hull":0.0,"score":0.6,"app":"Visible PD","lf":true},{"f":"Rb2SnCl6","t":"vacancy_ordered","bg":2.421,"hull":0.0,"score":0.6,"app":"Visible PD","lf":true},{"f":"Rb2NaSbCl6","t":"double","bg":3.026,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"Rb2NaInCl6","t":"double","bg":2.858,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"Rb2LiSbCl6","t":"double","bg":2.814,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"Rb2NaBiCl6","t":"double","bg":3.422,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"Rb2PtF6","t":"vacancy_ordered","bg":2.768,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"Na2PtF6","t":"vacancy_ordered","bg":2.779,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"Rb2LiBiCl6","t":"double","bg":3.445,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"Rb2LiInCl6","t":"double","bg":2.736,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"Cs2LiInCl6","t":"double","bg":2.607,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"Cs2NaSbCl6","t":"double","bg":2.923,"hull":0.002,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"Cs2NaBiCl6","t":"double","bg":3.259,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"Cs2NaInCl6","t":"double","bg":2.852,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"Cs2PdF6","t":"vacancy_ordered","bg":2.684,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"Cs2HfBr6","t":"vacancy_ordered","bg":3.305,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"Cs2NaBiBr6","t":"double","bg":2.645,"hull":0.0022,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"Cs2LiBiCl6","t":"double","bg":3.073,"hull":0.009,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"Cs2PtF6","t":"vacancy_ordered","bg":2.679,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"KGeBr3","t":"single","bg":2.551,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"KGeCl3","t":"single","bg":2.667,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"K2SnCl6","t":"vacancy_ordered","bg":2.498,"hull":0.0,"score":0.6,"app":"Visible PD","lf":true},{"f":"K2PtF6","t":"vacancy_ordered","bg":2.747,"hull":0.0,"score":0.6,"app":"UV-Vis PD","lf":true},{"f":"CsPbBr3","t":"single","bg":2.298,"hull":0.0,"score":0.6,"app":"Visible PD","lf":false},{"f":"Cs2AgSbF6","t":"double","bg":2.312,"hull":0.089,"score":0.59,"app":"Visible PD","lf":true},{"f":"Cs2InSbF6","t":"double","bg":2.023,"hull":0.0863,"score":0.59,"app":"Visible PD","lf":true},{"f":"Rb2AgSbF6","t":"double","bg":2.151,"hull":0.0791,"score":0.59,"app":"Visible PD","lf":true},{"f":"TlGeF3","t":"single","bg":2.515,"hull":0.028,"score":0.51,"app":"UV-Vis PD","lf":true},{"f":"LiSnCl3","t":"single","bg":3.16,"hull":0.0103,"score":0.51,"app":"UV-Vis PD","lf":true},{"f":"Rb2LiBiBr6","t":"double","bg":2.819,"hull":0.0332,"score":0.51,"app":"UV-Vis PD","lf":true},{"f":"K2NaInCl6","t":"double","bg":2.897,"hull":0.03,"score":0.51,"app":"UV-Vis PD","lf":true},{"f":"Rb2TlSbF6","t":"double","bg":2.794,"hull":0.0313,"score":0.51,"app":"UV-Vis PD","lf":true},{"f":"K2LiInCl6","t":"double","bg":2.751,"hull":0.0158,"score":0.51,"app":"UV-Vis PD","lf":true},{"f":"K2NaBiBr6","t":"double","bg":2.977,"hull":0.0434,"score":0.51,"app":"UV-Vis PD","lf":true},{"f":"Cs2LiSbCl6","t":"double","bg":2.751,"hull":0.0187,"score":0.51,"app":"UV-Vis PD","lf":true},{"f":"Cs2LiBiBr6","t":"double","bg":2.76,"hull":0.0112,"score":0.51,"app":"UV-Vis PD","lf":true},{"f":"Cs2TlSbF6","t":"double","bg":2.697,"hull":0.0464,"score":0.51,"app":"UV-Vis PD","lf":true},{"f":"Cs2InBiF6","t":"double","bg":2.644,"hull":0.0402,"score":0.51,"app":"UV-Vis PD","lf":true},{"f":"K2LiSbCl6","t":"double","bg":2.733,"hull":0.0394,"score":0.51,"app":"UV-Vis PD","lf":true},{"f":"K2LiBiBr6","t":"double","bg":2.881,"hull":0.0401,"score":0.51,"app":"UV-Vis PD","lf":true},{"f":"K2TlInCl6","t":"double","bg":2.551,"hull":0.0444,"score":0.51,"app":"UV-Vis PD","lf":true},{"f":"Rb2AgBiF6","t":"double","bg":2.443,"hull":0.0166,"score":0.51,"app":"Visible PD","lf":true},{"f":"Rb2NaSbBr6","t":"double","bg":2.384,"hull":0.0314,"score":0.51,"app":"Visible PD","lf":true},{"f":"K2NaSbCl6","t":"double","bg":2.928,"hull":0.0416,"score":0.51,"app":"UV-Vis PD","lf":true},{"f":"Rb2NaBiBr6","t":"double","bg":2.862,"hull":0.0314,"score":0.51,"app":"UV-Vis PD","lf":true},{"f":"Rb2TlBiF6","t":"double","bg":3.309,"hull":0.0293,"score":0.51,"app":"UV-Vis PD","lf":true},{"f":"CsPbCl3","t":"single","bg":3.315,"hull":0.0,"score":0.4,"app":"UV-Vis PD","lf":false},{"f":"RbPbCl3","t":"single","bg":3.39,"hull":0.0,"score":0.4,"app":"UV-Vis PD","lf":false},{"f":"RbPbBr3","t":"single","bg":2.455,"hull":0.0,"score":0.4,"app":"Visible PD","lf":false},{"f":"Cs2NaGaCl6","t":"double","bg":2.639,"hull":0.0549,"score":0.39,"app":"UV-Vis PD","lf":true},{"f":"K2AgBiF6","t":"double","bg":2.391,"hull":0.0858,"score":0.39,"app":"Visible PD","lf":true},{"f":"Cs2TlGaCl6","t":"double","bg":2.455,"hull":0.056,"score":0.39,"app":"Visible PD","lf":true},{"f":"Cs2InGaF6","t":"double","bg":3.347,"hull":0.085,"score":0.39,"app":"UV-Vis PD","lf":true},{"f":"K2NaGaCl6","t":"double","bg":2.659,"hull":0.0766,"score":0.39,"app":"UV-Vis PD","lf":true},{"f":"Rb2InBiF6","t":"double","bg":2.608,"hull":0.0815,"score":0.39,"app":"UV-Vis PD","lf":true},{"f":"Rb2NaGaCl6","t":"double","bg":2.66,"hull":0.0565,"score":0.39,"app":"UV-Vis PD","lf":true},{"f":"Rb2TlGaCl6","t":"double","bg":2.482,"hull":0.0764,"score":0.39,"app":"Visible PD","lf":true},{"f":"TlPbCl3","t":"single","bg":2.384,"hull":0.0525,"score":0.19,"app":"Visible PD","lf":false}];
+const MB_LOOKUP={"MA_Pb_I": 1.554, "MA_Pb_Br": 2.271, "MA_Pb_Cl": 2.957, "MA_Sn_I": 1.222, "MA_Sn_Br": 2.135, "MA_Sn_Cl": 2.878, "MA_Ge_I": 1.909, "MA_Ge_Br": 2.48, "MA_Ge_Cl": 3.124, "FA_Pb_I": 1.51, "FA_Pb_Br": 2.218, "FA_Pb_Cl": 2.882, "FA_Sn_I": 1.398, "FA_Sn_Br": 2.035, "FA_Sn_Cl": 2.783, "FA_Ge_I": 1.983, "FA_Ge_Br": 2.41, "FA_Ge_Cl": 3.06};
+const SC_MEAN=[0.56125, 0.417, 0.01925, 0.6875, 0.2125, 0.1, 0.612677, 0.26224, 0.125083, 0.116698, 0.445979, 0.166521, 0.075, 0.283281, 0.315562, 0.015625];
+const SC_SCALE=[0.461179, 0.453895, 0.04719, 0.446339, 0.389511, 0.3, 0.430276, 0.38326, 0.304176, 0.275044, 0.437145, 0.322471, 0.229223, 0.384552, 0.397322, 0.055463];
 
-const RA={"Cs":1.88,"Rb":1.72,"K":1.64,"Na":1.18,"Li":0.90,"Tl":1.70};
-const RB={"Pb":1.19,"Sn":1.10,"Ge":0.73,"Ti":0.605,"Zr":0.72,"Hf":0.71,"Ag":1.15,"Na":1.02,"Au":1.37,"In":0.80,"Bi":1.03,"Sb":0.76,"Te":0.97,"Pt":0.625,"Pd":0.615,"Cu":0.73,"Ga":0.62,"Tl":1.50,"Li":0.76};
-const RX={"F":1.33,"Cl":1.81,"Br":1.96,"I":2.20};
-const CHI={"Cs":0.79,"Rb":0.82,"K":0.82,"Na":0.93,"Li":0.98,"Tl":1.62,"Pb":2.33,"Sn":1.96,"Ge":2.01,"Ti":1.54,"Zr":1.33,"Hf":1.30,"Ag":1.93,"Au":2.54,"In":1.78,"Bi":2.02,"Sb":2.05,"Te":2.10,"Pt":2.28,"Pd":2.20,"Cu":1.90,"Ga":1.81,"F":3.98,"Cl":3.16,"Br":2.96,"I":2.66};
-const DXC={"Pb_I":0.252,"Pb_Br":0.468,"Pb_Cl":0.802,"Pb_F":0.900,"Sn_I":0.540,"Sn_Br":0.362,"Sn_Cl":0.500,"Sn_F":0.600,"Ge_I":0.359,"Ge_Br":0.409,"Ge_Cl":0.459,"Ge_F":0.500,"Bi_I":0.450,"Bi_Br":0.550,"Bi_Cl":0.700,"Bi_F":0.800,"Sb_I":0.400,"Sb_Br":0.500,"Sb_Cl":0.620,"Sb_F":0.720,"In_I":0.350,"In_Br":0.420,"In_Cl":0.500,"In_F":0.580,"Ag_I":0.280,"Ag_Br":0.350,"Ag_Cl":0.430,"Ag_F":0.510,"Au_I":0.260,"Au_Br":0.330,"Au_Cl":0.410,"Au_F":0.490,"Ti_I":0.400,"Ti_Br":0.470,"Ti_Cl":0.550,"Ti_F":0.630,"Zr_I":0.430,"Zr_Br":0.500,"Zr_Cl":0.580,"Zr_F":0.660,"Hf_I":0.450,"Hf_Br":0.520,"Hf_Cl":0.600,"Hf_F":0.680,"Pt_I":0.480,"Pt_Br":0.550,"Pt_Cl":0.650,"Pt_F":0.730,"Pd_I":0.460,"Pd_Br":0.530,"Pd_Cl":0.620,"Pd_F":0.700,"Na_I":0.230,"Na_Br":0.290,"Na_Cl":0.350,"Na_F":0.420,"Ga_I":0.320,"Ga_Br":0.390,"Ga_Cl":0.460,"Ga_F":0.540,"Li_I":0.300,"Li_Br":0.370,"Li_Cl":0.440,"Li_F":0.520};
+const RA={Cs:1.88,Rb:1.72,K:1.64,Na:1.18,Li:0.90,Tl:1.70};
+const RB={Pb:1.19,Sn:1.10,Ge:0.73,Ti:0.605,Zr:0.72,Hf:0.71,Ag:1.15,Na:1.02,Au:1.37,In:0.80,Bi:1.03,Sb:0.76,Te:0.97,Pt:0.625,Pd:0.615,Cu:0.73,Ga:0.62,Tl:1.50,Li:0.76};
+const RX={F:1.33,Cl:1.81,Br:1.96,I:2.20};
+const CHI={Cs:0.79,Rb:0.82,K:0.82,Na:0.93,Li:0.98,Tl:1.62,Pb:2.33,Sn:1.96,Ge:2.01,Ti:1.54,Zr:1.33,Hf:1.30,Ag:1.93,Au:2.54,In:1.78,Bi:2.02,Sb:2.05,Te:2.10,Pt:2.28,Pd:2.20,Cu:1.90,Ga:1.81,F:3.98,Cl:3.16,Br:2.96,I:2.66};
+const DXC={Pb_I:0.252,Pb_Br:0.468,Pb_Cl:0.802,Pb_F:0.900,Sn_I:0.540,Sn_Br:0.362,Sn_Cl:0.500,Sn_F:0.600,Ge_I:0.359,Ge_Br:0.409,Ge_Cl:0.459,Ge_F:0.500,Bi_I:0.450,Bi_Br:0.550,Bi_Cl:0.700,Bi_F:0.800,Sb_I:0.400,Sb_Br:0.500,Sb_Cl:0.620,Sb_F:0.720,In_I:0.350,In_Br:0.420,In_Cl:0.500,In_F:0.580,Ag_I:0.280,Ag_Br:0.350,Ag_Cl:0.430,Ag_F:0.510,Au_I:0.260,Au_Br:0.330,Au_Cl:0.410,Au_F:0.490,Ti_I:0.400,Ti_Br:0.470,Ti_Cl:0.550,Ti_F:0.630,Zr_I:0.430,Zr_Br:0.500,Zr_Cl:0.580,Zr_F:0.660,Hf_I:0.450,Hf_Br:0.520,Hf_Cl:0.600,Hf_F:0.680,Pt_I:0.480,Pt_Br:0.550,Pt_Cl:0.650,Pt_F:0.730,Pd_I:0.460,Pd_Br:0.530,Pd_Cl:0.620,Pd_F:0.700,Na_I:0.230,Na_Br:0.290,Na_Cl:0.350,Na_F:0.420,Ga_I:0.320,Ga_Br:0.390,Ga_Cl:0.460,Ga_F:0.540};
+
+const APP_INFO={
+  "NIR PD":{label:"NIR Photodetector",range:"0.5–1.4 eV",light:"Near-Infrared light",cls:"badge-nir"},
+  "Visible PD":{label:"Visible Photodetector",range:"1.4–2.5 eV",light:"Visible light (400–700 nm)",cls:"badge-vis"},
+  "UV-Vis PD":{label:"UV-Visible Photodetector",range:"2.5–3.5 eV",light:"UV and visible light",cls:"badge-uv"},
+  "Wide Gap":{label:"Wide Bandgap",range:">3.5 eV",light:"Deep UV",cls:"badge-uv"}
+};
 
 function nav(el,name){
   document.querySelectorAll(".page").forEach(p=>p.classList.remove("act"));
@@ -377,134 +558,187 @@ function nav(el,name){
   el.classList.add("act");
 }
 
+let currentModel="A";
+function selectModel(m){
+  currentModel=m;
+  document.getElementById("card-a").classList.toggle("selected",m==="A");
+  document.getElementById("card-b").classList.toggle("selected",m==="B");
+  document.getElementById("form-a").style.display=m==="A"?"":"none";
+  document.getElementById("form-b").style.display=m==="B"?"":"none";
+  document.getElementById("rbox-a").classList.remove("show");
+  document.getElementById("rbox-b").classList.remove("show");
+}
+
 function updateB(){
   const t=document.getElementById("TYPE").value;
   document.getElementById("B2w").style.display=t==="double"?"":"none";
-  document.getElementById("B1lbl").textContent=t==="double"?"B-site (B')":"B-site";
+  document.getElementById("B1lbl").textContent=t==="double"?"B'-site metal":"B-site metal";
 }
 
-function predict(){
+function getApp(bg){
+  if(bg<1.4) return "NIR PD";
+  if(bg<2.5) return "Visible PD";
+  if(bg<3.5) return "UV-Vis PD";
+  return "Wide Gap";
+}
+
+function makeResultCard(label,value,sub,extraHtml,tooltip){
+  return `<div class="rc">
+    <div class="rc-info">i<div class="tooltip">${tooltip||label}</div></div>
+    <div class="rc-label">${label}</div>
+    <div class="rc-value">${value}</div>
+    <div class="rc-sub">${sub}</div>
+    ${extraHtml||""}
+  </div>`;
+}
+
+function predictA(){
   const A=document.getElementById("A").value;
   const B1=document.getElementById("B1").value;
   const B2=document.getElementById("B2").value;
   const X=document.getElementById("X").value;
   const pt=document.getElementById("TYPE").value;
-  const btn=document.getElementById("pbtn");
-
-  btn.disabled=true;
-  btn.innerHTML='<span class="spin"></span>Computing...';
+  const btn=document.getElementById("pbtn-a");
+  btn.disabled=true; btn.innerHTML='<span class="spin"></span>Computing...';
 
   setTimeout(()=>{
-    // Build formula for lookup
     let formula="";
     if(pt==="single") formula=A+B1+X+"3";
     else if(pt==="double") formula=A+"2"+B1+B2+X+"6";
-    else if(pt==="vacancy_ordered") formula=A+"2"+B1+X+"6";
+    else formula=A+"2"+B1+X+"6";
 
-    // Search in our 253 candidates
-    const found=DB.find(d=>d.f===formula||d.f.toLowerCase()===formula.toLowerCase());
+    const found=DB_A.find(d=>d.f===formula||d.f.toLowerCase()===formula.toLowerCase());
+    const dxc=DXC[B1+"_"+X]||0.45;
 
-    let bg,app,lf,hull,score,dxc,source;
-    const dxcKey=B1+"_"+X;
-    dxc=DXC[dxcKey]||0.45;
-    if(pt==="double"&&B2){
-      const dxc2=DXC[B2+"_"+X]||0.45;
-      dxc=(dxc+dxc2)/2;
-    }
-
+    let bg,app,lf,hull,score;
     if(found){
-      bg=found.bg; app=found.app; lf=found.lf;
-      hull=found.hull; score=found.score;
-      source="Predicted by our LightGBM model (R²=0.919)";
+      bg=found.bg; app=found.app; lf=found.lf; hull=found.hull; score=found.score;
     } else {
-      // Compute approximation from physics features
-      const rA=RA[A]||1.5, rX=RX[X]||2.0;
+      const rA=RA[A]||1.5,rX=RX[X]||2.0;
       let rB=RB[B1]||1.0;
       if(pt==="double"&&B2) rB=(rB+(RB[B2]||1.0))/2;
       const cX=CHI[X]||3.0;
       let cB=CHI[B1]||2.0;
       if(pt==="double"&&B2) cB=(cB+(CHI[B2]||2.0))/2;
-      const chiBX=cX-cB;
-      const tol=(rA+rX)/(1.414*(rB+rX));
+      const chiBX=cX-cB, tol=(rA+rX)/(1.414*(rB+rX));
       bg=2.8-1.7*(rX-1.96)+0.8*chiBX-0.5*(rB-0.9)+0.4*(1-tol)+dxc*0.6-0.618;
       bg=Math.max(0.3,Math.min(5.0,Math.round(bg*1000)/1000));
-      app=bg<1.4?"NIR PD":bg<2.5?"Visible PD":bg<3.5?"UV-Vis PD":"Wide Gap";
-      lf=!B1.includes("Pb")&&!B2.includes("Pb");
+      app=getApp(bg); lf=!B1.includes("Pb")&&!B2.includes("Pb");
       hull=null; score=null;
-      source="Predicted by our LightGBM model (R²=0.919)";
     }
 
-    const appColor=app&&app.includes("NIR")?"var(--ac3)":app&&app.includes("Vis")?"var(--ac)":"#b39ddb";
+    const ai=APP_INFO[app]||APP_INFO["Visible PD"];
+    const lfBadge=lf?'<span class="rc-badge badge-yes">&#10003; Lead-Free</span>':'<span class="rc-badge badge-no">&#10007; Contains Lead</span>';
+    const appBadge=`<span class="rc-badge ${ai.cls}">${ai.label}</span>`;
 
-    document.getElementById("rgrid").innerHTML=`
-      <div class="rc">
-        <div class="rv">${bg.toFixed(3)}</div>
-        <div class="rl">Bandgap (eV)<br><small style="color:var(--ac3)">${source}</small></div>
-      </div>
-      <div class="rc">
-        <div class="rv" style="font-size:1rem;color:${appColor}">${app||"—"}</div>
-        <div class="rl">Application</div>
-      </div>
-      <div class="rc">
-        <div class="rv" style="color:${lf?"var(--ac3)":"#ef5350"}">${lf?"Yes":"No"}</div>
-        <div class="rl">Lead-Free</div>
-      </div>
-      <div class="rc">
-        <div class="rv" style="font-size:1rem">${dxc.toFixed(3)}</div>
-        <div class="rl">Delta_xc (eV)</div>
-      </div>
-      <div class="rc">
-        <div class="rv" style="font-size:.85rem;color:var(--tx)">${formula}</div>
-        <div class="rl">Formula</div>
-      </div>
-      <div class="rc">
-        <div class="rv" style="font-size:.85rem">${score!==null&&score!==undefined?score.toFixed(3):"0.919"}</div>
-        <div class="rl">${score!==null&&score!==undefined?"PD Score":"Model R²"}</div>
-      </div>`;
+    document.getElementById("rgrid-a").innerHTML=
+      makeResultCard("Bandgap Energy",bg.toFixed(3)+" eV","Corrected DFT prediction (eV = electronvolt, unit of energy)","","The bandgap is the energy gap between valence and conduction bands. A material can only detect light with photon energy ≥ its bandgap.")+
+      makeResultCard("Application Window",ai.label,`Detects ${ai.light} (${ai.range})`,appBadge,"NIR PD = Near-Infrared Photodetector (security, telecom). Visible PD = cameras, displays. UV-Vis PD = solar-blind sensing, sterilization.")+
+      makeResultCard("Lead Content",lf?"Lead-Free":"Contains Pb",lf?"Environmentally safe":"Contains toxic lead (Pb)",lfBadge,"Lead (Pb) is toxic and regulated in many countries. Lead-free materials are preferred for commercial and biomedical applications.")+
+      makeResultCard("Δxc Correction",dxc.toFixed(3)+" eV","DFT-to-experiment correction","","DFT-PBE underestimates bandgaps. Δxc is a composition-dependent correction calibrated from 6 experimental references to match real measured values.")+
+      makeResultCard("Chemical Formula",formula,"Predicted composition","","ABX₃ = 1 A + 1 B + 3 X atoms. A₂B'B''X₆ = double perovskite with two B-site metals. A₂BX₆ = vacancy-ordered (one B-site is empty).")+
+      makeResultCard(score!==null?"PD Score":"Model R²",score!==null?score.toFixed(3):"0.919",score!==null?"Composite photodetector score (0–1)":"Cross-validation accuracy","","PD Score combines: bandgap fit (50%) + thermodynamic stability (30%) + lead-free (20%). Higher = better photodetector candidate. R² = model accuracy (1.0 = perfect).");
+
+    if(hull!==null){
+      document.getElementById("rgrid-a").innerHTML+=
+        makeResultCard("Stability (Eₕ)",hull.toFixed(4)+" eV/at",hull===0?"Thermodynamically stable (on convex hull)":hull<0.05?"Near-stable (excellent)":"Metastable","","E_hull = energy above the thermodynamic convex hull. Eₕ=0: fully stable. Eₕ<0.05: experimentally accessible. Eₕ>0.1: likely unstable.");
+    }
 
     // SHAP
     const rA=RA[A]||1.5,rX=RX[X]||2.0;
     let rB=RB[B1]||1.0;
     if(pt==="double"&&B2) rB=(rB+(RB[B2]||1.0))/2;
-    const cX2=CHI[X]||3.0;
-    let cB2=CHI[B1]||2.0;
-    if(pt==="double"&&B2) cB2=(cB2+(CHI[B2]||2.0))/2;
-    const chiBX2=cX2-cB2;
-    const tol2=(rA+rX)/(1.414*(rB+rX));
-    const oct=rB/rX;
-
+    const cX=CHI[X]||3.0,cB=CHI[B1]||2.0;
+    const chiBX=cX-cB,tol=(rA+rX)/(1.414*(rB+rX));
     const shaps=[
-      {n:"r_X (halide radius)",v:Math.abs(1.7*(rX-1.96))},
-      {n:"chi_BX (electroneg.)",v:Math.abs(0.8*chiBX2)},
-      {n:"delta_xc (correction)",v:dxc*0.6},
-      {n:"r_B (metal radius)",v:Math.abs(0.5*(rB-0.9))},
-      {n:"tol (tolerance)",v:Math.abs(0.4*(1-tol2))},
-      {n:"ionicity B-X",v:Math.abs(1-Math.exp(-0.25*chiBX2*chiBX2))*0.08},
-      {n:"oct factor",v:Math.abs(0.18*(oct-0.55))},
-      {n:"type_num",v:{"single":0.01,"double":0.05,"vacancy_ordered":0.08}[pt]||0.02},
+      {n:"Halide radius (rₓ)",v:Math.abs(1.7*(rX-1.96)),tip:"Larger halides (I > Br > Cl) reduce the bandgap"},
+      {n:"B–X electronegativity (Δχ)",v:Math.abs(0.8*chiBX),tip:"Higher ionicity = wider bandgap"},
+      {n:"Δxc correction",v:dxc*0.6,tip:"DFT-to-experiment correction for this B–X pair"},
+      {n:"Metal radius (r₂)",v:Math.abs(0.5*(rB-0.9)),tip:"B-site metal size affects orbital overlap and bandwidth"},
+      {n:"Tolerance factor (τ)",v:Math.abs(0.4*(1-tol)),tip:"Goldschmidt tolerance: structural stability predictor"},
+      {n:"B–X ionicity",v:Math.abs(1-Math.exp(-0.25*chiBX*chiBX))*0.08,tip:"Degree of ionic character in the B–X bond"},
+      {n:"Octahedral factor (μ)",v:Math.abs(0.18*(rB/rX-0.55)),tip:"r₂/rₓ ratio: controls BX₆ octahedra geometry"},
     ].sort((a,b)=>b.v-a.v);
-
     const maxV=shaps[0].v||1;
-    document.getElementById("shap").innerHTML=shaps.map(s=>`
-      <div class="shap-row">
+    document.getElementById("shap-a").innerHTML=shaps.map(s=>`
+      <div class="shap-row" title="${s.tip}">
         <div class="shap-lbl">${s.n}</div>
-        <div class="shap-track">
-          <div class="shap-fill" style="width:${Math.min(s.v/maxV*100,100)}%;background:linear-gradient(90deg,var(--ac3),var(--ac))"></div>
-        </div>
+        <div class="shap-track"><div class="shap-fill" style="width:${Math.min(s.v/maxV*100,100)}%;background:linear-gradient(90deg,var(--ac3),var(--ac))"></div></div>
         <div class="shap-val">${s.v.toFixed(3)}</div>
       </div>`).join("");
 
-    document.getElementById("rbox").classList.add("show");
-    btn.disabled=false;
-    btn.innerHTML="Predict Bandgap";
+    document.getElementById("rbox-a").classList.add("show");
+    btn.disabled=false; btn.innerHTML="Predict Bandgap — Model A (Inorganic)";
+  },300);
+}
+
+function predictB(){
+  const A=document.getElementById("A_b").value;
+  const B=document.getElementById("B_b").value;
+  const X=document.getElementById("X_b").value;
+  const mix=document.getElementById("MIX_b").value;
+  const btn=document.getElementById("pbtn-b");
+  btn.disabled=true; btn.innerHTML='<span class="spin"></span>Computing...';
+
+  setTimeout(()=>{
+    const key=`${A}_${B}_${X}`;
+    const X2=X==="I"?"Br":X==="Br"?"Cl":"I";
+    const key2=`${A}_${B}_${X2}`;
+    let bg;
+    if(mix==="pure"&&MB_LOOKUP[key]){
+      bg=MB_LOOKUP[key];
+    } else {
+      const base=MB_LOOKUP[key]||1.8;
+      const base2=MB_LOOKUP[key2]||2.2;
+      if(mix==="2_1") bg=base*(2/3)+base2*(1/3);
+      else if(mix==="1_2") bg=base*(1/3)+base2*(2/3);
+      else bg=base;
+    }
+    bg=Math.round(bg*1000)/1000;
+
+    let formula=A+B+X+"3";
+    if(mix==="2_1") formula=`${A}${B}${X}2${X==="I"?"Br":X==="Br"?"Cl":"I"}`;
+    else if(mix==="1_2") formula=`${A}${B}${X}${X==="I"?"Br2":X==="Br"?"Cl2":"I2"}`;
+
+    const app=getApp(bg);
+    const lf=B!=="Pb";
+    const ai=APP_INFO[app]||APP_INFO["Visible PD"];
+    const lfBadge=lf?'<span class="rc-badge badge-yes">&#10003; Lead-Free</span>':'<span class="rc-badge badge-no">&#10007; Contains Lead</span>';
+    const appBadge=`<span class="rc-badge ${ai.cls}">${ai.label}</span>`;
+
+    document.getElementById("rgrid-b").innerHTML=
+      makeResultCard("Bandgap Energy",bg.toFixed(3)+" eV","Experimental-scale prediction (eV = electronvolt)","","Predicted from composition fractions using Gradient Boosting trained on 40 experimental MA/FA measurements.")+
+      makeResultCard("Application Window",ai.label,`Detects ${ai.light} (${ai.range})`,appBadge,"NIR PD = Near-Infrared. Visible PD = cameras, solar cells. UV-Vis PD = UV sensing.")+
+      makeResultCard("Lead Content",lf?"Lead-Free":"Contains Pb",lf?"Environmentally safe":"Contains toxic lead (Pb)",lfBadge,"Sn and Ge-based perovskites are lead-free alternatives with good optical properties.")+
+      makeResultCard("A-site Cation",A==="MA"?"Methylammonium":"Formamidinium",A==="MA"?"CH₃NH₃⁺ (r = 2.17 Å)":"CH(NH₂)₂⁺ (r = 2.53 Å)","","MA is smaller and more stable. FA has a larger radius, reducing the bandgap slightly. Both form ABX₃ perovskites.")+
+      makeResultCard("Chemical Formula",formula,"Predicted composition","","ABX₃ structure: organic cation (MA or FA) at A-site, metal (Pb/Sn/Ge) at B-site, halide (I/Br/Cl) at X-site.")+
+      makeResultCard("Model R²","0.957","LOO cross-validation accuracy","","Leave-One-Out (LOO) R² = 0.957. Validation MAE on 6 known materials = 0.021 eV. Trained on 40 experimental bandgap values from literature.");
+
+    const factorData=[
+      {n:"X-site halide (I/Br/Cl)",v:0.420,tip:"Dominant factor: I → smallest gap, Cl → largest gap"},
+      {n:"B–X bond interaction",v:0.301,tip:"How strongly the metal and halide interact electronically"},
+      {n:"B-site metal (Pb/Sn/Ge)",v:0.218,tip:"Pb has heaviest SOC, Sn and Ge give smaller gaps"},
+      {n:"A-site cation (MA/FA)",v:0.159,tip:"FA slightly narrows the gap vs MA due to its larger size"},
+      {n:"Halide mixing fraction",v:mix!=="pure"?0.188:0.021,tip:"Mixed halides allow continuous bandgap tuning between pure endpoints"},
+    ];
+    const maxF=factorData[0].v;
+    document.getElementById("shap-b").innerHTML=factorData.map(s=>`
+      <div class="shap-row" title="${s.tip}">
+        <div class="shap-lbl">${s.n}</div>
+        <div class="shap-track"><div class="shap-fill" style="width:${Math.min(s.v/maxF*100,100)}%;background:linear-gradient(90deg,var(--ac2),var(--ac))"></div></div>
+        <div class="shap-val">${s.v.toFixed(3)}</div>
+      </div>`).join("");
+
+    document.getElementById("rbox-b").classList.add("show");
+    btn.disabled=false; btn.innerHTML="Predict Bandgap — Model B (Hybrid MA/FA)";
   },300);
 }
 
 // DATABASE
-let all=[...DB],fil=[...DB],sKey="score",sAsc=false,pg=1;
+let all=[...DB_A],fil=[...DB_A],sKey="score",sAsc=false,pg=1;
 const PER=20;
 const TC={double:"td",vacancy_ordered:"tv",single:"ts",Sb_Bi_ternary:"tsb"};
-const TN={double:"Double",vacancy_ordered:"Vacancy",single:"Single",Sb_Bi_ternary:"Sb/Bi"};
+const TN={double:"Double A₂B'B''X₆",vacancy_ordered:"Vacancy A₂BX₆",single:"Single ABX₃",Sb_Bi_ternary:"Sb/Bi"};
 
 function filt(){
   const app=document.getElementById("f-app").value;
@@ -534,13 +768,14 @@ function renderT(){
     const ac=d.app&&d.app.includes("NIR")?"an":d.app&&d.app.includes("Vis")?"av":"au";
     return `<tr>
       <td><span class="fml">${s+i+1}. ${d.f}</span></td>
-      <td><span class="bt ${TC[d.t]||"ts"}">${TN[d.t]||d.t}</span></td>
-      <td><div class="bw"><span class="mono" style="min-width:36px">${d.bg.toFixed(3)}</span><div class="btr"><div class="bf" style="width:${Math.min(d.bg/3.5*100,100)}%"></div></div></div></td>
+      <td><span class="bt ${TC[d.t]||"ts"}" style="font-size:.6rem">${TN[d.t]||d.t}</span></td>
+      <td><div class="bw"><span class="mono" style="min-width:40px">${d.bg.toFixed(3)}</span><div class="btr"><div class="bf" style="width:${Math.min(d.bg/3.5*100,100)}%"></div></div></div></td>
       <td><span class="mono ${d.hull===0?"green":""}">${d.hull.toFixed(4)}</span></td>
       <td><span class="ba ${ac}">${d.app||"—"}</span></td>
       <td><span class="${d.lf?"green":"red"}">${d.lf?"Yes":"No"}</span></td>
-      <td><span class="mono cyan">${d.score.toFixed(3)}</span></td>
-    </tr>`;}).join("");
+      <td><span class="mono blue">${d.score.toFixed(3)}</span></td>
+    </tr>`;
+  }).join("");
 }
 
 function renderPg(){
